@@ -8,6 +8,14 @@
     <packaging>war</packaging>
 
     <name>Taschengeldboerse</name>
+    <scm>
+        <connection>https://github.com/Sybit-Education/taschengeldboerse.git</connection>
+    </scm>        
+    <ciManagement>
+        <system>Jenkins</system>
+        <url></url>
+    </ciManagement>        
+    
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

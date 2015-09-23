@@ -1,0 +1,6 @@
+/* 
+ * Script für die Anwendung
+ */
+
+
+

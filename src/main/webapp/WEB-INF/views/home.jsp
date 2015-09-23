@@ -30,9 +30,11 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Taschengeldbörse</h1>
-            <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
+            <h1>Die Taschengeldbörse</h1>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
                        src="https://goanimate.com/player/embed/0RVNfApDj9Gk?utm_source=social&utm_medium=tumblr&utm_campaign=usercontent"></iframe>
+            </div>
    
         </div>
 

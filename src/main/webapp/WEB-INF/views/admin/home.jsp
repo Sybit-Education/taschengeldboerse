@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 
@@ -17,11 +17,8 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
-                       src="https://goanimate.com/player/embed/0RVNfApDj9Gk?utm_source=social&utm_medium=tumblr&utm_campaign=usercontent"></iframe>
-            </div>
+            <h1>Admin</h1>
+            
    
         </div>
 

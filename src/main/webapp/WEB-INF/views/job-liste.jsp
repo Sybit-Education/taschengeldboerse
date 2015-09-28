@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Taschengeldbörse</title>
+        <title>Jobübersicht :: Taschengeldbörse</title>
 
     </head>
     <body>
@@ -18,11 +18,9 @@
 
         <div class="container">
             <h1>Die Taschengeldbörse</h1>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
-                       src="https://goanimate.com/player/embed/0RVNfApDj9Gk?utm_source=social&utm_medium=tumblr&utm_campaign=usercontent"></iframe>
-            </div>
-   
+            <h2>Jobs</h2>
+
+
         </div>
 
     </body>

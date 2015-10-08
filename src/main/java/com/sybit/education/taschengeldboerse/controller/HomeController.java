@@ -26,4 +26,16 @@ public class HomeController {
      
       return "home";
    }
+   
+   /**
+    * Simply selects the view to render by returning its name.
+    *
+    * @param request needed to get the referring url
+    * @return the logical view to be returned
+    */
+   @RequestMapping(value = "/impressum", method = RequestMethod.GET)
+   public String impressum( final HttpServletRequest request) {
+     
+      return "impressum";
+   }   
 }

@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Taschengeldbörse</title>
+        <title>Impressum :: Taschengeldbörse</title>
 
     </head>
     <body>
@@ -17,12 +17,14 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
-                       src="https://goanimate.com/player/embed/0RVNfApDj9Gk"></iframe>
+            <h1>Impressum</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    
+                </div>
             </div>
-   
+       
         </div>
 
     </body>

@@ -32,8 +32,8 @@
 
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href='<c:url value="/jobs" />'>Jobs</a>
-                <li><a href='<c:url value="#" />'>Menü 2</a>   
+                <li><a href="<c:url value="/admin" />">Admin</a>
+                <li><a href="<c:url value="#" />">Menü 2</a>   
 
             </ul>
 

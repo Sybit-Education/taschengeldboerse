@@ -23,5 +23,6 @@
 
         </div>
 
+        <c:import url="inc/footer.jsp" />
     </body>
 </html>

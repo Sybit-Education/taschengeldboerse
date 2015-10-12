@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Taschengeldbörse</title>
+        <title>Administration :: Taschengeldbörse</title>
 
     </head>
     <body>
@@ -17,10 +17,11 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Admin</h1>
+            <h1>Administration</h1>
             
    
         </div>
-
+        
+        <c:import url="inc/footer.jsp" />
     </body>
 </html>

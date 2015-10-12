@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Job anlegen :: Taschengeldbörse</title>
+        <title>Wir über uns :: Taschengeldbörse</title>
 
     </head>
     <body>
@@ -17,10 +17,14 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
-            <h2>Neuen Job anlegen</h2>
-
-
+            <h1>Wir über uns</h1>
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    
+                </div>
+            </div>
+       
         </div>
 
         <c:import url="inc/footer.jsp" />

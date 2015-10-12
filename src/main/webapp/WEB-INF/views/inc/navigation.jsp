@@ -33,20 +33,20 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="<c:url value="/jobs"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Jobs <span class="caret"></span></a>
+                    <a href="<c:url value="/schueler"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schüler<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="<c:url value="/schueler" />">Bewerber</a></li>
+                        <li><a href="<c:url value="/schueler/neu" />">anmelden</a></li>
+                    </ul>
+                </li> 
+                <li class="dropdown">
+                    <a href="<c:url value="/jobs"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Job-Anbieter <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<c:url value="/jobs" />">Übersicht</a></li>
                         <li><a href="<c:url value="/jobs/neu" />">eintragen</a></li>
                     </ul>
-
-                <li class="dropdown">
-                    <a href="<c:url value="/bewerber"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Bewerber <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<c:url value="/bewerber" />">Bewerber</a></li>
-                        <li><a href="<c:url value="/bewerber/neu" />">anmelden</a></li>
-                    </ul>
-                    
-
+                </li>
+                <li><a href="<c:url value="/about" />">Wir über uns</a></li>
             </ul>
 
         </div>

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class HomeController {
+public class SchuelerController {
 
    /**
     * Simply selects the home view to render by returning its name.
@@ -21,34 +21,22 @@ public class HomeController {
     * @param request needed to get the referring url
     * @return the logical view to be returned
     */
-   @RequestMapping(value = "/", method = RequestMethod.GET)
+   @RequestMapping(value = "/schueler", method = RequestMethod.GET)
    public String home( final HttpServletRequest request) {
      
-      return "home";
+      return "schueler-liste";
    }
    
+   
    /**
-    * Simply selects the view to render by returning its name.
+    * Simply selects the home view to render by returning its name.
     *
     * @param request needed to get the referring url
     * @return the logical view to be returned
     */
-   @RequestMapping(value = "/impressum", method = RequestMethod.GET)
-   public String impressum( final HttpServletRequest request) {
+   @RequestMapping(value = "/schueler/neu", method = RequestMethod.GET)
+   public String add( final HttpServletRequest request) {
      
-      return "impressum";
-   }   
-   
-   
-   /**
-    * Simply selects the view to render by returning its name.
-    *
-    * @param request needed to get the referring url
-    * @return the logical view to be returned
-    */
-   @RequestMapping(value = "/about", method = RequestMethod.GET)
-   public String about( final HttpServletRequest request) {
-     
-      return "about";
-   }    
+      return "schueler-neu";
+   }
 }

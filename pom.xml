@@ -25,8 +25,32 @@
         <org.spring.security-version>3.2.5.RELEASE</org.spring.security-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
     </properties>
-    
+    <profiles>
+      <profile>
+         <id>localhost</id>
+         <activation>
+            <activeByDefault>true</activeByDefault>
+         </activation>  
+         <properties>
+            <database.url>jdbc:mysql://localhost:3306/sybib?zeroDateTimeBehavior=convertToNull</database.url>
+            <user>sybibadmin</user>
+            <password>admin@sybib2015!</password>
+            
+            <containerId>tomcat8x</containerId>
+            <cargo.hostname>localhost</cargo.hostname>
+            <cargo.servlet.port>8080</cargo.servlet.port>
+            <cargo.remote.username>tomcat</cargo.remote.username>
+            <cargo.remote.password>tomcat</cargo.remote.password>
+            <cargo.tomcat.manager.url>http://localhost:8080/manager/</cargo.tomcat.manager.url>
+         </properties>       
+      </profile>
+    </profiles>
     <dependencies>
+         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.34</version>
+        </dependency>
         <dependency>
             <groupId>javax.annotation</groupId>
             <artifactId>jsr250-api</artifactId>
@@ -124,7 +148,13 @@
             <artifactId>spring-data-oracle</artifactId>
             <version>1.1.0.RELEASE</version>
         </dependency>        
-      
+        
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.5.0</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -171,7 +201,44 @@
             <artifactId>cdi-api</artifactId>
             <version>1.0-SP1</version>
         </dependency>
-         -->    
+         -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <scope>test</scope>
+            <version>2.44.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opera</groupId>
+            <artifactId>operadriver</artifactId>
+            <scope>test</scope>
+            <version>1.5</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.seleniumhq.selenium</groupId>
+                    <artifactId>selenium-remote-driver</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <version>2.3.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.5.0</version>
+            <scope>test</scope>
+        </dependency> 
+
     </dependencies>
 
     <build>

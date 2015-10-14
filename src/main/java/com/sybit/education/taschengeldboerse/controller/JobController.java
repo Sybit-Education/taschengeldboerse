@@ -22,9 +22,22 @@ public class JobController {
     * @return the logical view to be returned
     */
    @RequestMapping(value = "/jobs", method = RequestMethod.GET)
-   public String home( final HttpServletRequest request) {
+   public String jobList( final HttpServletRequest request) {
      
       return "job-liste";
+   }
+   
+   
+    /**
+    * Simply selects the home view to render by returning its name.
+    *
+    * @param request needed to get the referring url
+    * @return the logical view to be returned
+    */
+   @RequestMapping(value = "/jobs/anmelden", method = RequestMethod.GET)
+   public String login( final HttpServletRequest request) {
+     
+      return "job-anmelden";
    }
    
    
@@ -39,4 +52,7 @@ public class JobController {
      
       return "job-neu";
    }
+   
+   
+
 }

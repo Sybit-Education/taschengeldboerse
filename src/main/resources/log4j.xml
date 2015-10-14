@@ -21,7 +21,7 @@
    </appender>
 	
    <!-- Application Loggers -->
-   <logger name="com.sybit.sybib">
+   <logger name="com.sybit.education.taschengeldboerse">
       <level value="debug" />
    </logger>
 	

@@ -5,10 +5,5 @@
     <non-jta-data-source/>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode>
-    <properties>
-      <property name="hibernate.search.lucene_version" value="LUCENE_CURRENT"/>
-      <property name="hibernate.search.default.indexBase" value="./data/sybib/indexes"/>
-      <property name="hibernate.search.default.directory_provider" value="filesystem"/>
-    </properties>
   </persistence-unit>
 </persistence>

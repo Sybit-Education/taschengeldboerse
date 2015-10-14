@@ -1,0 +1,9 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Schuelerprojekt: Taschengeldboerse
+${licensePrefix}Sybit GmbH - www.sybit.de -  Apache License, Version 2.0
+${licensePrefix}https://github.com/Sybit-Education/taschengeldboerse
+<#if licenseLast??>
+${licenseLast}
+</#if>

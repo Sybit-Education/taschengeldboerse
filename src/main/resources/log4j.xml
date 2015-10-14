@@ -12,7 +12,7 @@
    
    <appender name="file" class="org.apache.log4j.DailyRollingFileAppender">
       <param name="datePattern" value="'.'yyyy-MM-dd" />
-      <param name="File" value="${catalina.base}/logs/sybib.log" />
+      <param name="File" value="${catalina.base}/logs/boerse.log" />
       <param name="Append" value="true" />
       <param name="threshold" value="info" />
       <layout class="org.apache.log4j.PatternLayout">

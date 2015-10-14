@@ -38,9 +38,9 @@
         <description>MySQL datasource of Sybib</description>
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url"
-                          value="jdbc:derby://localhost:1527/tboerse" />
-        <property name="username" value="tboerse" />
-        <property name="password" value="" />
+                  value="jdbc:mysql://localhost/taschengeldboerse?zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;characterSetResults=utf8" />
+        <property name="username" value="boerse" />
+        <property name="password" value="admin2015!" />
     </bean>
 
     <bean id="entityManagerFactory"

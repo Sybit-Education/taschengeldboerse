@@ -41,19 +41,19 @@ public class Job implements Serializable{
     private Integer anbieter;
     
     @Column(name = "Datum")
-    private Calendar Datum;
+    private Calendar datum;
     
     @Column(name = "Uhrzeit")
-    private String Uhrzeit;
+    private String uhrzeit;
     
     @Column(name = "Zeitaufwand")
-    private String Zeitaufwand;
+    private String zeitaufwand;
     
     @Column(name = "Entlohnung")
-    private String Entlohnung;
+    private String entlohnung;
     
     @Column(name = "Zusaetzliche_Infos")
-    private String ZusaetzlicheInfos;
+    private String zusaetzlicheInfos;
 
     
     public Job() {
@@ -91,43 +91,43 @@ public class Job implements Serializable{
     }
 
     public Calendar getDatum() {
-        return Datum;
+        return datum;
     }
 
     public void setDatum(Calendar Datum) {
-        this.Datum = Datum;
+        this.datum = Datum;
     }
 
     public String getUhrzeit() {
-        return Uhrzeit;
+        return uhrzeit;
     }
 
     public void setUhrzeit(String Uhrzeit) {
-        this.Uhrzeit = Uhrzeit;
+        this.uhrzeit = Uhrzeit;
     }
 
     public String getZeitaufwand() {
-        return Zeitaufwand;
+        return zeitaufwand;
     }
 
     public void setZeitaufwand(String Zeitaufwand) {
-        this.Zeitaufwand = Zeitaufwand;
+        this.zeitaufwand = Zeitaufwand;
     }
 
     public String getEntlohnung() {
-        return Entlohnung;
+        return entlohnung;
     }
 
     public void setEntlohnung(String Entlohnung) {
-        this.Entlohnung = Entlohnung;
+        this.entlohnung = Entlohnung;
     }
 
     public String getZusaetzlicheInfos() {
-        return ZusaetzlicheInfos;
+        return zusaetzlicheInfos;
     }
 
     public void setZusaetzlicheInfos(String ZusaetzlicheInfos) {
-        this.ZusaetzlicheInfos = ZusaetzlicheInfos;
+        this.zusaetzlicheInfos = ZusaetzlicheInfos;
     }
 
     @Override
@@ -136,11 +136,11 @@ public class Job implements Serializable{
         hash = 17 * hash + Objects.hashCode(this.ID);
         hash = 17 * hash + Objects.hashCode(this.bezeichnung);
         hash = 17 * hash + Objects.hashCode(this.anbieter);
-        hash = 17 * hash + Objects.hashCode(this.Datum);
-        hash = 17 * hash + Objects.hashCode(this.Uhrzeit);
-        hash = 17 * hash + Objects.hashCode(this.Zeitaufwand);
-        hash = 17 * hash + Objects.hashCode(this.Entlohnung);
-        hash = 17 * hash + Objects.hashCode(this.ZusaetzlicheInfos);
+        hash = 17 * hash + Objects.hashCode(this.datum);
+        hash = 17 * hash + Objects.hashCode(this.uhrzeit);
+        hash = 17 * hash + Objects.hashCode(this.zeitaufwand);
+        hash = 17 * hash + Objects.hashCode(this.entlohnung);
+        hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
         return hash;
     }
 
@@ -159,16 +159,16 @@ public class Job implements Serializable{
         if (!Objects.equals(this.bezeichnung, other.bezeichnung)) {
             return false;
         }
-        if (!Objects.equals(this.Uhrzeit, other.Uhrzeit)) {
+        if (!Objects.equals(this.uhrzeit, other.uhrzeit)) {
             return false;
         }
-        if (!Objects.equals(this.Zeitaufwand, other.Zeitaufwand)) {
+        if (!Objects.equals(this.zeitaufwand, other.zeitaufwand)) {
             return false;
         }
-        if (!Objects.equals(this.Entlohnung, other.Entlohnung)) {
+        if (!Objects.equals(this.entlohnung, other.entlohnung)) {
             return false;
         }
-        if (!Objects.equals(this.ZusaetzlicheInfos, other.ZusaetzlicheInfos)) {
+        if (!Objects.equals(this.zusaetzlicheInfos, other.zusaetzlicheInfos)) {
             return false;
         }
         if (!Objects.equals(this.ID, other.ID)) {
@@ -177,7 +177,7 @@ public class Job implements Serializable{
         if (!Objects.equals(this.anbieter, other.anbieter)) {
             return false;
         }
-        if (!Objects.equals(this.Datum, other.Datum)) {
+        if (!Objects.equals(this.datum, other.datum)) {
             return false;
         }
         return true;
@@ -185,7 +185,7 @@ public class Job implements Serializable{
 
     @Override
     public String toString() {
-        return "jobs{" + "ID=" + ID + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + Datum + ", Uhrzeit=" + Uhrzeit + ", Zeitaufwand=" + Zeitaufwand + ", Entlohnung=" + Entlohnung + ", ZusaetzlicheInfos=" + ZusaetzlicheInfos + '}';
+        return "jobs{" + "ID=" + ID + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + '}';
     }
     
     

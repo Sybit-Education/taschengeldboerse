@@ -26,56 +26,56 @@ public class Anbieter {
     private Integer ID;
     
     @Column(name = "Anrede")
-    private String Anrede;
+    private String anrede;
     
     @Column(name = "Vorname")
-    private String Vorname;
+    private String vorname;
     
     @Column(name = "Name")
-    private String Name;
+    private String name;
     
     @Column(name = "Geburtsdatum")
-    private Calendar Geburtsdatum;
+    private Calendar geburtsdatum;
     
     @Column(name = "Straße")
-    private String Straße;
+    private String straße;
     
     @Column(name = "Hausnummer")
-    private String Hausnummer;
+    private String hausnummer;
     
     @Column(name = "PLZ")
-    private String PLZ;
+    private String plz;
     
     @Column(name = "Wohnort")
-    private String Wohnort;
+    private String wohnort;
     
     @Column(name = "Telefonnummer")
-    private String Telefonnummer;
+    private String telefonnummer;
     
     @Column(name = "Emailadresse")
-    private String Emailadresse;
+    private String emailadresse;
     
     @Column(name = "Merkblatt")
-    private boolean Merkblatt;
+    private boolean merkblatt;
     
     @Column(name = "Datenschutz")
-    private boolean Datenschutz;
+    private boolean datenschutz;
 
     public Anbieter() {
     }
 
     public Anbieter(String Anrede, String Vorname, String Name, Calendar Geburtsdatum, String Straße, String Hausnummer, String PLZ, String Wohnort, String Emailadresse, boolean Merkblatt, boolean Datenschutz) {
-        this.Anrede = Anrede;
-        this.Vorname = Vorname;
-        this.Name = Name;
-        this.Geburtsdatum = Geburtsdatum;
-        this.Straße = Straße;
-        this.Hausnummer = Hausnummer;
-        this.PLZ = PLZ;
-        this.Wohnort = Wohnort;
-        this.Emailadresse = Emailadresse;
-        this.Merkblatt = Merkblatt;
-        this.Datenschutz = Datenschutz;
+        this.anrede = Anrede;
+        this.vorname = Vorname;
+        this.name = Name;
+        this.geburtsdatum = Geburtsdatum;
+        this.straße = Straße;
+        this.hausnummer = Hausnummer;
+        this.plz = PLZ;
+        this.wohnort = Wohnort;
+        this.emailadresse = Emailadresse;
+        this.merkblatt = Merkblatt;
+        this.datenschutz = Datenschutz;
     }
 
     public Integer getID() {
@@ -87,117 +87,117 @@ public class Anbieter {
     }
 
     public String getAnrede() {
-        return Anrede;
+        return anrede;
     }
 
     public void setAnrede(String Anrede) {
-        this.Anrede = Anrede;
+        this.anrede = Anrede;
     }
 
     public String getVorname() {
-        return Vorname;
+        return vorname;
     }
 
     public void setVorname(String Vorname) {
-        this.Vorname = Vorname;
+        this.vorname = Vorname;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public Calendar getGeburtsdatum() {
-        return Geburtsdatum;
+        return geburtsdatum;
     }
 
     public void setGeburtsdatum(Calendar Geburtsdatum) {
-        this.Geburtsdatum = Geburtsdatum;
+        this.geburtsdatum = Geburtsdatum;
     }
 
     public String getStraße() {
-        return Straße;
+        return straße;
     }
 
     public void setStraße(String Straße) {
-        this.Straße = Straße;
+        this.straße = Straße;
     }
 
     public String getHausnummer() {
-        return Hausnummer;
+        return hausnummer;
     }
 
     public void setHausnummer(String Hausnummer) {
-        this.Hausnummer = Hausnummer;
+        this.hausnummer = Hausnummer;
     }
 
     public String getPLZ() {
-        return PLZ;
+        return plz;
     }
 
     public void setPLZ(String PLZ) {
-        this.PLZ = PLZ;
+        this.plz = PLZ;
     }
 
     public String getWohnort() {
-        return Wohnort;
+        return wohnort;
     }
 
     public void setWohnort(String Wohnort) {
-        this.Wohnort = Wohnort;
+        this.wohnort = Wohnort;
     }
 
     public String getTelefonnummer() {
-        return Telefonnummer;
+        return telefonnummer;
     }
 
     public void setTelefonnummer(String Telefonnummer) {
-        this.Telefonnummer = Telefonnummer;
+        this.telefonnummer = Telefonnummer;
     }
 
     public String getEmailadresse() {
-        return Emailadresse;
+        return emailadresse;
     }
 
     public void setEmailadresse(String Emailadresse) {
-        this.Emailadresse = Emailadresse;
+        this.emailadresse = Emailadresse;
     }
 
     public boolean isMerkblatt() {
-        return Merkblatt;
+        return merkblatt;
     }
 
     public void setMerkblatt(boolean Merkblatt) {
-        this.Merkblatt = Merkblatt;
+        this.merkblatt = Merkblatt;
     }
 
     public boolean isDatenschutz() {
-        return Datenschutz;
+        return datenschutz;
     }
 
     public void setDatenschutz(boolean Datenschutz) {
-        this.Datenschutz = Datenschutz;
+        this.datenschutz = Datenschutz;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 43 * hash + Objects.hashCode(this.ID);
-        hash = 43 * hash + Objects.hashCode(this.Anrede);
-        hash = 43 * hash + Objects.hashCode(this.Vorname);
-        hash = 43 * hash + Objects.hashCode(this.Name);
-        hash = 43 * hash + Objects.hashCode(this.Geburtsdatum);
-        hash = 43 * hash + Objects.hashCode(this.Straße);
-        hash = 43 * hash + Objects.hashCode(this.Hausnummer);
-        hash = 43 * hash + Objects.hashCode(this.PLZ);
-        hash = 43 * hash + Objects.hashCode(this.Wohnort);
-        hash = 43 * hash + Objects.hashCode(this.Telefonnummer);
-        hash = 43 * hash + Objects.hashCode(this.Emailadresse);
-        hash = 43 * hash + (this.Merkblatt ? 1 : 0);
-        hash = 43 * hash + (this.Datenschutz ? 1 : 0);
+        hash = 43 * hash + Objects.hashCode(this.anrede);
+        hash = 43 * hash + Objects.hashCode(this.vorname);
+        hash = 43 * hash + Objects.hashCode(this.name);
+        hash = 43 * hash + Objects.hashCode(this.geburtsdatum);
+        hash = 43 * hash + Objects.hashCode(this.straße);
+        hash = 43 * hash + Objects.hashCode(this.hausnummer);
+        hash = 43 * hash + Objects.hashCode(this.plz);
+        hash = 43 * hash + Objects.hashCode(this.wohnort);
+        hash = 43 * hash + Objects.hashCode(this.telefonnummer);
+        hash = 43 * hash + Objects.hashCode(this.emailadresse);
+        hash = 43 * hash + (this.merkblatt ? 1 : 0);
+        hash = 43 * hash + (this.datenschutz ? 1 : 0);
         return hash;
     }
 
@@ -213,43 +213,43 @@ public class Anbieter {
             return false;
         }
         final Anbieter other = (Anbieter) obj;
-        if (this.Merkblatt != other.Merkblatt) {
+        if (this.merkblatt != other.merkblatt) {
             return false;
         }
-        if (this.Datenschutz != other.Datenschutz) {
+        if (this.datenschutz != other.datenschutz) {
             return false;
         }
-        if (!Objects.equals(this.Anrede, other.Anrede)) {
+        if (!Objects.equals(this.anrede, other.anrede)) {
             return false;
         }
-        if (!Objects.equals(this.Vorname, other.Vorname)) {
+        if (!Objects.equals(this.vorname, other.vorname)) {
             return false;
         }
-        if (!Objects.equals(this.Name, other.Name)) {
+        if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.Straße, other.Straße)) {
+        if (!Objects.equals(this.straße, other.straße)) {
             return false;
         }
-        if (!Objects.equals(this.Hausnummer, other.Hausnummer)) {
+        if (!Objects.equals(this.hausnummer, other.hausnummer)) {
             return false;
         }
-        if (!Objects.equals(this.PLZ, other.PLZ)) {
+        if (!Objects.equals(this.plz, other.plz)) {
             return false;
         }
-        if (!Objects.equals(this.Wohnort, other.Wohnort)) {
+        if (!Objects.equals(this.wohnort, other.wohnort)) {
             return false;
         }
-        if (!Objects.equals(this.Telefonnummer, other.Telefonnummer)) {
+        if (!Objects.equals(this.telefonnummer, other.telefonnummer)) {
             return false;
         }
-        if (!Objects.equals(this.Emailadresse, other.Emailadresse)) {
+        if (!Objects.equals(this.emailadresse, other.emailadresse)) {
             return false;
         }
         if (!Objects.equals(this.ID, other.ID)) {
             return false;
         }
-        if (!Objects.equals(this.Geburtsdatum, other.Geburtsdatum)) {
+        if (!Objects.equals(this.geburtsdatum, other.geburtsdatum)) {
             return false;
         }
         return true;
@@ -257,7 +257,7 @@ public class Anbieter {
 
     @Override
     public String toString() {
-        return "anbieter{" + "ID=" + ID + ", Anrede=" + Anrede + ", Vorname=" + Vorname + ", Name=" + Name + ", Geburtsdatum=" + Geburtsdatum + ", Stra\u00dfe=" + Straße + ", Hausnummer=" + Hausnummer + ", PLZ=" + PLZ + ", Wohnort=" + Wohnort + ", Telefonnummer=" + Telefonnummer + ", Emailadresse=" + Emailadresse + ", Merkblatt=" + Merkblatt + ", Datenschutz=" + Datenschutz + '}';
+        return "anbieter{" + "ID=" + ID + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + straße + ", Hausnummer=" + hausnummer + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
     }
     
     

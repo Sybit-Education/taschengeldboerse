@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sybit.education.taschengeldboerse.repositorys;
+package com.sybit.education.taschengeldboerse.repository;
 
-import com.sybit.education.taschengeldboerse.domain.jobs;
+import com.sybit.education.taschengeldboerse.domain.Job;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author sat
  */
-public interface jobsRepository extends JpaRepository<jobs, Integer>{
+public interface JobsRepository extends JpaRepository<Job, Integer>{
     
-    List<jobs> findAll();
+    List<Job> findAll();
 }

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sybit.education.taschengeldboerse.JobServiceTest;
+package com.sybit.education.taschengeldboerse.testService;
 
-import com.sybit.education.taschengeldboerse.domain.jobs;
-import com.sybit.education.taschengeldboerse.service.jobsService;
+import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+import com.sybit.education.taschengeldboerse.service.JobsService;
 import static org.junit.Assert.assertEquals;
 
 
@@ -20,12 +22,16 @@ import static org.junit.Assert.assertEquals;
 public class JobServiceTest extends AbstractDatabaseTest{
     
     @Autowired
-    jobsService Service;
+    JobsService service;
     
+    @Test
     public void testFindAll(){
-        List<jobs> jobList;
-        jobList=Service.findAll();
-        assertEquals(0, jobList.size());
+        List<Job> jobList;
+        jobList=service.findAll();
+        assertEquals(1, jobList.size());
+        
+        Job job = jobList.get(0);
+        assertEquals("Test Job", job.getBezeichnung());
     }
 
     @Override

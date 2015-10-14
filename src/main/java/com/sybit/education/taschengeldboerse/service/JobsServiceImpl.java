@@ -5,22 +5,25 @@
  */
 package com.sybit.education.taschengeldboerse.service;
 
-import com.sybit.education.taschengeldboerse.domain.jobs;
-import com.sybit.education.taschengeldboerse.repositorys.jobsRepository;
+import com.sybit.education.taschengeldboerse.domain.Job;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import com.sybit.education.taschengeldboerse.repository.JobsRepository;
 
 /**
  *
  * @author sat
  */
-public class jobsServiceImpl implements jobsService {
+@Service
+public class JobsServiceImpl implements JobsService {
 
     @Autowired
-    jobsRepository repository;
+    JobsRepository repository;
     
     @Override
-    public List<jobs> findAll() {
+    public List<Job> findAll() {
         return repository.findAll();
     }
     

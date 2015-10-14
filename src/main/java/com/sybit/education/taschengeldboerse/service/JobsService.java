@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sybit.education.taschengeldboerse.repositorys;
+package com.sybit.education.taschengeldboerse.service;
+
+import com.sybit.education.taschengeldboerse.domain.Job;
+import java.util.List;
 
 /**
  *
  * @author sat
  */
-public class jobRepositoryImpl {
+public interface JobsService {
     
+    List<Job> findAll();
 }

@@ -17,7 +17,7 @@ import javax.persistence.Id;
  *
  * @author sat
  */
-public class anbieter {
+public class Anbieter {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -61,10 +61,10 @@ public class anbieter {
     @Column(name = "Datenschutz")
     private boolean Datenschutz;
 
-    public anbieter() {
+    public Anbieter() {
     }
 
-    public anbieter(String Anrede, String Vorname, String Name, Calendar Geburtsdatum, String Straße, String Hausnummer, String PLZ, String Wohnort, String Emailadresse, boolean Merkblatt, boolean Datenschutz) {
+    public Anbieter(String Anrede, String Vorname, String Name, Calendar Geburtsdatum, String Straße, String Hausnummer, String PLZ, String Wohnort, String Emailadresse, boolean Merkblatt, boolean Datenschutz) {
         this.Anrede = Anrede;
         this.Vorname = Vorname;
         this.Name = Name;
@@ -212,7 +212,7 @@ public class anbieter {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final anbieter other = (anbieter) obj;
+        final Anbieter other = (Anbieter) obj;
         if (this.Merkblatt != other.Merkblatt) {
             return false;
         }

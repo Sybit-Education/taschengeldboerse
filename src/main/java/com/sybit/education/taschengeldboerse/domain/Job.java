@@ -5,19 +5,25 @@
  */
 package com.sybit.education.taschengeldboerse.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  *
  * @author sat
  */
-public class jobs {
+@Entity
+@Table(name = "jobs")
+public class Job implements Serializable{
     
     /**
      * 
@@ -29,10 +35,10 @@ public class jobs {
     private Integer ID;
     
     @Column(name = "Bezeichnung")
-    private String Bezeichnung;
+    private String bezeichnung;
     
     @Column(name = "Anbieter")
-    private Integer Anbieter;
+    private Integer anbieter;
     
     @Column(name = "Datum")
     private Calendar Datum;
@@ -50,12 +56,12 @@ public class jobs {
     private String ZusaetzlicheInfos;
 
     
-    public jobs() {
+    public Job() {
     };
     
-    public jobs(String Bezeichnung, Integer Anbieter) {
-        this.Bezeichnung = Bezeichnung;
-        this.Anbieter = Anbieter;
+    public Job(String bezeichnung, Integer Anbieter) {
+        this.bezeichnung = bezeichnung;
+        this.anbieter = Anbieter;
     }
     
     
@@ -69,19 +75,19 @@ public class jobs {
     }
 
     public String getBezeichnung() {
-        return Bezeichnung;
+        return bezeichnung;
     }
 
     public void setBezeichnung(String Bezeichnung) {
-        this.Bezeichnung = Bezeichnung;
+        this.bezeichnung = Bezeichnung;
     }
 
     public Integer getAnbieter() {
-        return Anbieter;
+        return anbieter;
     }
 
     public void setAnbieter(Integer Anbieter) {
-        this.Anbieter = Anbieter;
+        this.anbieter = Anbieter;
     }
 
     public Calendar getDatum() {
@@ -128,8 +134,8 @@ public class jobs {
     public int hashCode() {
         int hash = 5;
         hash = 17 * hash + Objects.hashCode(this.ID);
-        hash = 17 * hash + Objects.hashCode(this.Bezeichnung);
-        hash = 17 * hash + Objects.hashCode(this.Anbieter);
+        hash = 17 * hash + Objects.hashCode(this.bezeichnung);
+        hash = 17 * hash + Objects.hashCode(this.anbieter);
         hash = 17 * hash + Objects.hashCode(this.Datum);
         hash = 17 * hash + Objects.hashCode(this.Uhrzeit);
         hash = 17 * hash + Objects.hashCode(this.Zeitaufwand);
@@ -149,8 +155,8 @@ public class jobs {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final jobs other = (jobs) obj;
-        if (!Objects.equals(this.Bezeichnung, other.Bezeichnung)) {
+        final Job other = (Job) obj;
+        if (!Objects.equals(this.bezeichnung, other.bezeichnung)) {
             return false;
         }
         if (!Objects.equals(this.Uhrzeit, other.Uhrzeit)) {
@@ -168,7 +174,7 @@ public class jobs {
         if (!Objects.equals(this.ID, other.ID)) {
             return false;
         }
-        if (!Objects.equals(this.Anbieter, other.Anbieter)) {
+        if (!Objects.equals(this.anbieter, other.anbieter)) {
             return false;
         }
         if (!Objects.equals(this.Datum, other.Datum)) {
@@ -179,7 +185,7 @@ public class jobs {
 
     @Override
     public String toString() {
-        return "jobs{" + "ID=" + ID + ", Bezeichnung=" + Bezeichnung + ", Anbieter=" + Anbieter + ", Datum=" + Datum + ", Uhrzeit=" + Uhrzeit + ", Zeitaufwand=" + Zeitaufwand + ", Entlohnung=" + Entlohnung + ", ZusaetzlicheInfos=" + ZusaetzlicheInfos + '}';
+        return "jobs{" + "ID=" + ID + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + Datum + ", Uhrzeit=" + Uhrzeit + ", Zeitaufwand=" + Zeitaufwand + ", Entlohnung=" + Entlohnung + ", ZusaetzlicheInfos=" + ZusaetzlicheInfos + '}';
     }
     
     

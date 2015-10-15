@@ -31,8 +31,8 @@ public class Job implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID")
-    private Integer ID;
+    @Column(name = "id")
+    private Integer id;
     
     @Column(name = "Bezeichnung")
     private String bezeichnung;
@@ -67,11 +67,11 @@ public class Job implements Serializable{
     
     
     public Integer getID() {
-        return ID;
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setID(Integer id) {
+        this.id = id;
     }
 
     public String getBezeichnung() {
@@ -133,7 +133,7 @@ public class Job implements Serializable{
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.ID);
+        hash = 17 * hash + Objects.hashCode(this.id);
         hash = 17 * hash + Objects.hashCode(this.bezeichnung);
         hash = 17 * hash + Objects.hashCode(this.anbieter);
         hash = 17 * hash + Objects.hashCode(this.datum);
@@ -171,7 +171,7 @@ public class Job implements Serializable{
         if (!Objects.equals(this.zusaetzlicheInfos, other.zusaetzlicheInfos)) {
             return false;
         }
-        if (!Objects.equals(this.ID, other.ID)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         if (!Objects.equals(this.anbieter, other.anbieter)) {
@@ -185,7 +185,7 @@ public class Job implements Serializable{
 
     @Override
     public String toString() {
-        return "jobs{" + "ID=" + ID + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + '}';
+        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + '}';
     }
     
     

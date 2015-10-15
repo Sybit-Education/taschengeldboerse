@@ -17,9 +17,18 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
-            <h2>Jobs</h2>
-
+            
+            <div class="page-header">
+                <h1>Die Taschengeldbörse</h1>
+                <h2>Jobs</h2>
+            </div>
+            
+            <div class="joblist">
+                <c:forEach var="job" items="${jobList}">
+                    
+                    <c:out value="${job.bezeichnung}" />
+                </c:forEach>
+            </div>
 
         </div>
 

@@ -23,26 +23,30 @@
  
     <form class="form-horizontal">
         <div class="row">
-        <div class="col-sm-2">
-        </div>
-        <select class="form-group col-sm-2">
-            <option>Herr</option>
-            <option>Frau</option>
-        </select>
-        </div>
-        <div class="form-group col-sm-6">
-            <label for="inputFirstName" class="col-sm-4 control-label">Vorname</label>
-            <div class="col-sm-6">
-            <input type="name1" class="form-control" id="inputFirstVorname" placeholder="Vorname">
+            <div class="form-group col-sm-12">
+                <label for="salutation" class="col-sm-2 control-label">Anrede</label>
+                <div class="col-sm-2">
+                    <select id="salutation" class="form-control col-sm-2">
+                        <option>Herr</option>
+                        <option>Frau</option>
+                    </select>
+                </div>
             </div>
         </div>
-        <div class="form-group col-sm-6">
-            <label for="inputName" class="col-sm-4 control-label">Name</label>
-            <div class="col-sm-6">
-            <input type="name2" class="form-control" id="inputName" placeholder="Name">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="inputFirstName" class="col-sm-4 control-label">Vorname</label>
+                <div class="col-sm-6">
+                <input type="name1" class="form-control" id="inputFirstName" placeholder="Vorname">
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="inputName" class="col-sm-4 control-label">Name</label>
+                <div class="col-sm-6">
+                <input type="name2" class="form-control" id="inputName" placeholder="Name">
+                </div>
             </div>
         </div>
-        
         <div class="form-group">
             <label for="inputDate" class="col-sm-2 control-label">Geburtsdatum</label>
             <div class="col-sm-2">
@@ -70,7 +74,7 @@
         <div class="form-group col-sm-6">
             <label for="inputHouseNumber" class="col-sm-4 control-label">Hausnummer</label>
             <div class="col-sm-3">
-            <input type="adresse1" class="form-control" id="inputStreet" placeholder="Haus-Nr.">
+            <input type="adresse1" class="form-control" id="inputHouseNumber" placeholder="Haus-Nr.">
             </div>
         </div>
         <div class="form-group col-sm-6">

@@ -23,7 +23,7 @@
                 <h2>Jobs</h2>
             </div>
             
-            <div class="joblist">
+            <div class="row">
                 <c:forEach var="job" items="${jobList}">
                     
                     <c:out value="${job.bezeichnung}" />

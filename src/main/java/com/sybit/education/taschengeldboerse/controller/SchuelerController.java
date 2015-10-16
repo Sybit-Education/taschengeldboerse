@@ -29,14 +29,26 @@ public class SchuelerController {
    
    
    /**
-    * Simply selects the home view to render by returning its name.
+    * Lade das Formular für die Anlage eines Schülers.
     *
     * @param request needed to get the referring url
     * @return the logical view to be returned
     */
    @RequestMapping(value = "/schueler/neu", method = RequestMethod.GET)
-   public String add( final HttpServletRequest request) {
+   public String addForm( final HttpServletRequest request) {
      
       return "schueler-neu";
    }
+   
+   /**
+    * Speichere neuen Schüler.
+    *
+    * @param request needed to get the referring url
+    * @return the logical view to be returned
+    */
+   @RequestMapping(value = "/schueler/neu", method = RequestMethod.POST)
+   public String saveForm( final HttpServletRequest request) {
+       System.out.println("com.sybit.education.taschengeldboerse.controller.SchuelerController.saveForm()");
+      return "schueler-neu";
+   }   
 }

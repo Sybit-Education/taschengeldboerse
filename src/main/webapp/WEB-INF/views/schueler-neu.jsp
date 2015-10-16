@@ -21,7 +21,7 @@
             <h2>Anmeldung Schüler</h2>
     
  
-    <form class="form-horizontal">
+            <form class="form-horizontal" action="<c:url value="/schueler/neu" />" method="post">
         <div class="row">
             <div class="form-group col-sm-12">
                 <label for="salutation" class="col-sm-2 control-label">Anrede</label>
@@ -33,11 +33,10 @@
                 </div>
             </div>
         </div>
-        <div class="row">
             <div class="form-group col-sm-6">
                 <label for="inputFirstName" class="col-sm-4 control-label">Vorname</label>
                 <div class="col-sm-6">
-                <input type="name1" class="form-control" id="inputFirstName" placeholder="Vorname">
+                    <input type="name1" class="form-control" id="inputFirstName" placeholder="Vorname">
                 </div>
             </div>
             <div class="form-group col-sm-6">
@@ -46,7 +45,6 @@
                 <input type="name2" class="form-control" id="inputName" placeholder="Name">
                 </div>
             </div>
-        </div>
         <div class="form-group">
             <label for="inputDate" class="col-sm-2 control-label">Geburtsdatum</label>
             <div class="col-sm-2">
@@ -132,6 +130,9 @@
                 Ich bin mit den Datenschutz-Richtlinien einverstanden.
             </label>
         </div>
+            <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
+                  <input type="hidden"	name="${_csrf.parameterName}"	value="${_csrf.token}"/>
+            
     </form>
             
         </div>

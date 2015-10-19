@@ -5,6 +5,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/spring/spring-context.xml
+            /WEB-INF/spring/spring-security.xml
         </param-value>
     </context-param>
     <listener>
@@ -46,18 +47,17 @@
         <filter-name>encoding-filter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
- <!--   
- <filter>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    <init-param>
-      <param-name>contextAttribute</param-name>
-      <param-value>org.springframework.web.context.WebApplicationContext.ROOT</param-value>
-    </init-param>
-  </filter>
-  <filter-mapping>
-    <filter-name>springSecurityFilterChain</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping> 
--->
+    
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>contextAttribute</param-name>
+            <param-value>org.springframework.web.context.WebApplicationContext.ROOT</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping> 
 </web-app>

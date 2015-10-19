@@ -8,10 +8,32 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
-<div class="row">
-    <div class="col-md-12">
-        &copy; 2015 Sybit | <a href="<c:url value="/impressum" />">Impressum</a>
+<script>
+    function formSubmit() {
+        document.getElementById("logoutForm").submit();
+    }
+</script>
 
+<c:url value="/logout" var="logoutUrl" />
+
+<!-- csrt for log out-->
+<form action="${logoutUrl}" method="post" id="logoutForm">
+    <input type="hidden" 
+           name="${_csrf.parameterName}"
+           value="${_csrf.token}" />
+</form>
+
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        &copy; 2015 Sybit | 
+        <a href="<c:url value="/impressum" />">Impressum</a> |
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            Benutzer: ${pageContext.request.userPrincipal.name} | 
+            <a href="javascript:formSubmit()"> Logout</a>	
+        </c:if>
     </div>
 </div>
 

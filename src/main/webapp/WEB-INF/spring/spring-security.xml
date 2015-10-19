@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns:security="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <!-- Global Security Settings -->
+    <security:global-method-security secured-annotations="enabled" />
+    
+    <security:http auto-config="true" use-expressions="true" disable-url-rewriting="false">
+        
+        <security:intercept-url pattern="/schueler/**" access="hasRole('ROLE_SCHUELER')" />
+        <security:intercept-url pattern="/schueler/neu" access="permitAll" />
+        <security:intercept-url pattern="/jobs/**" access="hasRole('ROLE_ANBIETER')" />
+        <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+        <security:intercept-url pattern="/**" access="permitAll" />
+        <security:intercept-url pattern="/resources/**" access="permitAll" />
+        
+        <!-- access denied page -->
+        <security:access-denied-handler error-page="/" />
+
+
+        <security:form-login
+            login-page="/login"
+            authentication-failure-url="/login?error=1" 
+            username-parameter="username"
+            password-parameter="password" />
+        
+        <security:logout 
+            invalidate-session="true" 
+            delete-cookies="true" 
+        />
+
+        <!-- enable csrf protection -->
+        <security:csrf />
+    </security:http>
+
+	<security:authentication-manager>
+		<security:authentication-provider>
+		  <security:user-service>
+			<security:user name="schueler" password="schueler" authorities="ROLE_SCHUELER" />
+                        <security:user name="anbieter" password="anbieter" authorities="ROLE_ANBIETER" />
+                        <security:user name="admin" password="admin" authorities="ROLE_ADMIN" />
+		  </security:user-service>
+		</security:authentication-provider>
+	</security:authentication-manager>
+        <!--
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:jdbc-user-service 
+                data-source-ref="dataSource"
+                users-by-username-query="select email, password, enabled from user where email=?"
+                authorities-by-username-query="select email, authority from user where email=?" />
+            <security:password-encoder ref="encoder" />
+        </security:authentication-provider>
+    </security:authentication-manager>
+    -->
+    <beans:bean id="encoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <beans:constructor-arg name="strength" value="11" />
+    </beans:bean>
+</beans:beans>

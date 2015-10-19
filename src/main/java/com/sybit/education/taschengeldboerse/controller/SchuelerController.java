@@ -1,9 +1,15 @@
 package com.sybit.education.taschengeldboerse.controller;
 
 
+import com.sun.deploy.uitoolkit.impl.fx.ui.resources.ResourceManager;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.jsp.PageContext;
+import javax.swing.UIManager;
+import javax.ws.rs.HttpMethod;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -14,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class SchuelerController {
-
    /**
     * Simply selects the home view to render by returning its name.
     *
@@ -47,8 +52,9 @@ public class SchuelerController {
     * @return the logical view to be returned
     */
    @RequestMapping(value = "/schueler/neu", method = RequestMethod.POST)
-   public String saveForm( final HttpServletRequest request) {
-       System.out.println("com.sybit.education.taschengeldboerse.controller.SchuelerController.saveForm()");
+   public String saveForm(@ModelAttribute("vorname") String vorname, final Model model,  final HttpServletRequest request) {
+       
+       System.out.println("Vorname: " + vorname);
       return "schueler-neu";
    }   
 }

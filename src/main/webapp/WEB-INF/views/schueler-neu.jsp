@@ -24,9 +24,9 @@
             <form class="form-horizontal" action="<c:url value="/schueler/neu" />" method="post">
         <div class="row">
             <div class="form-group col-sm-12">
-                <label for="salutation" class="col-sm-2 control-label">Anrede</label>
+                <label for="anrede" class="col-sm-2 control-label">Anrede</label>
                 <div class="col-sm-2">
-                    <select id="salutation" class="form-control col-sm-2">
+                    <select name="anrede" class="form-control col-sm-2">
                         <option>Herr</option>
                         <option>Frau</option>
                     </select>
@@ -34,70 +34,70 @@
             </div>
         </div>
             <div class="form-group col-sm-6">
-                <label for="inputFirstName" class="col-sm-4 control-label">Vorname</label>
+                <label for="vorname" class="col-sm-4 control-label">Vorname</label>
                 <div class="col-sm-6">
-                    <input type="name1" class="form-control" id="inputFirstName" placeholder="Vorname">
+                    <input type="text" class="form-control" name="vorname" placeholder="Vorname">
                 </div>
             </div>
             <div class="form-group col-sm-6">
-                <label for="inputName" class="col-sm-4 control-label">Name</label>
+                <label for="name" class="col-sm-4 control-label">Name</label>
                 <div class="col-sm-6">
-                <input type="name2" class="form-control" id="inputName" placeholder="Name">
+                <input type="text" class="form-control" name="name" placeholder="Name">
                 </div>
             </div>
         <div class="form-group">
-            <label for="inputDate" class="col-sm-2 control-label">Geburtsdatum</label>
+            <label for="date" class="col-sm-2 control-label">Geburtsdatum</label>
             <div class="col-sm-2">
-            <input type="date" class="form-control" id="inputDate" placeholder="TT.MM.JJJJ">
+            <input type="date" class="form-control" name="date" placeholder="TT.MM.JJJJ">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail" class="col-sm-2 control-label">e-Mail</label>
+            <label for="email" class="col-sm-2 control-label">e-Mail</label>
             <div class="col-sm-4">
-            <input type="email" class="form-control" id="inputEmail" placeholder="e-Mail">
+            <input type="text" class="form-control" name="email" placeholder="e-Mail">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputTel" class="col-sm-2 control-label">Telefon-Nr.</label>
+            <label for="tel" class="col-sm-2 control-label">Telefon-Nr.</label>
             <div class="col-sm-2">
-            <input type="tel" class="form-control" id="inputTel" placeholder="Telefon-Nr.">
+            <input type="text" class="form-control" name="tel" placeholder="Telefon-Nr.">
             </div>
         </div>
         <div class="form-group col-sm-6">
-            <label for="inputStreet" class="col-sm-4 control-label">Straße</label>
+            <label for="street" class="col-sm-4 control-label">Straße</label>
             <div class="col-sm-6">
-            <input type="adresse1" class="form-control" id="inputStreet" placeholder="Straße">
+            <input type="text" class="form-control" name="street" placeholder="Straße">
             </div>
         </div>
         <div class="form-group col-sm-6">
-            <label for="inputHouseNumber" class="col-sm-4 control-label">Hausnummer</label>
+            <label for="houseNumber" class="col-sm-4 control-label">Hausnummer</label>
             <div class="col-sm-3">
-            <input type="adresse1" class="form-control" id="inputHouseNumber" placeholder="Haus-Nr.">
+            <input type="text" class="form-control" name="houseNumber" placeholder="Haus-Nr.">
             </div>
         </div>
         <div class="form-group col-sm-6">
-            <label for="inputPostalCode" class="col-sm-4 control-label">PLZ</label>
+            <label for="postalCode" class="col-sm-4 control-label">PLZ</label>
             <div class="col-sm-3">
-            <input type="adresse2" class="form-control" id="inputPostalCode" placeholder="PLZ">
+            <input type="text" class="form-control" name="postalCode" placeholder="PLZ">
             </div>
         </div>
         <div class="form-group col-sm-6">
-            <label for="inputCity" class="col-sm-4 control-label">Wohnort</label>
+            <label for="city" class="col-sm-4 control-label">Wohnort</label>
             <div class="col-sm-6">
-            <input type="adresse3" class="form-control" id="inputCity" placeholder="Wohnort">
+            <input type="text" class="form-control" name="city" placeholder="Wohnort">
             </div>
         </div>
         
         <div class="form-group">
-            <label for="inputJob" class="col-sm-2 control-label">Jobvorstellungen</label>
+            <label for="job" class="col-sm-2 control-label">Jobvorstellungen</label>
             <div class="col-sm-10">
-            <input type="jobs" class="form-control" id="inputJob" placeholder="Welche Jobs stellst du dir vor?">
+            <input type="text" class="form-control" name="job" placeholder="Welche Jobs stellst du dir vor?">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputTime" class="col-sm-2 control-label">mögliche Einsatz-Zeiten</label>
+            <label for="time" class="col-sm-2 control-label">mögliche Einsatz-Zeiten</label>
             <div class="col-sm-10">
-            <input type="time" class="form-control" id="inputTime" placeholder="Wann hast du Zeit?">
+            <input type="time" class="form-control" name="time" placeholder="Wann hast du Zeit?">
             </div>
         </div>
             

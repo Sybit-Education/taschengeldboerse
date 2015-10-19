@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="row">
-                    Benuter Schüler: schueler/schueler<br /> 
+                    Benutzer Schüler: schueler/schueler<br /> 
                     Benutzer Anbieter: anbieter/anbieter <br />
                     Benutzer Admin: admin/admin
                 </div>

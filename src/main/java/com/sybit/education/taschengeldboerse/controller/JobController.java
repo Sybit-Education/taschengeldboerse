@@ -52,19 +52,6 @@ public class JobController {
    }
    
    
-    /**
-    * Simply selects the home view to render by returning its name.
-    *
-    * @param request needed to get the referring url
-    * @return the logical view to be returned
-    */
-   @RequestMapping(value = "/jobs/anmelden", method = RequestMethod.GET)
-   public String login( final HttpServletRequest request) {
-     
-      return "job-anmelden";
-   }
-   
-   
    /**
     * Simply selects the home view to render by returning its name.
     *

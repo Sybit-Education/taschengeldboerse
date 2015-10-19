@@ -36,14 +36,14 @@
                     <a href="<c:url value="/schueler"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schüler<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<c:url value="/schueler" />">Bewerber</a></li>
-                        <li><a href="<c:url value="/schueler/neu" />">Anmeldung</a></li>
+                        <li><a href="<c:url value="/registrieren/schueler" />">Anmeldung</a></li>
                     </ul>
                 </li> 
                 <li class="dropdown">
                     <a href="<c:url value="/jobs"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Job-Anbieter <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<c:url value="/jobs" />">Job-Übersicht</a></li>
-                        <li><a href="<c:url value="/jobs/anmelden" />">Anmeldung</a></li>
+                        <li><a href="<c:url value="/registrieren/anbieter" />">Anmeldung</a></li>
                         <li><a href="<c:url value="/jobs/neu" />">Neuen Job anbieten</a></li>
                     </ul>
                 </li>

@@ -1,4 +1,4 @@
-package com.sybit.education.taschengeldboerse.model;
+package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;

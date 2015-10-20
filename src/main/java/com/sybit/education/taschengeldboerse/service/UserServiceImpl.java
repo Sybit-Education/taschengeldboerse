@@ -2,7 +2,7 @@ package com.sybit.education.taschengeldboerse.service;
 
 
 
-import com.sybit.education.taschengeldboerse.model.User;
+import com.sybit.education.taschengeldboerse.domain.User;
 import com.sybit.education.taschengeldboerse.repository.IUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

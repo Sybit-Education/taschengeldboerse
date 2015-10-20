@@ -17,13 +17,13 @@ import javax.persistence.Id;
  *
  * @author sat
  */
-public class Anbieter {
+public class Anbieter extends User {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "ID")
-    private Integer ID;
+    private Integer id;
     
     @Column(name = "Anrede")
     private String anrede;
@@ -78,12 +78,12 @@ public class Anbieter {
         this.datenschutz = Datenschutz;
     }
 
-    public Integer getID() {
-        return ID;
+    public Integer getId() {
+        return id;
     }
 
-    public void setID(Integer ID) {
-        this.ID = ID;
+    public void setId(Integer ID) {
+        this.id = ID;
     }
 
     public String getAnrede() {
@@ -185,7 +185,7 @@ public class Anbieter {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.ID);
+        hash = 43 * hash + Objects.hashCode(this.id);
         hash = 43 * hash + Objects.hashCode(this.anrede);
         hash = 43 * hash + Objects.hashCode(this.vorname);
         hash = 43 * hash + Objects.hashCode(this.name);
@@ -246,7 +246,7 @@ public class Anbieter {
         if (!Objects.equals(this.emailadresse, other.emailadresse)) {
             return false;
         }
-        if (!Objects.equals(this.ID, other.ID)) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
         if (!Objects.equals(this.geburtsdatum, other.geburtsdatum)) {
@@ -257,7 +257,7 @@ public class Anbieter {
 
     @Override
     public String toString() {
-        return "anbieter{" + "ID=" + ID + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + straße + ", Hausnummer=" + hausnummer + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
+        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + straße + ", Hausnummer=" + hausnummer + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
     }
     
     

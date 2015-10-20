@@ -4,7 +4,7 @@
  */
 package com.sybit.education.taschengeldboerse.controller;
 
-import com.sybit.education.taschengeldboerse.model.User;
+import com.sybit.education.taschengeldboerse.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

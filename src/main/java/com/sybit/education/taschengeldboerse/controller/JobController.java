@@ -83,6 +83,9 @@ public class JobController {
         
         System.out.println("Jobbezeichnung: " + job.getBezeichnung());
         
+        //neuen Job in der Datenbak abspeichern:
+        jobService.addJob(job);
+        
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
 

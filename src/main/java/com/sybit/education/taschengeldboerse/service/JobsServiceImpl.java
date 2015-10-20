@@ -8,7 +8,6 @@ package com.sybit.education.taschengeldboerse.service;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import com.sybit.education.taschengeldboerse.repository.JobsRepository;
 
@@ -26,5 +25,16 @@ public class JobsServiceImpl implements JobsService {
     public List<Job> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public void addJob(Job job) {
+        
+        if(job.getAnbieter() == null) {
+            job.setAnbieter(1); //zum Standardbenutzer hinzufügen. Muss noch geändert werden.
+        }
+        repository.save(job);
+    }
+    
+    
     
 }

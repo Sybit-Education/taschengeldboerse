@@ -19,13 +19,15 @@ CREATE TABLE `anbieter` (
   PRIMARY KEY (`id`)
 );
 
+INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `straße`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('0', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
+
 
 CREATE TABLE `jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `bezeichnung` varchar(60) NOT NULL,
   `anbieter` int(11) NOT NULL,
   `datum` varchar(45) DEFAULT NULL,
-  `uhrzeit` datetime DEFAULT NULL,
+  `uhrzeit` varchar(45) DEFAULT NULL,
   `zeitaufwand` varchar(45) DEFAULT NULL,
   `entlohnung` varchar(45) DEFAULT NULL,
   `zusaetzliche_infos` varchar(250) DEFAULT NULL,

@@ -1,7 +1,7 @@
 package com.sybit.education.taschengeldboerse.service;
 
 
-import com.sybit.education.taschengeldboerse.model.User;
+import com.sybit.education.taschengeldboerse.domain.User;
 import java.util.List;
 
 /**

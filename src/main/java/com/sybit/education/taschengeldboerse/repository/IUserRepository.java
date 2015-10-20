@@ -1,7 +1,7 @@
 package com.sybit.education.taschengeldboerse.repository;
 
 
-import com.sybit.education.taschengeldboerse.model.User;
+import com.sybit.education.taschengeldboerse.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

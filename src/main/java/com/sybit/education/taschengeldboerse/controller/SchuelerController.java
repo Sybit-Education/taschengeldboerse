@@ -1,6 +1,6 @@
 package com.sybit.education.taschengeldboerse.controller;
 
-import com.sybit.education.taschengeldboerse.model.Schueler;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;

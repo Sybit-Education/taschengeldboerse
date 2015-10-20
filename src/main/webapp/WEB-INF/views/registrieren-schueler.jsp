@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Schueler anmelden :: Taschengeldbörse</title>
+        <title>Schueler registrieren :: Taschengeldbörse</title>
 
     </head>
     <body>
@@ -20,8 +20,8 @@
             <h1>Die Taschengeldbörse</h1>
             <h2>Anmeldung Schüler</h2>
 
-
-            <form:form class="form-horizontal" action="/registrieren/schueler" method="post"  modelAttribute="schueler">
+            <c:url var = "action" value="/registrieren/schueler" />
+            <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="schueler">
                 <div class="row">
                     <div class="form-group col-sm-12">
                         <form:label path="anrede" class="col-sm-2 control-form:label">Anrede</form:label>
@@ -58,60 +58,53 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="tel" class="col-sm-2 control-form:label">Telefon-Nr.</form:label>
+                    <form:label path="telefon" class="col-sm-2 control-form:label">Telefon-Nr.</form:label>
                         <div class="col-sm-2">
-                        <form:input type="text" class="form-control" path="tel" placeholder="Telefon-Nr." />
+                        <form:input type="text" class="form-control" path="telefon" placeholder="Telefon-Nr." />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="street" class="col-sm-4 control-form:label">Straße</form:label>
+                    <form:label path="strasse" class="col-sm-4 control-form:label">Straße, Nr.</form:label>
                         <div class="col-sm-6">
-                        <form:input type="text" class="form-control" path="street" placeholder="Straße" />
+                        <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="houseNumber" class="col-sm-4 control-form:label">Hausnummer</form:label>
+                    <form:label path="plz" class="col-sm-4 control-form:label">PLZ</form:label>
                         <div class="col-sm-3">
-                        <form:input type="text" class="form-control" path="houseNumber" placeholder="Haus-Nr." />
+                        <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="postalCode" class="col-sm-4 control-form:label">PLZ</form:label>
-                        <div class="col-sm-3">
-                        <form:input type="text" class="form-control" path="postalCode" placeholder="PLZ" />
-                    </div>
-                </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="city" class="col-sm-4 control-form:label">Wohnort</form:label>
+                    <form:label path="ort" class="col-sm-4 control-form:label">Wohnort</form:label>
                         <div class="col-sm-6">
-                        <form:input type="text" class="form-control" path="city" placeholder="Wohnort" />
+                        <form:input type="text" class="form-control" path="ort" placeholder="Wohnort" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <form:label path="job" class="col-sm-2 control-form:label">Jobvorstellungen</form:label>
+                    <form:label path="jobBeschreibung" class="col-sm-2 control-form:label">Jobvorstellungen</form:label>
                         <div class="col-sm-10">
-                        <form:input type="text" class="form-control" path="job" placeholder="Welche Jobs stellst du dir vor?" />
+                        <form:input type="text" class="form-control" path="jobBeschreibung" placeholder="Welche Jobs stellst du dir vor?" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="time" class="col-sm-2 control-form:label">mögliche Einsatz-Zeiten</form:label>
+                    <form:label path="jobZeit" class="col-sm-2 control-form:label">mögliche Einsatz-Zeiten</form:label>
                         <div class="col-sm-10">
-                        <form:input type="time" class="form-control" path="time" placeholder="Wann hast du Zeit?" />
+                        <form:input type="time" class="form-control" path="jobZeit" placeholder="Wann hast du Zeit?" />
                     </div>
                 </div>
-
                 <div class="checkbox disabled">
                     <div class="col-sm-2"></div>
                     <form:label path="hatHaftpflichtVers">
-                        <form:input type="checkbox" path="hatHaftpflichtVers" />
+                        <form:checkbox path="hatHaftpflichtVers" />
                         Ich besitze eine Haftpflichtversicherung.
                     </form:label>
                 </div>
                 <div class="checkbox disabled">
                     <div class="col-sm-2"></div>
                     <form:label path="hatUnfallVers">
-                        <form:input type="checkbox" path="hatUnfallVers" />
+                        <form:checkbox  path="hatUnfallVers" />
                         Ich besitze eine Unfallversicherung.
                     </form:label>
                 </div>
@@ -119,16 +112,17 @@
                 <div class="checkbox disabled">
                     <div class="col-sm-2"></div>
                     <form:label path="hatMerkblattGelesen">
-                        <form:input type="checkbox" path="hatMerkblattGelesen" />
+                        <form:checkbox path="hatMerkblattGelesen" />
                         Ich habe das Merkblatt gelesen.
                     </form:label>
                 </div>
                 <div class="checkbox disabled">
                     <div class="col-sm-2"></div>
                     <form:label path="hatDatenschutzGelesen">
-                        <form:input type="checkbox" path="hatDatenschutzGelesen" />
+                        <form:checkbox  path="hatDatenschutzGelesen" />
                         Ich bin mit den Datenschutz-Richtlinien einverstanden.
                     </form:label>
+
                 </div>
                 <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
                 <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>

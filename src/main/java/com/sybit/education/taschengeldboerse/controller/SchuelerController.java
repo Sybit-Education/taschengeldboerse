@@ -48,10 +48,12 @@ public class SchuelerController {
     /**
      * Speichere neuen Schüler.
      *
+     * @param schueler
+     * @param model
      * @param request needed to get the referring url
      * @return the logical view to be returned
      */
-    @RequestMapping(value = "/schueler/neu", method = RequestMethod.POST)
+    @RequestMapping(value = "/registrieren/schueler", method = RequestMethod.POST)
     public ModelAndView saveForm(@ModelAttribute("schueler") Schueler schueler, final Model model, final HttpServletRequest request) {
 
         System.out.println("Vorname: " + schueler.getVorname());

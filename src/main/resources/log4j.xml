@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4Jdtd">
+
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"> 
 	
    <!-- Appenders -->
@@ -45,7 +45,7 @@
   
    <!-- Root Logger -->
    <root>
-      <priority value ="warn" /> 
+      <priority value="warn" /> 
       <appender-ref ref="console"/>
       <appender-ref ref="file" />
    </root>

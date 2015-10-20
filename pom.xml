@@ -51,9 +51,26 @@
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.10</version>
-            <type>jar</type>
+            <version>1.7.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>javax</groupId>
@@ -246,19 +263,19 @@
             <type>jar</type>
         </dependency>
     </dependencies>
-  	<!--
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${org.springframework-version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>		
-        </dependencies>
-    </dependencyManagement>
-  -->
+    <!--
+      <dependencyManagement>
+          <dependencies>
+              <dependency>
+                  <groupId>org.springframework</groupId>
+                  <artifactId>spring-framework-bom</artifactId>
+                  <version>${org.springframework-version}</version>
+                  <type>pom</type>
+                  <scope>import</scope>
+              </dependency>		
+          </dependencies>
+      </dependencyManagement>
+    -->
     <build>
         <plugins>
             <plugin>

@@ -39,6 +39,9 @@ public class HomeController {
         }
         
         LOGGER.debug("User= " + username );
+        
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        
 
         return "home";
     }

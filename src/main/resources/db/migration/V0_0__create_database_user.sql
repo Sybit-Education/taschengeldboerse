@@ -1,4 +1,4 @@
-CREATE DATABASE `taschengeldboerse` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
 
 CREATE USER 'boersenadmin'@'%' IDENTIFIED BY 'admin2015!';
 GRANT ALL PRIVILEGES ON taschengeldboerse.* TO 'boersenadmin'@'%';

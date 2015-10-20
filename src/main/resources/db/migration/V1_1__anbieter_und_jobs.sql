@@ -17,12 +17,11 @@ CREATE TABLE `anbieter` (
   `merkblatt` tinyint(4) DEFAULT '0',
   `datenschutz` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-SELECT * FROM taschengeldboerse.anbieter;
+);
 
 
 CREATE TABLE `jobs` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `bezeichnung` varchar(60) NOT NULL,
   `anbieter` int(11) NOT NULL,
   `datum` date DEFAULT NULL,
@@ -33,4 +32,4 @@ CREATE TABLE `jobs` (
   PRIMARY KEY (`id`),
   KEY `Anbieter_idx` (`anbieter`),
   CONSTRAINT `Anbieter` FOREIGN KEY (`anbieter`) REFERENCES `anbieter` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);

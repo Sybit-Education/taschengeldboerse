@@ -15,7 +15,7 @@
     <ciManagement>
         <system>Jenkins</system>
         <url></url>
-    </ciManagement>        
+    </ciManagement>      
     
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -323,10 +323,47 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>3.2.1</version>
+                <configuration>
+                    <!-- <url>jdbc:mysql://leda.sybit.de:3306/sybib?zeroDateTimeBehavior=convertToNull</url> -->
+                    <url>${database.url}</url>
+                    <user>${user}</user>
+                    <password>${password}</password>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>mysql</groupId>
+                        <artifactId>mysql-connector-java</artifactId>
+                        <version>5.1.34</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
         </plugins>
     </build>
     
     <profiles>
+        <profile>
+            <id>localhost</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>  
+            <properties>
+                <database.url>jdbc:mysql://localhost:3306/taschengeldboerse?zeroDateTimeBehavior=convertToNull</database.url>
+                <user>boersenadmin</user>
+                <password>admin2015!</password>
+            </properties>       
+        </profile>
         <profile>
             <!-- When built in OpenShift the 'openshift' profile will be used when 
             invoking mvn. -->

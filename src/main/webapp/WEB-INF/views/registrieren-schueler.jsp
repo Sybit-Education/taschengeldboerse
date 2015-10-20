@@ -63,8 +63,8 @@
                         <form:input type="text" class="form-control" path="telefon" placeholder="Telefon-Nr." />
                     </div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="strasse" class="col-sm-4 control-form:label">Straße, Nr.</form:label>
+                <div class="form-group col-sm-12">
+                    <form:label path="strasse" class="col-sm-2 control-form:label">Straße, Nr.</form:label>
                         <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
                     </div>

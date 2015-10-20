@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 
 
@@ -59,9 +60,14 @@ public class JobController {
     * @return the logical view to be returned
     */
    @RequestMapping(value = "/jobs/neu", method = RequestMethod.GET)
-   public String add( final HttpServletRequest request) {
-     
-      return "job-neu";
+   public ModelAndView jobFormular( final HttpServletRequest request) {
+    
+       ModelAndView modelAndView = new ModelAndView();
+       modelAndView.addObject("job", new Job());
+       
+       modelAndView.setViewName("job-neu");
+       
+        return modelAndView;
    }
    
    

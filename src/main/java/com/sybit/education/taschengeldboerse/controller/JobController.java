@@ -80,7 +80,7 @@ public class JobController {
      */
     @RequestMapping(value = "/jobs/neu", method = RequestMethod.POST)
     public ModelAndView saveForm(@ModelAttribute("job") Job job, final Model model, final HttpServletRequest request) {
-
+        
         System.out.println("Jobbezeichnung: " + job.getBezeichnung());
         
         ModelAndView modelAndView = new ModelAndView();

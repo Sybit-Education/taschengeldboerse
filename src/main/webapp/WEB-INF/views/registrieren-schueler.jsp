@@ -94,14 +94,14 @@
                         <form:input type="time" class="form-control" path="jobZeit" placeholder="Wann hast du Zeit?" />
                     </div>
                 </div>
-                <div class="checkbox disabled">
+                <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="hatHaftpflichtVers">
                         <form:checkbox path="hatHaftpflichtVers" />
                         Ich besitze eine Haftpflichtversicherung.
                     </form:label>
                 </div>
-                <div class="checkbox disabled">
+                <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="hatUnfallVers">
                         <form:checkbox  path="hatUnfallVers" />
@@ -109,14 +109,14 @@
                     </form:label>
                 </div>
                 <br/>
-                <div class="checkbox disabled">
+                <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="hatMerkblattGelesen">
                         <form:checkbox path="hatMerkblattGelesen" />
                         Ich habe das Merkblatt gelesen.
                     </form:label>
                 </div>
-                <div class="checkbox disabled">
+                <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="hatDatenschutzGelesen">
                         <form:checkbox  path="hatDatenschutzGelesen" />

@@ -22,7 +22,7 @@
          
             <c:url var = "action" value="/jobs/neu" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="job">
-                
+            
                 <div class="form-group">
                     <form:label path="bezeichnung" class="col-sm-2 control-form:label">Jobbezeichnung</form:label>
                         <div class="col-sm-10">
@@ -59,6 +59,8 @@
                         <form:input type="text" class="form-control" path="zusaetzlicheInfos" placeholder="z.B. Regenkleidung, etc." />
                     </div>
                 </div>
+                <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
+                <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
             </form:form>
         </div>
 

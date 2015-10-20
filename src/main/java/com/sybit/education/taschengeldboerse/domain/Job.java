@@ -41,7 +41,7 @@ public class Job implements Serializable{
     private Integer anbieter;
     
     @Column(name = "Datum")
-    private Calendar datum;
+    private String datum;
     
     @Column(name = "Uhrzeit")
     private String uhrzeit;
@@ -90,11 +90,11 @@ public class Job implements Serializable{
         this.anbieter = Anbieter;
     }
 
-    public Calendar getDatum() {
+    public String getDatum() {
         return datum;
     }
 
-    public void setDatum(Calendar Datum) {
+    public void setDatum(String Datum) {
         this.datum = Datum;
     }
 

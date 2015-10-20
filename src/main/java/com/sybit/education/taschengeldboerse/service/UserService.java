@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by stl on 15.06.2015.
  */
-public interface IUserService {
+public interface UserService {
 
     List<User> getAllUser();
 

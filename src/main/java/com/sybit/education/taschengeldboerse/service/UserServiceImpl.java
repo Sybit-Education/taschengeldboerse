@@ -17,7 +17,7 @@ import java.util.*;
 
 @Service
 //@ImportResource("classpath:/spring/spring-context.xml")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 

@@ -19,7 +19,7 @@ CREATE TABLE `anbieter` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `straße`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('0', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
+INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `straße`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('1', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
 
 
 CREATE TABLE `jobs` (

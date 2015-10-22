@@ -30,19 +30,13 @@ public class JobController {
     private JobsService jobService;
     
     
-   /**
-    * Simply selects the home view to render by returning its name.
-    *
-    * @param request needed to get the referring url
-    * @return the logical view to be returned
-    */
-
     /**
+     * Liste für die Schüler alle offenen Jobs auf.
      * @param model
      * @param request
      * @return
      */
-    @RequestMapping(value = "/jobs", method = RequestMethod.GET)
+    @RequestMapping(value = "/schueler/jobs", method = RequestMethod.GET)
     public String jobList(final Model model, final HttpServletRequest request) {
         logger.debug("All Jobs---->");
         
@@ -60,7 +54,7 @@ public class JobController {
     * @param request needed to get the referring url
     * @return the logical view to be returned
     */
-   @RequestMapping(value = "/jobs/neu", method = RequestMethod.GET)
+   @RequestMapping(value = "/anbieter/jobs/neu", method = RequestMethod.GET)
    public ModelAndView jobFormular( final HttpServletRequest request) {
     
        ModelAndView modelAndView = new ModelAndView();
@@ -78,7 +72,7 @@ public class JobController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "/jobs/neu", method = RequestMethod.POST)
+    @RequestMapping(value = "/anbieter/jobs/neu", method = RequestMethod.POST)
     public ModelAndView saveForm(@ModelAttribute("job") Job job, final Model model, final HttpServletRequest request) {
         
         System.out.println("Jobbezeichnung: " + job.getBezeichnung());

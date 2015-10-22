@@ -17,12 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class SchuelerController {
 
     /**
-     * Simply selects the home view to render by returning its name.
+     * Liste der dem Anbieter alle Bewerber auf.
      *
      * @param request needed to get the referring url
      * @return the logical view to be returned
      */
-    @RequestMapping(value = "/schueler", method = RequestMethod.GET)
+    @RequestMapping(value = "/anbieter/schueler", method = RequestMethod.GET)
     public String home(final HttpServletRequest request) {
 
         return "schueler-liste";

@@ -5,77 +5,72 @@
  */
 package com.sybit.education.taschengeldboerse.domain;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author sat
  */
-public class Anbieter extends User {
-    
+@Entity(name = "anbieter")
+public class Anbieter implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "ID")
+    @Column(name = "id")
     private Integer id;
-    
+
+    @Size(min = 5, message = "Bitte E-Mail angeben")
+    @Column(unique = true)
+    private String email;
+
     @Column(name = "Anrede")
     private String anrede;
-    
+
     @Column(name = "Vorname")
     private String vorname;
-    
+
     @Column(name = "Name")
     private String name;
-    
+
     @Column(name = "Geburtsdatum")
-    private Calendar geburtsdatum;
-    
-    @Column(name = "Straße")
-    private String straße;
-    
-    @Column(name = "Hausnummer")
-    private String hausnummer;
-    
+    private String geburtsdatum;
+
+    @Column(name = "Strasse")
+    private String strasse;
+
     @Column(name = "PLZ")
     private String plz;
-    
+
     @Column(name = "Wohnort")
     private String wohnort;
-    
+
     @Column(name = "Telefonnummer")
     private String telefonnummer;
-    
+
     @Column(name = "Emailadresse")
     private String emailadresse;
-    
+
     @Column(name = "Merkblatt")
     private boolean merkblatt;
-    
+
     @Column(name = "Datenschutz")
     private boolean datenschutz;
 
     public Anbieter() {
     }
 
-    public Anbieter(String Anrede, String Vorname, String Name, Calendar Geburtsdatum, String Straße, String Hausnummer, String PLZ, String Wohnort, String Emailadresse, boolean Merkblatt, boolean Datenschutz) {
-        this.anrede = Anrede;
-        this.vorname = Vorname;
-        this.name = Name;
-        this.geburtsdatum = Geburtsdatum;
-        this.straße = Straße;
-        this.hausnummer = Hausnummer;
-        this.plz = PLZ;
-        this.wohnort = Wohnort;
-        this.emailadresse = Emailadresse;
-        this.merkblatt = Merkblatt;
-        this.datenschutz = Datenschutz;
+    public Anbieter(User user) {
+        this.email = user.getEmail();
     }
 
     public Integer getId() {
@@ -110,36 +105,36 @@ public class Anbieter extends User {
         this.name = Name;
     }
 
-    public Calendar getGeburtsdatum() {
+    public String getGeburtsdatum() {
         return geburtsdatum;
     }
 
-    public void setGeburtsdatum(Calendar Geburtsdatum) {
-        this.geburtsdatum = Geburtsdatum;
+    public void setGeburtsdatum(String geburtsdatum) {
+        this.geburtsdatum = geburtsdatum;
     }
 
-    public String getStraße() {
-        return straße;
+    public String getStrasse() {
+        return strasse;
     }
 
-    public void setStraße(String Straße) {
-        this.straße = Straße;
+    public void setStrasse(String Straße) {
+        this.strasse = Straße;
     }
 
-    public String getHausnummer() {
-        return hausnummer;
+    public String getEmail() {
+        return email;
     }
 
-    public void setHausnummer(String Hausnummer) {
-        this.hausnummer = Hausnummer;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPLZ() {
+    public String getPlz() {
         return plz;
     }
 
-    public void setPLZ(String PLZ) {
-        this.plz = PLZ;
+    public void setPlz(String plz) {
+        this.plz = plz;
     }
 
     public String getWohnort() {
@@ -190,8 +185,7 @@ public class Anbieter extends User {
         hash = 43 * hash + Objects.hashCode(this.vorname);
         hash = 43 * hash + Objects.hashCode(this.name);
         hash = 43 * hash + Objects.hashCode(this.geburtsdatum);
-        hash = 43 * hash + Objects.hashCode(this.straße);
-        hash = 43 * hash + Objects.hashCode(this.hausnummer);
+        hash = 43 * hash + Objects.hashCode(this.strasse);
         hash = 43 * hash + Objects.hashCode(this.plz);
         hash = 43 * hash + Objects.hashCode(this.wohnort);
         hash = 43 * hash + Objects.hashCode(this.telefonnummer);
@@ -228,10 +222,7 @@ public class Anbieter extends User {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.straße, other.straße)) {
-            return false;
-        }
-        if (!Objects.equals(this.hausnummer, other.hausnummer)) {
+        if (!Objects.equals(this.strasse, other.strasse)) {
             return false;
         }
         if (!Objects.equals(this.plz, other.plz)) {
@@ -257,9 +248,7 @@ public class Anbieter extends User {
 
     @Override
     public String toString() {
-        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + straße + ", Hausnummer=" + hausnummer + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
+        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + strasse + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
     }
-    
-    
-    
+
 }

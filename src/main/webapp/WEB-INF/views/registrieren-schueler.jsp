@@ -17,14 +17,14 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
+
             <h2>Anmeldung Schüler</h2>
 
             <c:url var = "action" value="/registrieren/schueler" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="schueler">
                 <div class="row">
                     <div class="form-group col-sm-12">
-                        <form:label path="anrede" class="col-sm-2 control-form:label">Anrede</form:label>
+                        <form:label path="anrede" class="col-sm-2 control-label">Anrede</form:label>
                             <div class="col-sm-2">
                             <form:select path="anrede" class="form-control col-sm-2">
                                 <form:option value="Herr">Herr</form:option>
@@ -46,50 +46,48 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="geburtsdatum" class="col-sm-2 control-form:label">Geburtsdatum</form:label>
+                    <form:label path="geburtsdatum" class="col-sm-2 control-label">Geburtsdatum</form:label>
                         <div class="col-sm-2">
                         <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="email" class="col-sm-2 control-form:label">e-Mail</form:label>
+                    <form:label path="email" class="col-sm-2 control-label">e-Mail</form:label>
                         <div class="col-sm-4">
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="telefon" class="col-sm-2 control-form:label">Telefon-Nr.</form:label>
+                    <form:label path="telefon" class="col-sm-2 control-label">Telefon-Nr.</form:label>
                         <div class="col-sm-2">
                         <form:input type="text" class="form-control" path="telefon" placeholder="Telefon-Nr." />
                     </div>
                 </div>
-                <div class="form-group col-sm-12">
-                    <form:label path="strasse" class="col-sm-2 control-form:label">Straße, Nr.</form:label>
-                        <div class="col-sm-6">
+                <div class="form-group">
+                    <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.</form:label>
+                        <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
-                    </div>
-                </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="plz" class="col-sm-4 control-form:label">PLZ</form:label>
-                        <div class="col-sm-3">
-                        <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
-                    </div>
-                </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="ort" class="col-sm-4 control-form:label">Wohnort</form:label>
-                        <div class="col-sm-6">
-                        <form:input type="text" class="form-control" path="ort" placeholder="Wohnort" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <form:label path="jobBeschreibung" class="col-sm-2 control-form:label">Jobvorstellungen</form:label>
+                    <form:label path="plz" class="col-sm-2 control-label">PLZ, Wohnort</form:label>
+                        <div class="col-sm-2">
+                            <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
+                        </div>
+                        <div class="col-sm-8">
+                            <form:input type="text" class="form-control" path="wohnort" placeholder="Wohnort" />
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <form:label path="jobBeschreibung" class="col-sm-2 control-label">Jobvorstellungen</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="jobBeschreibung" placeholder="Welche Jobs stellst du dir vor?" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="jobZeit" class="col-sm-2 control-form:label">mögliche Einsatz-Zeiten</form:label>
+                    <form:label path="jobZeit" class="col-sm-2 control-label">mögliche Einsatz-Zeiten</form:label>
                         <div class="col-sm-10">
                         <form:input type="time" class="form-control" path="jobZeit" placeholder="Wann hast du Zeit?" />
                     </div>
@@ -125,15 +123,11 @@
 
                 </div>
                 <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
-                <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
-
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <form:hidden path="id" />
             </form:form>
 
         </div>
-
-
-
-
 
         <c:import url="inc/footer.jsp" />
     </body>

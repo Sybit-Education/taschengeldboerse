@@ -19,11 +19,11 @@ import com.sybit.education.taschengeldboerse.repository.JobsRepository;
 public class JobsServiceImpl implements JobsService {
 
     @Autowired
-    JobsRepository repository;
+    JobsRepository jobRepository;
     
     @Override
     public List<Job> findAll() {
-        return repository.findAll();
+        return jobRepository.findAll();
     }
 
     @Override
@@ -32,9 +32,12 @@ public class JobsServiceImpl implements JobsService {
         if(job.getAnbieter() == null) {
             job.setAnbieter(1); //zum Standardbenutzer hinzufügen. Muss noch geändert werden.
         }
-        repository.save(job);
+        jobRepository.save(job);
     }
     
-    
+    @Override
+    public Job findById(Integer id) {
+        return jobRepository.findOne(id);
+    }
     
 }

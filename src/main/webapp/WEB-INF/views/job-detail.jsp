@@ -18,9 +18,9 @@
 
         <div class="container">
             <h1>Die Taschengeldbörse</h1>
-            <h2>Neuen Job anlegen</h2>
+            <h2>Job-Details</h2>
          
-            <c:url var = "action" value="/anbieter/jobs/neu" />
+            <c:url var = "action" value="/schueler/job" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="job">
             
                 <div class="form-group">

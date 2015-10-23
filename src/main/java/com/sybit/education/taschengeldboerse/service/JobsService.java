@@ -17,4 +17,7 @@ public interface JobsService {
     List<Job> findAll();
     
     void addJob(Job job);
+    
+    Job findById(Integer id);
+    
 }

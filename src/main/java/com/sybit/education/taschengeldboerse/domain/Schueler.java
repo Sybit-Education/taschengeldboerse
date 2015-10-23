@@ -5,44 +5,91 @@
  */
 package com.sybit.education.taschengeldboerse.domain;
 
-import java.util.Date;
+import java.io.Serializable;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 /**
  *
  * @author ssr
  */
-public class Schueler extends User {
+@Entity(name = "schueler")
+public class Schueler implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column
     private String vorname;
-
+    @Column
     private String anrede;
-
+    @Column
     private String name;
 
+    @Size(min = 5, message = "Bitte E-Mail angeben")
+    @Column(unique = true)
+    private String email;
+
+    @Column
     private String telefon;
-
+    @Column
     private String strasse;
-
+    @Column
     private String plz;
-
-    private String ort;
-    
+    @Column
+    private String wohnort;
+    @Column
     private String geburtsdatum;
-
+    @Column(name = "job_beschreibung")
     private String jobBeschreibung;
-
+    @Column(name = "job_zeit")
     private String jobZeit;
-
+    
+    @Column(name = "haftpflichtversicherung")
     private Boolean hatHaftpflichtVers;
-
+    
+    @Column(name = "unfallversicherung")
     private Boolean hatUnfallVers;
-
+    
+    @Column(name = "merkblatt")
     private Boolean hatMerkblattGelesen;
-
+    
+    @Column(name = "datenschutz")
     private Boolean hatDatenschutzGelesen;
+
+    public Schueler() {
+    }
+
+    public Schueler(User user) {
+        this.email = user.getEmail();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getStrasse() {
         return strasse;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setStrasse(String strasse) {
@@ -57,12 +104,12 @@ public class Schueler extends User {
         this.plz = plz;
     }
 
-    public String getOrt() {
-        return ort;
+    public String getWohnort() {
+        return wohnort;
     }
 
-    public void setOrt(String ort) {
-        this.ort = ort;
+    public void setWohnort(String wohnort) {
+        this.wohnort = wohnort;
     }
 
     public String getJobBeschreibung() {

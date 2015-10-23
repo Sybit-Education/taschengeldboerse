@@ -17,9 +17,16 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            <h1>Die Taschengeldbörse</h1>
+
             <h2>Neuer Job-Anbieter kann sich anmelden</h2>
 
+            <c:url var = "action" value="/registrieren/anbieter" />
+            <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="anbieter">
+
+                <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <form:hidden path="id" />
+            </form:form>
 
         </div>
 

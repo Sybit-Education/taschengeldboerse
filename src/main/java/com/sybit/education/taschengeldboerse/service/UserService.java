@@ -1,6 +1,8 @@
 package com.sybit.education.taschengeldboerse.service;
 
 
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.domain.User;
 import java.util.List;
 
@@ -12,6 +14,12 @@ public interface UserService {
     List<User> getAllUser();
 
     User getUserByEmail(String email);
-    void addUserToUsers(User user);
+    User addUser(User user);
+
+    User updateAuthority(User user);
+    
+    Schueler saveSchueler(Schueler schueler);
+    
+    Anbieter saveAnbieter(Anbieter anbieter);
 
 }

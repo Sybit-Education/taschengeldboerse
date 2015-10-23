@@ -1,7 +1,9 @@
 package com.sybit.education.taschengeldboerse.controller;
 
 import com.sybit.education.taschengeldboerse.domain.Schueler;
+import com.sybit.education.taschengeldboerse.service.UserService;
 import javax.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,9 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class SchuelerController {
+    
+    @Autowired
+    private UserService userService;
 
     /**
      * Liste der dem Anbieter alle Bewerber auf.
@@ -57,6 +62,8 @@ public class SchuelerController {
     public ModelAndView saveForm(@ModelAttribute("schueler") Schueler schueler, final Model model, final HttpServletRequest request) {
 
         System.out.println("Vorname: " + schueler.getVorname());
+        
+        schueler = userService.saveSchueler(schueler);
         
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("schueler", schueler);

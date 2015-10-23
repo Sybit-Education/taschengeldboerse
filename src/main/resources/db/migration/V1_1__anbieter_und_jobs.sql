@@ -8,8 +8,7 @@ CREATE TABLE `anbieter` (
   `vorname` varchar(45) DEFAULT NULL,
   `name` varchar(45) DEFAULT NULL,
   `geburtsdatum` varchar(45) DEFAULT NULL,
-  `straße` varchar(250) DEFAULT NULL,
-  `hausnummer` varchar(250) DEFAULT NULL,
+  `strasse` varchar(250) DEFAULT NULL,
   `plz` varchar(250) DEFAULT NULL,
   `wohnort` varchar(250) DEFAULT NULL,
   `telefonnummer` varchar(250) DEFAULT NULL,
@@ -19,7 +18,7 @@ CREATE TABLE `anbieter` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `straße`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('1', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
+INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `strasse`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('1', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
 
 
 CREATE TABLE `jobs` (

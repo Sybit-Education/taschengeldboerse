@@ -19,7 +19,7 @@ public class User implements Serializable {
 
     @Basic
     @NotNull
-    private String role;
+    private String authority;
 
     @Basic
     @Size(min = 3, message = "Dein \"Passwort\" ist zu kurz")
@@ -67,11 +67,11 @@ public class User implements Serializable {
         return this.enabled;
     }
 
-    public String getRole() {
-        return role;
+        public String getAuthority() {
+        return authority;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setAuthority(String authority) {
+        this.authority = authority;
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by stl on 09.06.2015.
  */
-public interface IUserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<User,Long> {
 
     List<User> findByEmail(String email);
 

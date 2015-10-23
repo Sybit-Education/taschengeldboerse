@@ -16,53 +16,49 @@
 
         <c:import url="inc/navigation.jsp" />
 
+        
         <div class="container">
             <h1>Die Taschengeldbörse</h1>
             <h2>Job-Details</h2>
          
-            <c:url var = "action" value="/schueler/job" />
-            <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="job">
             
-                <div class="form-group">
-                    <form:label path="bezeichnung" class="col-sm-2 control-form:label">Jobbezeichnung</form:label>
-                        <div class="col-sm-10">
-                        <form:input type="text" class="form-control" path="bezeichnung" placeholder="Welche Art von Job wollen Sie anbieten?" />
+            <div class="col-xs-6 col-md-8">
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Bezeichnung:</b>
                     </div>
+                    <div class="col-md-9">${job.bezeichnung}</div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="datum" class="col-sm-4 control-form:label">Erledigungsdatum</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="date" class="form-control" path="datum" placeholder="TT.MM.JJJJ" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Datum:</b>
                     </div>
+                    <div class="col-md-9">${job.datum}</div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="uhrzeit" class="col-sm-4 control-form:label">Uhrzeit</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="date" class="form-control" path="uhrzeit" placeholder="HH:MM" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Uhrzeit:</b>
                     </div>
+                    <div class="col-md-9">${job.uhrzeit}</div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="zeitaufwand" class="col-sm-4 control-form:label">Zeitaufwand</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="date" class="form-control" path="zeitaufwand" placeholder="HH:MM" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Zeitaufwand:</b>
                     </div>
+                    <div class="col-md-9">${job.zeitaufwand}</div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <form:label path="entlohnung" class="col-sm-4 control-form:label">Entlohnung</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="text" class="form-control" path="entlohnung" placeholder="__€" />
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Entlohnung:</b>
                     </div>
+                    <div class="col-md-9">${job.entlohnung}</div>
                 </div>
-                <div class="form-group">
-                    <form:label path="zusaetzlicheInfos" class="col-sm-2 control-form:label">Zusatz-Informationen</form:label>
-                        <div class="col-sm-10">
-                        <form:input type="text" class="form-control" path="zusaetzlicheInfos" placeholder="z.B. Regenkleidung, etc." />
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Zusatz-Informationen:</b>
                     </div>
-                </div>
-                <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
-                <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
-                <form:hidden path="id" />
-            </form:form>
+                    <div class="col-md-9">${job.zusaetzlicheInfos}</div>
+                </div>    
         </div>
 
         <c:import url="inc/footer.jsp" />

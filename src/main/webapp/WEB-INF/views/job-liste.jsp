@@ -25,7 +25,7 @@
             
             <div class="row">
                 <c:forEach var="job" items="${jobList}">
-                    <a href="<c:url value='/schueler/job?id=${job.id}'/>">    
+                    <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>">    
                         <c:out value="${job.bezeichnung}" />
                     </a>
                 </c:forEach>

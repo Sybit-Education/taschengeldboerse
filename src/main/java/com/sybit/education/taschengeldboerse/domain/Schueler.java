@@ -35,7 +35,7 @@ public class Schueler implements Serializable {
     private String name;
 
     @Size(min = 5, message = "Bitte E-Mail angeben")
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String email;
 
     @Column

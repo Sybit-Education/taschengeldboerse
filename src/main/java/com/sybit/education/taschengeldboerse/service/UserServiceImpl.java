@@ -58,6 +58,10 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User addUser(User user) {
+        
+        if (getUserByEmail(user.getEmail()) != null) {
+            throw new IllegalArgumentException("E-Mail already in use!");
+        }
 
         if (user.getAuthority() == null) {
             user.setAuthority("unknown");

@@ -64,7 +64,6 @@
                 <div class="row">
                     Benutzer Schüler: schueler/schueler<br /> 
                     Benutzer Anbieter: anbieter/anbieter <br />
-                    Benutzer Admin: admin/admin
                 </div>
             </form>
         </div>

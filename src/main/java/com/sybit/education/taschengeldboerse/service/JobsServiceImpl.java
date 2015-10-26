@@ -16,6 +16,7 @@ import com.sybit.education.taschengeldboerse.repository.JobsRepository;
  * @author sat
  */
 @Service
+
 public class JobsServiceImpl implements JobsService {
 
     @Autowired

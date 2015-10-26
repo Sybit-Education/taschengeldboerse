@@ -22,7 +22,35 @@
 
             <c:url var = "action" value="/registrieren/anbieter" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="anbieter">
-
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <form:label path="anrede" class="col-sm-2 control-label">Anrede</form:label>
+                            <div class="col-sm-2">
+                            <form:select path="anrede" class="form-control col-sm-2">
+                                <form:option value="Herr">Herr</form:option>
+                                <form:option value="Frau">Frau</form:option>
+                            </form:select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="vorname" class="col-sm-4 control-form:label">Vorname</form:label>
+                        <div class="col-sm-6">
+                        <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="name" class="col-sm-4 control-form:label">Name</form:label>
+                        <div class="col-sm-6">
+                        <form:input type="text" class="form-control" path="name" placeholder="Name" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <form:label path="email" class="col-sm-2 control-label">e-Mail</form:label>
+                        <div class="col-sm-4">
+                        <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
+                    </div>
+                </div>
                 <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <form:hidden path="id" />

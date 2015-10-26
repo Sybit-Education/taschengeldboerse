@@ -38,7 +38,7 @@
         <!-- enable csrf protection -->
         <security:csrf />
     </security:http>
-
+        <!--
 	<security:authentication-manager>
 		<security:authentication-provider>
 		  <security:user-service>
@@ -48,7 +48,7 @@
 		  </security:user-service>
 		</security:authentication-provider>
 	</security:authentication-manager>
-        <!--
+    -->
     <security:authentication-manager>
         <security:authentication-provider>
             <security:jdbc-user-service 
@@ -58,7 +58,7 @@
             <security:password-encoder ref="encoder" />
         </security:authentication-provider>
     </security:authentication-manager>
-    -->
+
     <beans:bean id="encoder"
                 class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
         <beans:constructor-arg name="strength" value="11" />

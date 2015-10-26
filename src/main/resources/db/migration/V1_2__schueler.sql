@@ -22,3 +22,13 @@ CREATE TABLE `schueler` (
   `datenschutz` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id`)
 );
+
+
+INSERT INTO `taschengeldboerse`.`user` 
+(`email`, `authority`, `enabled`, `password`)
+VALUES ('schueler', 'ROLE_SCHUELER', '1', '$2a$10$itnRIcZi9s.ssmu8rHcHiegmdWaKSJRZYeOs30SfeQWU8ugJajSJa');
+
+INSERT INTO `taschengeldboerse`.`schueler`
+(`id`, `anrede`,`vorname`,`name`,`geburtsdatum`,`strasse`,`plz`,`wohnort`,`telefon`,`email`,`job_zeit`,`job_beschreibung`,`haftpflichtversicherung`,`unfallversicherung`,`merkblatt`,`datenschutz`)
+VALUES ('1', 'Herr', 'Tobias', 'Schmid', '6.6.2001', 'St-Johannis-Str. 12', '78315', 'Radolfzell', '12345', 'schueler', 'nachmittags', 'Einkaufen', '0', '0', '0', '0');
+

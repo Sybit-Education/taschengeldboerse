@@ -18,8 +18,13 @@ CREATE TABLE `anbieter` (
   PRIMARY KEY (`id`)
 );
 
-INSERT INTO `taschengeldboerse`.`anbieter` (`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `strasse`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) VALUES ('1', 'Herr', 'Max', 'Mustermann', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '110', 'mail@email.de', '1', '1');
+INSERT INTO `taschengeldboerse`.`user` 
+(`email`, `authority`, `enabled`, `password`)
+VALUES ('anbieter', 'ROLE_ANBIETER', '1', '$2a$10$4.W3mxoRfPNq17F8rCjU.e9ZvCMByQOgrflOte2dvN/a0tJlHSpl6');
 
+INSERT INTO `taschengeldboerse`.`anbieter` 
+(`id`, `anrede`, `vorname`, `name`, `geburtsdatum`, `strasse`, `plz`, `wohnort`, `telefonnummer`, `emailadresse`, `merkblatt`, `datenschutz`) 
+VALUES ('1', 'Frau', 'Elfriede', 'Meier', '1.1.1945', 'Straße 1', '78315', 'Radolfzell', '1234567', 'anbieter', '1', '1');
 
 CREATE TABLE `jobs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,

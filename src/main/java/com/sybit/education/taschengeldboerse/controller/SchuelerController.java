@@ -59,10 +59,8 @@ public class SchuelerController {
      * @return the logical view to be returned
      */
     @RequestMapping(value = "/registrieren/schueler", method = RequestMethod.POST)
-    public ModelAndView saveForm(@ModelAttribute("schueler") Schueler schueler, final Model model, final HttpServletRequest request) {
-
-        System.out.println("Vorname: " + schueler.getVorname());
-        
+    public ModelAndView saveForm(@ModelAttribute("schueler") Schueler schueler) {
+       
         schueler = userService.saveSchueler(schueler);
         
         ModelAndView modelAndView = new ModelAndView();

@@ -22,20 +22,24 @@
 
             <c:url var = "action" value="/registrieren/anbieter" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="anbieter">
-                <div class="row">
-                    <div class="form-group col-sm-12">
-                        <form:label path="anrede" class="col-sm-2 control-label">Anrede</form:label>
-                            <div class="col-sm-2">
-                            <form:select path="anrede" class="form-control col-sm-2">
-                                <form:option value="Herr">Herr</form:option>
-                                <form:option value="Frau">Frau</form:option>
-                            </form:select>
-                        </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="anrede" class="col-sm-4 control-label">Anrede</form:label>
+                        <div class="col-sm-8">
+                        <form:select path="anrede" class="form-control col-sm-8">
+                            <form:option value="Herr">Herr</form:option>
+                            <form:option value="Frau">Frau</form:option>
+                        </form:select>
+                    </div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="geburtsdatum" class="col-sm-4 control-label">Geburtsdatum</form:label>
+                        <div class="col-sm-6">
+                        <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="vorname" class="col-sm-4 control-label">Vorname</form:label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
                     </div>
                 </div>
@@ -45,21 +49,15 @@
                         <form:input type="text" class="form-control" path="name" placeholder="Name" />
                     </div>
                 </div>
-                     <div class="form-group">
-                    <form:label path="geburtsdatum" class="col-sm-2 control-label">Geburtsdatum</form:label>
-                        <div class="col-sm-2">
-                        <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <form:label path="email" class="col-sm-2 control-label">e-Mail</form:label>
-                        <div class="col-sm-4">
+                <div class="form-group col-sm-6">
+                    <form:label path="email" class="col-sm-4 control-label">e-Mail</form:label>
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                     </div>
                 </div>
-                      <div class="form-group">
-                    <form:label path="telefonnummer" class="col-sm-2 control-label">Telefon-Nr.</form:label>
-                        <div class="col-sm-2">
+                <div class="form-group col-sm-6">
+                    <form:label path="telefonnummer" class="col-sm-4 control-label">Telefon-Nr.</form:label>
+                        <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="telefonnummer" placeholder="Telefon-Nr." />
                     </div>
                 </div>
@@ -69,17 +67,17 @@
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
                     </div>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                     <form:label path="plz" class="col-sm-2 control-label">PLZ, Wohnort</form:label>
                         <div class="col-sm-2">
-                            <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
-                        </div>
-                        <div class="col-sm-8">
-                            <form:input type="text" class="form-control" path="wohnort" placeholder="Wohnort" />
-                        </div>
+                        <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
+                    </div>
+                    <div class="col-sm-8">
+                        <form:input type="text" class="form-control" path="wohnort" placeholder="Wohnort" />
+                    </div>
                 </div>
-            
-                
+
+
                 <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="merkblatt">

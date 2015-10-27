@@ -19,6 +19,10 @@
         <div class="container">
 
             <h2>Neu registrieren</h2>
+            
+            <c:if test='${not empty error}'>
+                <div>${error}</div>
+            </c:if>
 
             <c:url var = "action" value="/registrieren" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="user">

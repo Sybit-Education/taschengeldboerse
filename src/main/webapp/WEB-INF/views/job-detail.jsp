@@ -27,37 +27,49 @@
                     <div class="col-md-3">
                         <b>Bezeichnung:</b>
                     </div>
-                    <div class="col-md-9">${job.bezeichnung}</div>
+                    <div class="col-md-9">
+                    <c:out  value=" ${job.bezeichnung} "/>
+                </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <b>Datum:</b>
                     </div>
-                    <div class="col-md-9">${job.datum}</div>
+                    <div class="col-md-9">
+                        <c:out value="${job.datum}"/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <b>Uhrzeit:</b>
                     </div>
-                    <div class="col-md-9">${job.uhrzeit}</div>
+                    <div class="col-md-9">
+                        <c:out value="${job.uhrzeit}"/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <b>Zeitaufwand:</b>
                     </div>
-                    <div class="col-md-9">${job.zeitaufwand}</div>
+                    <div class="col-md-9">
+                        <c:out value="${job.zeitaufwand}"/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <b>Entlohnung:</b>
                     </div>
-                    <div class="col-md-9">${job.entlohnung}</div>
+                    <div class="col-md-9">
+                        <c:out value="${job.entlohnung}"/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">
                         <b>Zusatz-Informationen:</b>
                     </div>
-                    <div class="col-md-9">${job.zusaetzlicheInfos}</div>
+                    <div class="col-md-9">
+                        <c:out value="${job.zusaetzlicheInfos}"/>
+                    </div>
                 </div>    
         </div>
 

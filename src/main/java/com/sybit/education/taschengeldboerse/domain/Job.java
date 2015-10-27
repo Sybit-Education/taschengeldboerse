@@ -32,25 +32,25 @@ public class Job implements Serializable {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "Bezeichnung")
+    @Column(name = "bezeichnung")
     private String bezeichnung;
 
-    @Column(name = "Anbieter")
+    @Column(name = "anbieter")
     private Integer anbieter;
 
     @Column(name = "Datum")
     private String datum;
 
-    @Column(name = "Uhrzeit")
+    @Column(name = "uhrzeit")
     private String uhrzeit;
 
-    @Column(name = "Zeitaufwand")
+    @Column(name = "zeitaufwand")
     private String zeitaufwand;
 
-    @Column(name = "Entlohnung")
+    @Column(name = "entlohnung")
     private String entlohnung;
 
-    @Column(name = "Zusaetzliche_Infos")
+    @Column(name = "zusaetzliche_infos")
     private String zusaetzlicheInfos;
 
     public Job() {

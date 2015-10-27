@@ -59,9 +59,9 @@
                     
                 </div>
                      
-                <div class="form-group">
-                    <form:label path="email" class="col-sm-2 control-label">e-Mail*</form:label>
-                        <div class="col-sm-4">
+                <div class="form-group col-sm-6">
+                    <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                             <form:errors class="col-sm-12 error" path="email"/>
                         </div>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="telefonnummer" class="col-sm-4 control-label">Telefon-Nr.</form:label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="telefonnummer" placeholder="Telefon-Nr." />
                     </div>
                 </div>

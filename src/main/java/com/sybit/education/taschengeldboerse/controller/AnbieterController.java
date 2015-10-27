@@ -77,9 +77,7 @@ public class AnbieterController {
             modelAndView.addObject("anbieter", anbieter);
             modelAndView.setViewName("/login");
             
-        } catch (Exception ex) {
-            modelAndView.setViewName("registrieren-1");
-        }
+        } 
         return modelAndView;
     }
 }

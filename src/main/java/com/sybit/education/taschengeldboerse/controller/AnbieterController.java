@@ -66,13 +66,16 @@ public class AnbieterController {
     @RequestMapping(value = "/registrieren/anbieter", method = RequestMethod.POST)
     public ModelAndView saveForm(@ModelAttribute("anbieter") Anbieter anbieter) {
         
-        anbieter = userService.saveAnbieter(anbieter);
-        
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("anbieter", anbieter);
-
-        modelAndView.setViewName("registrieren-anbieter");
-
+        try {
+            anbieter = userService.saveAnbieter(anbieter);
+            modelAndView.addObject("anbieter", anbieter);
+            modelAndView.setViewName("login");
+            
+        } catch (Exception ex) {
+            modelAndView.setViewName("registrieren-1");
+        }
+        
         return modelAndView;
     }
 }

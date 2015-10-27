@@ -57,9 +57,6 @@ public class Anbieter implements Serializable {
     @Column(name = "Telefonnummer")
     private String telefonnummer;
 
-    @Column(name = "Emailadresse")
-    private String emailadresse;
-
     @Column(name = "Merkblatt")
     private boolean merkblatt;
 
@@ -153,14 +150,6 @@ public class Anbieter implements Serializable {
         this.telefonnummer = Telefonnummer;
     }
 
-    public String getEmailadresse() {
-        return emailadresse;
-    }
-
-    public void setEmailadresse(String Emailadresse) {
-        this.emailadresse = Emailadresse;
-    }
-
     public boolean isMerkblatt() {
         return merkblatt;
     }
@@ -189,7 +178,7 @@ public class Anbieter implements Serializable {
         hash = 43 * hash + Objects.hashCode(this.plz);
         hash = 43 * hash + Objects.hashCode(this.wohnort);
         hash = 43 * hash + Objects.hashCode(this.telefonnummer);
-        hash = 43 * hash + Objects.hashCode(this.emailadresse);
+        hash = 43 * hash + Objects.hashCode(this.email);
         hash = 43 * hash + (this.merkblatt ? 1 : 0);
         hash = 43 * hash + (this.datenschutz ? 1 : 0);
         return hash;
@@ -234,7 +223,7 @@ public class Anbieter implements Serializable {
         if (!Objects.equals(this.telefonnummer, other.telefonnummer)) {
             return false;
         }
-        if (!Objects.equals(this.emailadresse, other.emailadresse)) {
+        if (!Objects.equals(this.email, other.email)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
@@ -248,7 +237,7 @@ public class Anbieter implements Serializable {
 
     @Override
     public String toString() {
-        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + strasse + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Emailadresse=" + emailadresse + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
+        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + strasse + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Email=" + email + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
     }
 
 }

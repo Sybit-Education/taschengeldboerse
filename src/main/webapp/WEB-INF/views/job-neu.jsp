@@ -23,7 +23,7 @@
             <c:url var = "action" value="/anbieter/jobs/neu" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="job">
             
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <form:label path="bezeichnung" class="col-sm-2 control-form:label">Jobbezeichnung</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="bezeichnung" placeholder="Welche Art von Job wollen Sie anbieten?" />
@@ -48,12 +48,12 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="entlohnung" class="col-sm-4 control-form:label">Entlohnung</form:label>
+                    <form:label path="entlohnung" class="col-sm-4 control-form:label">Entlohnung in €</form:label>
                         <div class="col-sm-4">
                         <form:input type="text" class="form-control" path="entlohnung" placeholder="__€" />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <form:label path="zusaetzlicheInfos" class="col-sm-2 control-form:label">Zusatz-Informationen</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="zusaetzlicheInfos" placeholder="z.B. Regenkleidung, etc." />

@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -37,21 +38,26 @@ public class Anbieter implements Serializable {
     private String anrede;
 
     @Column(name = "Vorname")
+    @NotEmpty(message="Bitte Vornamen angeben")
     private String vorname;
 
     @Column(name = "Name")
+    @NotEmpty(message="Bitte Namen angeben")
     private String name;
-
+    
     @Column(name = "Geburtsdatum")
+    @NotEmpty(message="Bitte Geburtsdatum angeben")
     private String geburtsdatum;
 
     @Column(name = "Strasse")
     private String strasse;
 
     @Column(name = "PLZ")
+    @NotEmpty(message="Bitte PLZ angeben")
     private String plz;
 
     @Column(name = "Wohnort")
+    @NotEmpty(message="Bitte Wohnort angeben")
     private String wohnort;
 
     @Column(name = "Telefonnummer")

@@ -22,6 +22,7 @@
 
             <c:url var = "action" value="/registrieren/schueler" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="schueler">
+               
                 <div class="form-group col-sm-6">
                     <form:label path="anrede" class="col-sm-4 control-label">Anrede</form:label>
                         <div class="col-sm-8">
@@ -33,56 +34,65 @@
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="geburtsdatum" class="col-sm-4 control-label">Geburtsdatum*</form:label>
-                        <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
+                        <small><form:errors class="col-sm-12 error" path="geburtsdatum" /></small>
                     </div>
-                    <form:errors class="col-sm-12" path="geburtsdatum" cssclass="error"/>
+                    
                 </div>
+                
+                
                 <div class="form-group col-sm-6">
                     <form:label path="vorname" class="col-sm-4 control-label">Vorname*</form:label>
                         <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
-                    </div>
-                    <form:errors class="col-sm-12" path="vorname" cssclass="error"/>
+                        <small><form:errors class="col-sm-12 error" path="vorname" /></small>
+                        </div>
+                    
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="name" class="col-sm-4 control-label">Name*</form:label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="name" placeholder="Name" />
-                    </div>
-                    <form:errors class="col-sm-12" path="name" cssclass="error"/>
+                        <small><form:errors class="col-sm-12 error" path="name" /></small>
+                        </div>
+                    
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
-                    </div>
-                        <form:errors class="col-sm-12" path="email" cssclass="error"/>
+                        <div class="col-sm-8">
+                        <form:input type="text" disabled="true" class="form-control" path="email" placeholder="e-Mail" />
+                        <small><form:errors class="col-sm-12 error" path="email" /></small>
+                        </div>
+                        
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="telefon" class="col-sm-4 control-label">Telefon-Nr.</form:label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="telefon" placeholder="Telefon-Nr." />
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.*</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
-                    </div>
-                    <form:errors class="col-sm-12" path="strasse" cssclass="error"/>
+                        <small><form:errors class="col-sm-12 error" path="strasse" /></small>
+                        </div>
+                    
                 </div>
 
                 <div class="form-group">
                     <form:label path="plz" class="col-sm-2 control-label">PLZ, Wohnort*</form:label>
                         <div class="col-sm-2">
-                            <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
+                        <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
+                        <small><form:errors class="col-sm-12 error " path="plz" /></small> 
                         </div>
-                        <form:errors class="col-sm-12" path="plz" cssclass="error"/>
+                        
                         <div class="col-sm-8">
                             <form:input type="text" class="form-control" path="wohnort" placeholder="Wohnort" />
+                            <small><form:errors class="col-sm-12 error" path="wohnort" /></small>
                         </div>
-                        <form:errors class="col-sm-12" path="wohnort" cssclass="error"/>
+                       
                 </div>
 
                 <div class="form-group">

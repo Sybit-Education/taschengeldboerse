@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="vorname" class="col-sm-4 control-label">Vorname</form:label>
-                    <div class="col-sm-6">
+                    <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
                     </div>
                 </div>

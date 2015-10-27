@@ -38,13 +38,13 @@
                 <div class="form-group col-sm-6">
                     <form:label path="uhrzeit" class="col-sm-4 control-form:label">Uhrzeit</form:label>
                         <div class="col-sm-4">
-                        <form:input type="date" class="form-control" path="uhrzeit" placeholder="HH:MM" />
+                        <form:input type="text" class="form-control" path="uhrzeit" placeholder="HH:MM" />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
                     <form:label path="zeitaufwand" class="col-sm-4 control-form:label">Zeitaufwand</form:label>
-                        <div class="col-sm-4">
-                        <form:input type="date" class="form-control" path="zeitaufwand" placeholder="HH:MM" />
+                        <div class="col-sm-4"text>
+                        <form:input type="text" class="form-control" path="zeitaufwand" placeholder="HH:MM" />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">

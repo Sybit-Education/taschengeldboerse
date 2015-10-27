@@ -1,3 +1,7 @@
 /* 
     Style Layouts für die Anwendung
 */
+
+span.error {
+    color: red;
+}

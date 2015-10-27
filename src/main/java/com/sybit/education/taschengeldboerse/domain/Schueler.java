@@ -50,10 +50,10 @@ public class Schueler implements Serializable {
     @NotEmpty(message="Bitte Straße eingeben")
     @Column
     private String strasse;
-    @NotEmpty(message="Bitte Plz eingeben")
+    @NotEmpty(message="Bitte Plz/Wohnort eingeben")
     @Column
     private String plz;
-    @NotEmpty(message="Bitte Wohnort eingeben")
+    @NotEmpty()
     @Column
     private String wohnort;
     @NotEmpty(message="Bitte Geburtsdatum eingeben")

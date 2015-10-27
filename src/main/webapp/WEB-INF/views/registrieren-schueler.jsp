@@ -34,13 +34,13 @@
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="vorname" class="col-sm-4 control-form:label">Vorname</form:label>
+                    <form:label path="vorname" class="col-sm-4 control-label">Vorname</form:label>
                         <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="name" class="col-sm-4 control-form:label">Name</form:label>
+                    <form:label path="name" class="col-sm-4 control-label">Name</form:label>
                         <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="name" placeholder="Name" />
                     </div>

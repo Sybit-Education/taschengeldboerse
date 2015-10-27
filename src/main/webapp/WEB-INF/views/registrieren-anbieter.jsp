@@ -67,9 +67,9 @@
                         </div>
                     
                 </div>
-                      <div class="form-group">
-                    <form:label path="telefonnummer" class="col-sm-2 control-label">Telefon-Nr.</form:label>
-                        <div class="col-sm-2">
+                <div class="form-group col-sm-6">
+                    <form:label path="telefonnummer" class="col-sm-4 control-label">Telefon-Nr.</form:label>
+                        <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="telefonnummer" placeholder="Telefon-Nr." />
                     </div>
                 </div>
@@ -91,8 +91,8 @@
                         </div>
                         
                 </div>
-            
-                
+
+
                 <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="merkblatt">

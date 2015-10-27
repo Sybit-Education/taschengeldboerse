@@ -75,8 +75,10 @@ public class AnbieterController {
         } else { 
             anbieter = userService.saveAnbieter(anbieter);
             modelAndView.addObject("anbieter", anbieter);
-
-            modelAndView.setViewName("login");
+            modelAndView.setViewName("/login");
+            
+        } catch (Exception ex) {
+            modelAndView.setViewName("registrieren-1");
         }
         return modelAndView;
     }

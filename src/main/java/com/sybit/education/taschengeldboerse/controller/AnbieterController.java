@@ -52,7 +52,7 @@ public class AnbieterController {
     public ModelAndView registrierenFormular(final HttpServletRequest request) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("anbieter", new Schueler());
+        modelAndView.addObject("anbieter", new Anbieter());
 
         modelAndView.setViewName("registrieren-anbieter");
 

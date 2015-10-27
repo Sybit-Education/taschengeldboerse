@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.sybit.education.taschengeldboerse.service.UserService;
+import javax.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
@@ -54,22 +55,29 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/registrieren", method = RequestMethod.POST)
-    public ModelAndView sendRegisterForm(User user, Model model) {
+    public ModelAndView sendRegisterForm(@Valid User user, Model model, BindingResult result) {
         ModelAndView modelAndView;
-        try {
-            modelAndView = new ModelAndView();
-            userService.addUser(user);
 
-            modelAndView.addObject("user", user);
-            modelAndView.addObject("error", "");
-            modelAndView.setViewName("registrieren-2-next");
-
-        } catch (IllegalArgumentException e) {
-            
-            //noch mal probieren...
+        if (result.hasErrors()) {
             modelAndView = new ModelAndView();
-            modelAndView.addObject("error", "E-Mail schon vergeben!");
+            modelAndView.addObject(result.getModel());
             modelAndView.setViewName("registrieren-1");
+        } else {
+            try {
+                modelAndView = new ModelAndView();
+                userService.addUser(user);
+
+                modelAndView.addObject("user", user);
+                modelAndView.addObject("error", "");
+                modelAndView.setViewName("registrieren-2-next");
+
+            } catch (IllegalArgumentException e) {
+
+                //noch mal probieren...
+                modelAndView = new ModelAndView();
+                modelAndView.addObject("error", "E-Mail schon vergeben!");
+                modelAndView.setViewName("registrieren-1");
+            }
         }
         return modelAndView;
     }

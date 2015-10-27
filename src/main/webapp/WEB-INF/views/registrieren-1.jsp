@@ -30,6 +30,9 @@
                 <div class="form-group">
                     <form:label path="email" class="control-label col-sm-2">e-Mail</form:label>
                         <div class="col-sm-10">
+                            
+                          
+                            
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                     </div>
                 </div>

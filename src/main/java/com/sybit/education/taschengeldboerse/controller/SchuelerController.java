@@ -3,10 +3,11 @@ package com.sybit.education.taschengeldboerse.controller;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.service.UserService;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -59,15 +60,18 @@ public class SchuelerController {
      * @return the logical view to be returned
      */
     @RequestMapping(value = "/registrieren/schueler", method = RequestMethod.POST)
-    public ModelAndView saveForm(@ModelAttribute("schueler") Schueler schueler) {
-       
-        schueler = userService.saveSchueler(schueler);
-        
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("schueler", schueler);
+    public ModelAndView saveForm(@Valid Schueler schueler, BindingResult result) {
+           ModelAndView modelAndView = new ModelAndView();
+        if(result.hasErrors()) {
+            modelAndView.addObject(result.getModel());
+            modelAndView.setViewName("registrieren-schueler");
+            
+        } else { 
+            schueler = userService.saveSchueler(schueler);
+            modelAndView.addObject("schueler", schueler);
 
-        modelAndView.setViewName("registrieren-schueler");
-
+            modelAndView.setViewName("login");
+        }
         return modelAndView;
     }
 }

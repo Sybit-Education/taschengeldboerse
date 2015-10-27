@@ -12,7 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -26,26 +27,36 @@ public class Schueler implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-
+    
+    @NotEmpty(message="Bitte Vorname eingeben")
     @Column
     private String vorname;
+    
     @Column
     private String anrede;
+    
+    @NotEmpty(message="Bitte Name eingeben")
     @Column
     private String name;
 
-    @Size(min = 5, message = "Bitte E-Mail angeben")
+    @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\."
+        +"[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
+        +"(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
+             message="Bitte eine gültige E-Mail angeben.")
     @Column(unique = true, nullable = false)
     private String email;
-
     @Column
     private String telefon;
+    @NotEmpty(message="Bitte Straße eingeben")
     @Column
     private String strasse;
+    @NotEmpty(message="Bitte Plz eingeben")
     @Column
     private String plz;
+    @NotEmpty(message="Bitte Wohnort eingeben")
     @Column
     private String wohnort;
+    @NotEmpty(message="Bitte Geburtsdatum eingeben")
     @Column
     private String geburtsdatum;
     @Column(name = "job_beschreibung")

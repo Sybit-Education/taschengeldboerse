@@ -39,7 +39,7 @@
                         <form:password class="form-control" path="password" />
                     </div>
                 </div>
-
+                
                 <input class="btn btn-primary pull-right" type="submit" value="Registrieren..." />
                 <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
             </form:form>

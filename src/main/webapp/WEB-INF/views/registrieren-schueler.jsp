@@ -22,78 +22,83 @@
 
             <c:url var = "action" value="/registrieren/schueler" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="schueler">
-                <div class="row">
-                    <div class="form-group col-sm-12">
-                        <form:label path="anrede" class="col-sm-2 control-label">Anrede</form:label>
-                            <div class="col-sm-2">
-                            <form:select path="anrede" class="form-control col-sm-2">
-                                <form:option value="Herr">Herr</form:option>
-                                <form:option value="Frau">Frau</form:option>
-                            </form:select>
-                        </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="anrede" class="col-sm-4 control-label">Anrede</form:label>
+                        <div class="col-sm-8">
+                        <form:select path="anrede" class="form-control col-sm-8">
+                            <form:option value="Herr">Herr</form:option>
+                            <form:option value="Frau">Frau</form:option>
+                        </form:select>
                     </div>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="vorname" class="col-sm-4 control-form:label">Vorname</form:label>
+                    <form:label path="geburtsdatum" class="col-sm-4 control-label">Geburtsdatum*</form:label>
                         <div class="col-sm-6">
+                        <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
+                    </div>
+                    <form:errors class="col-sm-12" path="geburtsdatum" cssclass="error"/>
+                </div>
+                <div class="form-group col-sm-6">
+                    <form:label path="vorname" class="col-sm-4 control-label">Vorname*</form:label>
+                        <div class="col-sm-8">
                         <form:input type="text" class="form-control" path="vorname" placeholder="Vorname" />
                     </div>
+                    <form:errors class="col-sm-12" path="vorname" cssclass="error"/>
                 </div>
                 <div class="form-group col-sm-6">
-                    <form:label path="name" class="col-sm-4 control-form:label">Name</form:label>
+                    <form:label path="name" class="col-sm-4 control-label">Name*</form:label>
                         <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="name" placeholder="Name" />
                     </div>
+                    <form:errors class="col-sm-12" path="name" cssclass="error"/>
                 </div>
-                <div class="form-group">
-                    <form:label path="geburtsdatum" class="col-sm-2 control-label">Geburtsdatum</form:label>
-                        <div class="col-sm-2">
-                        <form:input type="date" class="form-control" path="geburtsdatum" placeholder="TT.MM.JJJJ" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <form:label path="email" class="col-sm-2 control-label">e-Mail</form:label>
+                <div class="form-group col-sm-6">
+                    <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
                         <div class="col-sm-4">
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                     </div>
+                        <form:errors class="col-sm-12" path="email" cssclass="error"/>
                 </div>
-                <div class="form-group">
-                    <form:label path="telefon" class="col-sm-2 control-label">Telefon-Nr.</form:label>
-                        <div class="col-sm-2">
+                <div class="form-group col-sm-6">
+                    <form:label path="telefon" class="col-sm-4 control-label">Telefon-Nr.</form:label>
+                        <div class="col-sm-6">
                         <form:input type="text" class="form-control" path="telefon" placeholder="Telefon-Nr." />
                     </div>
                 </div>
                 <div class="form-group">
-                    <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.</form:label>
+                    <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.*</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />
                     </div>
+                    <form:errors class="col-sm-12" path="strasse" cssclass="error"/>
                 </div>
 
                 <div class="form-group">
-                    <form:label path="plz" class="col-sm-2 control-label">PLZ, Wohnort</form:label>
+                    <form:label path="plz" class="col-sm-2 control-label">PLZ, Wohnort*</form:label>
                         <div class="col-sm-2">
                             <form:input type="text" class="form-control" path="plz" placeholder="PLZ" />
                         </div>
+                        <form:errors class="col-sm-12" path="plz" cssclass="error"/>
                         <div class="col-sm-8">
                             <form:input type="text" class="form-control" path="wohnort" placeholder="Wohnort" />
                         </div>
+                        <form:errors class="col-sm-12" path="wohnort" cssclass="error"/>
                 </div>
 
                 <div class="form-group">
                     <form:label path="jobBeschreibung" class="col-sm-2 control-label">Jobvorstellungen</form:label>
                         <div class="col-sm-10">
-                        <form:input type="text" class="form-control" path="jobBeschreibung" placeholder="Welche Jobs stellst du dir vor?" />
+                            <textarea type="text" class="form-control" rows="3" path="jobBeschreibung" placeholder="Welche Jobs stellst du dir vor?" ></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
+                    <div class="form-group">
                     <form:label path="jobZeit" class="col-sm-2 control-label">mögliche Einsatz-Zeiten</form:label>
-                        <div class="col-sm-10">
-                        <form:input type="time" class="form-control" path="jobZeit" placeholder="Wann hast du Zeit?" />
+                        <div class="col-sm-5">
+                            <textarea type="time" class="form-control" rows="2" path="jobZeit" placeholder="Wann hast du Zeit?" ></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="checkbox">
-                    <div class="col-sm-2"></div>
+                    <div class="checkbox">
+                        <div class="col-sm-2"></div>
                     <form:label path="hatHaftpflichtVers">
                         <form:checkbox path="hatHaftpflichtVers" />
                         Ich besitze eine Haftpflichtversicherung.
@@ -111,16 +116,22 @@
                     <div class="col-sm-2"></div>
                     <form:label path="hatMerkblattGelesen">
                         <form:checkbox path="hatMerkblattGelesen" />
-                        Ich habe das Merkblatt gelesen.
+                        Ich habe das Merkblatt gelesen.*
                     </form:label>
                 </div>
                 <div class="checkbox">
                     <div class="col-sm-2"></div>
                     <form:label path="hatDatenschutzGelesen">
                         <form:checkbox  path="hatDatenschutzGelesen" />
-                        Ich bin mit den Datenschutz-Richtlinien einverstanden.
+                        Ich bin mit den Datenschutz-Richtlinien einverstanden.*
                     </form:label>
 
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <div class="col-sm-2"></div>
+                    </div>
                 </div>
                 <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>

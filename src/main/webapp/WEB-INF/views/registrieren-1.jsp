@@ -19,6 +19,10 @@
         <div class="container">
 
             <h2>Neu registrieren</h2>
+            
+            <c:if test='${not empty error}'>
+                <div>${error}</div>
+            </c:if>
 
             <c:url var = "action" value="/registrieren" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="user">
@@ -26,6 +30,9 @@
                 <div class="form-group">
                     <form:label path="email" class="control-label col-sm-2">e-Mail</form:label>
                         <div class="col-sm-10">
+                            
+                          
+                            
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                     </div>
                 </div>
@@ -35,7 +42,7 @@
                         <form:password class="form-control" path="password" />
                     </div>
                 </div>
-
+                
                 <input class="btn btn-primary pull-right" type="submit" value="Registrieren..." />
                 <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
             </form:form>

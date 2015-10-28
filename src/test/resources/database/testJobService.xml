@@ -2,5 +2,5 @@
 
 <dataset>
     <jobs id="1" Bezeichnung="Test Job" anbieter="1" datum="01.01.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
-            entlohnung="5€/h" ort="testhausen" zusaetzlicheInfos="testtesttest"/>
+            entlohnung="5€/h" zusaetzliche_Infos="testtesttest"/>
 </dataset>

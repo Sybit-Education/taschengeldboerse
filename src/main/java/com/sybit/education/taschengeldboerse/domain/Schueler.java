@@ -45,22 +45,29 @@ public class Schueler implements Serializable {
              message="Bitte eine gültige E-Mail angeben.")
     @Column(unique = true, nullable = false)
     private String email;
+    
     @Column
     private String telefon;
+    
     @NotEmpty(message="Bitte Straße eingeben")
     @Column
     private String strasse;
+    
     @NotEmpty(message="Bitte Plz/Wohnort eingeben")
     @Column
     private String plz;
+    
     @NotEmpty()
     @Column
     private String wohnort;
+    
     @NotEmpty(message="Bitte Geburtsdatum eingeben")
     @Column
     private String geburtsdatum;
+    
     @Column(name = "job_beschreibung")
     private String jobBeschreibung;
+    
     @Column(name = "job_zeit")
     private String jobZeit;
     

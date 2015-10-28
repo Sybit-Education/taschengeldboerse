@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -34,7 +35,7 @@ public class Job implements Serializable {
 
     @Column(name = "bezeichnung")
     private String bezeichnung;
-
+    
     @Column(name = "anbieter")
     private Integer anbieter;
 
@@ -53,7 +54,7 @@ public class Job implements Serializable {
     @Column(name = "zusaetzliche_infos")
     private String zusaetzlicheInfos;
 
-    @Column(name = "Ort")
+    @Column(name = "ort")
     private String ort;
     
     public Job() {
@@ -130,7 +131,7 @@ public class Job implements Serializable {
       public String getOrt() {
         return ort;
     }
-       public void setOrt(String Ort) {
+       public void setOrt(String ort) {
         this.ort = ort;
     }
 

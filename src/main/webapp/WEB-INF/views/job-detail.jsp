@@ -36,8 +36,16 @@
                         <b>Bezeichnung:</b>
                     </div>
                     <div class="col-md-9">
-                    <c:out  value=" ${job.bezeichnung} "/>
+                        <c:out  value=" ${job.bezeichnung} "/>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Anbieter: </b>
+                    </div>
+                    <div class="col-md-9">
+                        <c:out  value=" ${anbieter} "/>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-3">

@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -63,6 +64,10 @@ public class Job implements Serializable {
     @Column(name = "ort")
     @NotEmpty(message="Bitte Ort angeben")
     private String ort;
+    
+    @Column(name = "erstelldatum")
+    private Date erstelldatum;
+    
     
     public Job() {
     }
@@ -137,13 +142,22 @@ public class Job implements Serializable {
     public void setZusaetzlicheInfos(String ZusaetzlicheInfos) {
         this.zusaetzlicheInfos = ZusaetzlicheInfos;
     }
-      public String getOrt() {
+    
+    public String getOrt() {
         return ort;
     }
-       public void setOrt(String ort) {
+    
+    public void setOrt(String ort) {
         this.ort = ort;
     }
 
+    public Date getErstelldatum() {
+        return erstelldatum;
+    }
+    public void setErstelldatum(Date erstelldatum) {
+        this.erstelldatum = erstelldatum;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -156,6 +170,7 @@ public class Job implements Serializable {
         hash = 17 * hash + Objects.hashCode(this.entlohnung);
         hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
         hash = 17 * hash + Objects.hashCode(this.ort);
+        hash = 17 * hash + Objects.hashCode(this.erstelldatum);
         return hash;
     }
 
@@ -203,7 +218,7 @@ public class Job implements Serializable {
 
     @Override
     public String toString() {
-        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + ", Ort=" + ort + '}';
+        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + ", Ort=" + ort + ", Erstelldatum=" + erstelldatum + '}';
     }
 
 }

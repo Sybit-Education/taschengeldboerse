@@ -46,7 +46,7 @@ public class JobController {
     @RequestMapping(value = "/schueler/jobs", method = RequestMethod.GET)
     public String jobList(final Model model, final HttpServletRequest request) {
         logger.debug("All Jobs---->");
-        final List<Job> jobList = jobService.findAllByOrderByDatumDesc();
+        final List<Job> jobList = jobService.findAllByOrderByErstelldatumDesc();
         model.addAttribute("jobList", jobList);
         logger.debug("All Jobs <------");
         return "job-liste";

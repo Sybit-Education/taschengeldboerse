@@ -20,6 +20,6 @@ public interface JobsService {
     
     Job findById(Integer id);
     
-    List<Job> findAllByOrderByDatumDesc();
+    List<Job> findAllByOrderByErstelldatumDesc();
     
 }

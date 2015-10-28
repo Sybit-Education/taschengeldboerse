@@ -42,7 +42,7 @@ public class JobsServiceImpl implements JobsService {
     }
     
     @Override
-    public List<Job> findAllByOrderByDatumDesc() {
-        return jobRepository.findAllByOrderByDatumDesc();
+    public List<Job> findAllByOrderByErstelldatumDesc(){
+        return jobRepository.findAllByOrderByErstelldatumDesc();
     }
 }

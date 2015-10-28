@@ -40,6 +40,10 @@ public class JobsServiceImpl implements JobsService {
     @Override
     public Job findById(Integer id) {
         return jobRepository.findOne(id);
+    }  
+    
+    @Override
+    public List<Job> findAllByOrderByErstelldatumDesc(){
+        return jobRepository.findAllByOrderByErstelldatumDesc();
     }
-   
 }

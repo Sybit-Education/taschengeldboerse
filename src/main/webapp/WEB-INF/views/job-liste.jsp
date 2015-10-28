@@ -19,17 +19,30 @@
           
             <div class="page-header">
                 <h1>Die Taschengeldbörse</h1>
-                <h2>Jobs</h2>
+                
             </div>
-            
-            <div class="row">
-                <c:forEach var="job" items="${jobList}">
-                    <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>">    
-                        <c:out value="${job.bezeichnung}" />
-                    </a>
-                </c:forEach>
-            </div>
+           
+                
+            <div class="row" id="gff">
+                 <table>   
+                     <tr>
+                         <th>Bezeichnung</th><th>Datum</th><th>Ort</th>
+                     </tr>
+                    <c:forEach var="job" items="${jobList}">
+                        
+                   
+                        <tr onclick="window.location.href ='<c:url value='/schueler/jobs/detail?id=${job.id}'/>" style="cursor: pointer">
+                            <td><c:out value="${job.bezeichnung}" /></td><td><c:out value="${job.datum}" /></td><td><c:out value="${job.ort}" /></td>
+                             </a> 
+                        </tr>
+                   
+                       
 
+                    </c:forEach>
+                </table>
+            </div>
+        </div>
+       <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
         </div>
 
         <c:import url="inc/footer.jsp" />

@@ -54,6 +54,13 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals("Singen", job.getOrt());
     }
     
+    @Test
+    public void testOrderByDate() {
+        List<Job> jobList = service.findAllByOrderByDatumDesc();
+        assertEquals(5, jobList.size());
+        assertEquals(Integer.valueOf(3), jobList.get(0).getId());
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

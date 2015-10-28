@@ -15,7 +15,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="<c:url value="/"/>"> 
-                <img alt="Taschengeldbörse" src="<c:url value="/resources/img/app.png" />" />
+                <img width=52px" height="35px" alt="Taschengeldbörse" src="<c:url value="/resources/img/app.jpg" />" />
             </a>
             <a class="navbar-brand" href="<c:url value="/" />">Taschengeldbörse</a>
 

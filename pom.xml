@@ -339,10 +339,10 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>3.2.1</version>
                 <configuration>
-                    <!-- <url>jdbc:mysql://leda.sybit.de:3306/sybib?zeroDateTimeBehavior=convertToNull</url> -->
                     <url>${database.url}</url>
                     <user>${user}</user>
                     <password>${password}</password>
+                    <skip>${skip.flyway}</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -370,6 +370,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>  
             <properties>
+                <skip.flyway>false</skip.flyway>
                 <database.url>jdbc:mysql://localhost:3306/taschengeldboerse?zeroDateTimeBehavior=convertToNull</database.url>
                 <user>boersenadmin</user>
                 <password>admin2015!</password>
@@ -397,6 +398,12 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>travis</id>
+            <properties>
+                <skip.flyway>true</skip.flyway>
+            </properties>
         </profile>
     </profiles>
 

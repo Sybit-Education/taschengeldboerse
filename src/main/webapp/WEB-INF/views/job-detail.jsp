@@ -25,14 +25,6 @@
             <div class="col-xs-6 col-md-8">
                 <div class="row">
                     <div class="col-md-3">
-                        <b>Anbieter:</b>
-                    </div>
-                    <div class="col-md-9">
-                    <c:out  value=" ${job.anbieter} "/>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
                         <b>Bezeichnung:</b>
                     </div>
                     <div class="col-md-9">
@@ -47,6 +39,14 @@
                         <c:out  value=" ${anbieter} "/>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <b>Ort:</b>
+                    </div>
+                    <div class="col-md-9">
+                        <c:out  value=" ${job.ort} "/>
+                    </div>
+                </div>                    
                 <div class="row">
                     <div class="col-md-3">
                         <b>Datum:</b>

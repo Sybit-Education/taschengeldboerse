@@ -10,7 +10,6 @@
     <head>
         <c:import url="inc/header.jsp" />
         <title>Impressum :: Taschengeldbörse</title>
-
     </head>
     <body>
 
@@ -24,7 +23,6 @@
                     
                 </div>
             </div>
-       
         </div>
 
         <c:import url="inc/footer.jsp" />

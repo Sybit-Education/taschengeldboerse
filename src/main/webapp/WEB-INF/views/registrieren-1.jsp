@@ -10,7 +10,6 @@
     <head>
         <c:import url="inc/header.jsp" />
         <title>Registrieren :: Taschengeldbörse</title>
-
     </head>
     <body>
 
@@ -47,7 +46,6 @@
             </form:form>
 
         </div>
-
 
         <c:import url="inc/footer.jsp" />
     </body>

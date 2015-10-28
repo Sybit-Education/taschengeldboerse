@@ -5,7 +5,9 @@
  */
 package com.sybit.education.taschengeldboerse.service;
 
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.repository.AnbieterRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,8 @@ public class JobsServiceImpl implements JobsService {
 
     @Autowired
     JobsRepository jobRepository;
+    @Autowired
+    AnbieterRepository anbieterRepository;
     
     @Override
     public List<Job> findAll() {
@@ -39,6 +43,12 @@ public class JobsServiceImpl implements JobsService {
     @Override
     public Job findById(Integer id) {
         return jobRepository.findOne(id);
+     }   
+    
+    @Override
+    public List<Anbieter> findById() {
+        return anbieterRepository.findById();
     }
+    
     
 }

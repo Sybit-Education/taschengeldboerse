@@ -66,9 +66,10 @@ public class JobServiceTest extends AbstractDatabaseTest{
     public void testUebernehmenJob() {
         Job job = service.findById(1);
         
-        Schueler schueler = service.getById(job.getSchueler());
+        Schueler schueler = service.getSchuelerById(job.getSchueler());
         
-        assertEquals("Max", schueler.getVorname());
+        assertEquals("Paul", schueler.getVorname());
+        
     }
     
     @Override

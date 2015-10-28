@@ -34,5 +34,16 @@ public class AnbieterServiceImpl implements AnbieterService {
         }
         
     }
+
+    @Override
+    public Anbieter getById(Integer id) {
+        List<Anbieter> anbieterList = repository.findById(id);
+        
+        if(anbieterList.size() > 0) {
+            return anbieterList.get(0);
+        } else {
+            return null;
+        }
+    }
     
 }

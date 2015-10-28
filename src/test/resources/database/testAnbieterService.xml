@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <anbieter id="1" vorname="Max" name="Mustermann" plz="78259" geburtsdatum="01.05.2004" wohnort="Singen" datenschutz="true" merkblatt="true"/>
+    <jobs id="1" Bezeichnung="Test Job" anbieter="1" datum="01.01.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+            entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen"/>
+</dataset>

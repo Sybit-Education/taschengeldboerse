@@ -14,6 +14,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -34,30 +35,30 @@ public class Job implements Serializable {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "Bezeichnung")
+    @Column(name = "bezeichnung")
     @NotEmpty(message="Bitte Bezeichnung angeben")
     private String bezeichnung;
-
-    @Column(name = "Anbieter")
+    
+    @Column(name = "anbieter")
     private Integer anbieter;
 
     @Column(name = "Datum")
     @NotEmpty(message="Bitte Datum angeben")
-    private String datum;
-
-    @Column(name = "Uhrzeit")
+    private String datum; 
+    
+    @Column(name = "uhrzeit")
     @NotEmpty(message="Bitte Uhrzeit angeben")
     private String uhrzeit;
 
-    @Column(name = "Zeitaufwand")
+    @Column(name = "zeitaufwand")
     @NotEmpty(message="Bitte Zeitaufwand angeben")
     private String zeitaufwand;
 
-    @Column(name = "Entlohnung")
+    @Column(name = "entlohnung")
     @NotEmpty(message="Bitte Entlohnung angeben")
     private String entlohnung;
 
-    @Column(name = "Zusaetzliche_Infos")
+    @Column(name = "zusaetzliche_infos")
     @NotEmpty(message="Bitte Zusaetzliche Infos angeben")
     private String zusaetzlicheInfos;
 
@@ -71,8 +72,6 @@ public class Job implements Serializable {
     
     public Job() {
     }
-
-    ;
     
     public Job(String bezeichnung, Integer Anbieter) {
         this.bezeichnung = bezeichnung;

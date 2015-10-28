@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.service;
 
 import com.sybit.education.taschengeldboerse.domain.Anbieter;
+import java.util.List;
 
 /**
  *
@@ -14,5 +15,7 @@ import com.sybit.education.taschengeldboerse.domain.Anbieter;
 public interface AnbieterService {
     
     Anbieter getByEmail(String email);
+    
+    Anbieter getById(Integer id);
     
 }

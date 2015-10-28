@@ -2,7 +2,6 @@ package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -28,7 +27,6 @@ public class User implements Serializable {
 
     @Basic
     @NotEmpty(message = "Bitte Passwort angeben.")
-    @Min(value = 3, message = "Dein Passwort muss mindestenz 3 Zeichen haben.")
     private String password;
 
     @Basic

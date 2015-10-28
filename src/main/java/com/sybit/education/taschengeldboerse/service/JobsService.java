@@ -19,5 +19,4 @@ public interface JobsService {
     void addJob(Job job);
     
     Job findById(Integer id);
-    
 }

@@ -53,7 +53,7 @@ public class Job implements Serializable {
     @Column(name = "Zusaetzliche_Infos")
     private String zusaetzlicheInfos;
 
-    @Column(name = "Ort")
+    @Column(name = "ort")
     private String ort;
     
     public Job() {
@@ -132,7 +132,7 @@ public class Job implements Serializable {
       public String getOrt() {
         return ort;
     }
-       public void setOrt(String Ort) {
+       public void setOrt(String ort) {
         this.ort = ort;
     }
 

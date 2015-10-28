@@ -53,6 +53,9 @@ public class Job implements Serializable {
     @Column(name = "Zusaetzliche_Infos")
     private String zusaetzlicheInfos;
 
+    @Column(name = "ort")
+    private String ort;
+    
     public Job() {
     }
 
@@ -126,6 +129,12 @@ public class Job implements Serializable {
     public void setZusaetzlicheInfos(String ZusaetzlicheInfos) {
         this.zusaetzlicheInfos = ZusaetzlicheInfos;
     }
+      public String getOrt() {
+        return ort;
+    }
+       public void setOrt(String ort) {
+        this.ort = ort;
+    }
 
     @Override
     public int hashCode() {
@@ -138,6 +147,7 @@ public class Job implements Serializable {
         hash = 17 * hash + Objects.hashCode(this.zeitaufwand);
         hash = 17 * hash + Objects.hashCode(this.entlohnung);
         hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
+        hash = 17 * hash + Objects.hashCode(this.ort);
         return hash;
     }
 
@@ -168,6 +178,9 @@ public class Job implements Serializable {
         if (!Objects.equals(this.zusaetzlicheInfos, other.zusaetzlicheInfos)) {
             return false;
         }
+         if (!Objects.equals(this.ort, other.ort)) {
+            return false;
+        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
@@ -182,7 +195,7 @@ public class Job implements Serializable {
 
     @Override
     public String toString() {
-        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + '}';
+        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + ", Ort=" + ort + '}';
     }
 
 }

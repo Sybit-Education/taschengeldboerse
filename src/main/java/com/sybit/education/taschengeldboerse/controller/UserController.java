@@ -55,7 +55,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/registrieren", method = RequestMethod.POST)
-    public ModelAndView sendRegisterForm(@Valid User user, Model model, BindingResult result) {
+    public ModelAndView sendRegisterForm(@Valid User user, BindingResult result) {
         ModelAndView modelAndView;
 
         if (result.hasErrors()) {

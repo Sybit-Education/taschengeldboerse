@@ -2,9 +2,10 @@ package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
@@ -17,7 +18,6 @@ public class User implements Serializable {
         +"[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@"
         +"(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
              message="Bitte eine gültige E-Mail angeben.")
-    @Size(min = 5, message = "Bitte E-Mail angeben")
     @Column(unique = true)
     @Id
     private String email;
@@ -27,7 +27,8 @@ public class User implements Serializable {
     private String authority;
 
     @Basic
-    @Size(min = 3, message = "Dein \"Passwort\" ist zu kurz")
+    @NotEmpty(message = "Bitte Passwort angeben.")
+    @Min(value = 3, message = "Dein Passwort muss mindestenz 3 Zeichen haben.")
     private String password;
 
     @Basic

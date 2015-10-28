@@ -10,10 +10,12 @@ import java.util.List;
 
 /**
  *
- * @author sat
+ * @author Schulungsnb04
  */
 public interface AnbieterService {
     
-     List<Anbieter> findById(Integer id);
+    Anbieter getByEmail(String email);
+    
+    Anbieter getById(Integer id);
     
 }

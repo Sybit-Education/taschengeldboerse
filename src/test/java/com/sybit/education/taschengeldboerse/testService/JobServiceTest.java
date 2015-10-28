@@ -33,7 +33,22 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals("Test Job", job.getBezeichnung());
        
     }
-
+    
+    @Test
+    public void testSaveJob() {
+        Job job = new Job();
+        job.setId(1);
+        job.setOrt("Singen");
+        job.setAnbieter(1);
+        job.setDatum("01.01.2015");
+        job.setBezeichnung("test");
+        
+        service.addJob(job);
+        
+        assertEquals(Integer.valueOf(1), job.getId());
+        assertEquals("Singen", job.getOrt());
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

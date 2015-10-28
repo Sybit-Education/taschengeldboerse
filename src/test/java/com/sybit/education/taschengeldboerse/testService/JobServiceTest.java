@@ -23,7 +23,7 @@ public class JobServiceTest extends AbstractDatabaseTest{
     @Autowired
     JobsService service;
     
-    //@Test
+    @Test
     public void testFindAll(){
         List<Job> jobList;
         jobList=service.findAll();

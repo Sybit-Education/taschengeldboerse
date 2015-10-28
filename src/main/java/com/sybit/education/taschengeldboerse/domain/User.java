@@ -22,7 +22,6 @@ public class User implements Serializable {
     private String email;
 
     @Basic
-    @NotNull
     private String authority;
 
     @Basic

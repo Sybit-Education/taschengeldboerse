@@ -70,6 +70,9 @@ public class Job implements Serializable {
     private Date erstelldatum;
     
     
+    @Column(name = "schueler")
+    private Integer schueler;
+    
     public Job() {
     }
     
@@ -156,6 +159,15 @@ public class Job implements Serializable {
     public void setErstelldatum(Date erstelldatum) {
         this.erstelldatum = erstelldatum;
     }
+
+    public Integer getSchueler() {
+        return schueler;
+    }
+
+    public void setSchueler(Integer schueler) {
+        this.schueler = schueler;
+    }
+    
     
     @Override
     public int hashCode() {
@@ -170,6 +182,7 @@ public class Job implements Serializable {
         hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
         hash = 17 * hash + Objects.hashCode(this.ort);
         hash = 17 * hash + Objects.hashCode(this.erstelldatum);
+        hash = 17 * hash + Objects.hashCode(this.schueler);
         return hash;
     }
 
@@ -210,6 +223,9 @@ public class Job implements Serializable {
             return false;
         }
         if (!Objects.equals(this.datum, other.datum)) {
+            return false;
+        }
+        if (!Objects.equals(this.schueler, other.schueler)) {
             return false;
         }
         return true;

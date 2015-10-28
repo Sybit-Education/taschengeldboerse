@@ -1,15 +1,16 @@
 package com.sybit.education.taschengeldboerse.controller;
 
 
-import com.sybit.education.taschengeldboerse.domain.Schueler;
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.service.UserService;
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,11 +36,28 @@ public class AnbieterController {
     * @param request needed to get the referring url
     * @return the logical view to be returned
     */
-   @RequestMapping(value = "/registrieren/anbieter", method = RequestMethod.GET)
-   public String registrierenFormular( final HttpServletRequest request) {
+   /*@RequestMapping(value = "/anbieter/schueler", method = RequestMethod.GET)
+   public String home( final HttpServletRequest request) {
      
       return "registrieren-anbieter";
-   }
+   }*/
+   
+       /**
+     * Lade das Formular für die Anlage eines Schülers.
+     *
+     * @param request needed to get the referring url
+     * @return the logical view to be returned
+     */
+    @RequestMapping(value = "/registrieren/anbieter", method = RequestMethod.GET)
+    public ModelAndView registrierenFormular(final HttpServletRequest request) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("anbieter", new Anbieter());
+
+        modelAndView.setViewName("registrieren-anbieter");
+
+        return modelAndView;
+    }
    
     /**
      * Speichere neuen Anbieter.
@@ -48,15 +66,18 @@ public class AnbieterController {
      * @return the logical view to be returned
      */
     @RequestMapping(value = "/registrieren/anbieter", method = RequestMethod.POST)
-    public ModelAndView saveForm(@ModelAttribute("anbieter") Schueler anbieter) {
-        
-        anbieter = userService.saveSchueler(anbieter);
-        
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("anbieter", anbieter);
-
-        modelAndView.setViewName("registrieren-anbieter");
-
+    public ModelAndView saveForm(@Valid Anbieter anbieter, BindingResult result) {
+           ModelAndView modelAndView = new ModelAndView();
+        if(result.hasErrors()) {
+            modelAndView.addObject(result.getModel());
+            modelAndView.setViewName("registrieren-anbieter");
+            
+        } else { 
+            anbieter = userService.saveAnbieter(anbieter);
+            modelAndView.addObject("anbieter", anbieter);
+            modelAndView.setViewName("/login");
+            
+        } 
         return modelAndView;
     }
 }

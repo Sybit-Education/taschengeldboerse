@@ -20,19 +20,25 @@
 
             <h2>Neu registrieren</h2>
 
+            <c:if test='${not empty error}'>
+                <div>${error}</div>
+            </c:if>
+
             <c:url var = "action" value="/registrieren" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="user">
 
                 <div class="form-group">
                     <form:label path="email" class="control-label col-sm-2">e-Mail</form:label>
-                        <div class="col-sm-10">
+                    <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
+                        <small><form:errors class="error" path="email" /></small>
                     </div>
                 </div>
                 <div class="form-group">
                     <form:label path="password" class="control-label col-sm-2">Passwort</form:label>
-                        <div class="col-sm-10">
+                    <div class="col-sm-10">
                         <form:password class="form-control" path="password" />
+                        <small><form:errors class="error" path="password" /></small>
                     </div>
                 </div>
 

@@ -10,14 +10,13 @@
     <head>
         <c:import url="inc/header.jsp" />
         <title>Jobübersicht :: Taschengeldbörse</title>
-
     </head>
     <body>
 
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-            
+          
             <div class="page-header">
                 <h1>Die Taschengeldbörse</h1>
                 <h2>Jobs</h2>

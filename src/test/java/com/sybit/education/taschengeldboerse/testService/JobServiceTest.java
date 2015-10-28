@@ -23,7 +23,7 @@ public class JobServiceTest extends AbstractDatabaseTest{
     @Autowired
     JobsService service;
     
-    //@Test
+    @Test
     public void testFindAll(){
         List<Job> jobList;
         jobList=service.findAll();
@@ -31,6 +31,7 @@ public class JobServiceTest extends AbstractDatabaseTest{
         
         Job job = jobList.get(0);
         assertEquals("Test Job", job.getBezeichnung());
+       
     }
 
     @Override

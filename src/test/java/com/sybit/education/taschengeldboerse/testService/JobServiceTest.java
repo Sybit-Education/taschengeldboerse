@@ -61,6 +61,11 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
     
+    @Test
+    public void testUebernehmenJob() {
+        
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

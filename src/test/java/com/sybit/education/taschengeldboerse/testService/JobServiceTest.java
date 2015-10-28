@@ -31,10 +31,9 @@ public class JobServiceTest extends AbstractDatabaseTest{
         
         Job job = jobList.get(0);
         assertEquals("Test Job", job.getBezeichnung());
-       
     }
     
-    @Test
+//    @Test
     public void testSaveJob() {
         Job job = new Job();
         job.setId(1);

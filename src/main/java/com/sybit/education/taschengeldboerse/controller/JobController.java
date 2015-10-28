@@ -4,6 +4,7 @@ import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.service.AnbieterService;
 import com.sybit.education.taschengeldboerse.service.JobsService;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -98,7 +99,7 @@ public class JobController {
         //neuen Job in der Datenbak abspeichern:
         if (result.hasErrors()) {
             modelAndView = new ModelAndView();
-            modelAndView.addObject("error", "iein text");
+            modelAndView.addObject("error", "Es besteht ein Fehler in Ihrer Eingabe");
             modelAndView.addObject(result.getModel());
             modelAndView.addObject("job", job);
             modelAndView.setViewName("job-neu");
@@ -111,6 +112,7 @@ public class JobController {
             //anbieter suchen und dem Job zuweisen
             Anbieter anbieter = anbieterService.getByEmail(username);            
             job.setAnbieter(anbieter.getId());
+            job.setErstelldatum(new Date());
             
             jobService.addJob(job);
 

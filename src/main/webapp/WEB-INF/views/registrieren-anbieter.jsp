@@ -95,6 +95,7 @@
                     <form:label path="merkblatt">
                         <form:checkbox path="merkblatt" />
                         Ich habe das Merkblatt gelesen.*
+                        <form:errors class="col-sm-12 error" path="merkblatt"/>
                     </form:label>
                 </div>
                         
@@ -103,6 +104,7 @@
                     <form:label path="datenschutz">
                         <form:checkbox  path="datenschutz" />
                         Ich bin mit den Datenschutz-Richtlinien einverstanden.*
+                        <form:errors class="col-sm-12 error" path="datenschutz"/>
                     </form:label>
                 </div>
                         

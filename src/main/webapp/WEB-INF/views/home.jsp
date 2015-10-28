@@ -10,7 +10,6 @@
     <head>
         <c:import url="inc/header.jsp" />
         <title>Taschengeldbörse</title>
-
     </head>
     <body>
 
@@ -22,7 +21,6 @@
                 <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
                        src="https://goanimate.com/player/embed/0RVNfApDj9Gk"></iframe>
             </div>
-   
         </div>
 
         <c:import url="inc/footer.jsp" />

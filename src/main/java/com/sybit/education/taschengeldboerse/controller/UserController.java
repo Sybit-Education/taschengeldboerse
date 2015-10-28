@@ -51,7 +51,6 @@ public class UserController {
      * Save the user.
      *
      * @param user
-     * @param model
      * @return
      */
     @RequestMapping(value = "/registrieren", method = RequestMethod.POST)

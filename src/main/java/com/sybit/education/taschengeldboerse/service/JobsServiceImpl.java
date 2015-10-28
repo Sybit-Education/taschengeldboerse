@@ -22,6 +22,7 @@ public class JobsServiceImpl implements JobsService {
     @Autowired
     JobsRepository jobRepository;
     
+    
     @Override
     public List<Job> findAll() {
         return jobRepository.findAll();
@@ -39,7 +40,7 @@ public class JobsServiceImpl implements JobsService {
     @Override
     public Job findById(Integer id) {
         return jobRepository.findOne(id);
-    }
+    }  
     
     @Override
     public List<Job> findAllByOrderByErstelldatumDesc(){

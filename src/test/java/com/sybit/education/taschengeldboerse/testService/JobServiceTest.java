@@ -25,29 +25,28 @@ public class JobServiceTest extends AbstractDatabaseTest{
     
     @Test
     public void testFindAll(){
-//        List<Job> jobList;
-//        jobList=service.findAll();
-//        assertEquals(1, jobList.size());
-//        
-//        Job job = jobList.get(0);
-//        assertEquals("Test Job", job.getBezeichnung());
-          assertEquals("A", "A");
+        List<Job> jobList;
+        jobList=service.findAll();
+        assertEquals(1, jobList.size());
+        
+        Job job = jobList.get(0);
+        assertEquals("Test Job", job.getBezeichnung());
     }
     
 //    @Test
-//    public void testSaveJob() {
-//        Job job = new Job();
-//        job.setId(1);
-//        job.setOrt("Singen");
-//        job.setAnbieter(1);
-//        job.setDatum("01.01.2015");
-//        job.setBezeichnung("test");
-//        
-//        service.addJob(job);
-//        
-//        assertEquals(Integer.valueOf(1), job.getId());
-//        assertEquals("Singen", job.getOrt());
-//    }
+    public void testSaveJob() {
+        Job job = new Job();
+        job.setId(1);
+        job.setOrt("Singen");
+        job.setAnbieter(1);
+        job.setDatum("01.01.2015");
+        job.setBezeichnung("test");
+        
+        service.addJob(job);
+        
+        assertEquals(Integer.valueOf(1), job.getId());
+        assertEquals("Singen", job.getOrt());
+    }
     
     @Test
     public void testOrderByDate() {

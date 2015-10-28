@@ -6,7 +6,6 @@
 package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;

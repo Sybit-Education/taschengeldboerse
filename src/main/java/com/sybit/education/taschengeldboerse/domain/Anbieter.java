@@ -69,11 +69,11 @@ public class Anbieter implements Serializable {
     private String telefonnummer;
 
     @Column(name = "Merkblatt")
-    @AssertTrue(message="Das Merkblatt muss erst gelesen werden!")
+    @AssertTrue(message="Das Merkblatt muss vor der Anmeldung zur Kenntnis genommen werden!")
     private boolean merkblatt;
 
     @Column(name = "Datenschutz")
-    @AssertTrue(message="Die Datenschutzbedingungen müssen aktzeptiert werden!")
+    @AssertTrue(message="Die Datenschutzbedingungen müssen akzeptiert werden!")
     private boolean datenschutz;
 
     public Anbieter() {

@@ -58,18 +58,10 @@
                         
                 <div class="form-group col-sm-6">
                     <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
-<<<<<<< HEAD
                         <div class="col-sm-8">
                         <form:input type="text" disabled="true" class="form-control" path="email" placeholder="e-Mail" />
                             <form:errors class="col-sm-12 error" path="email"/>
                         </div>
-                    
-=======
-                    <div class="col-sm-8">
-                        <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
-                        <form:errors class="col-sm-12 error" path="email"/>
-                    </div>
->>>>>>> develop
                 </div>
                         
                 <div class="form-group col-sm-6">

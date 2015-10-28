@@ -55,8 +55,6 @@ public class Job implements Serializable {
 
     public Job() {
     }
-
-    ;
     
     public Job(String bezeichnung, Integer Anbieter) {
         this.bezeichnung = bezeichnung;

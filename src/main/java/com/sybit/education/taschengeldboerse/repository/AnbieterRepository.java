@@ -11,6 +11,8 @@ import java.util.List;
  * Created by stl on 09.06.2015.
  */
 public interface AnbieterRepository extends JpaRepository<Anbieter,Long> {
+    
+    public List<Anbieter> findById();
 
     List<User> findByEmail(String email);
 

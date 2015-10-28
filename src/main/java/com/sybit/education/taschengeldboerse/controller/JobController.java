@@ -41,7 +41,7 @@ public class JobController {
     public String jobList(final Model model, final HttpServletRequest request) {
         logger.debug("All Jobs---->");
         
-        final List<Job> jobList = jobService.findAll();
+        final List<Job> jobList = jobService.findAllByOrderByDatumDesc();
         
         model.addAttribute("jobList", jobList);
        logger.debug("All Jobs <------");

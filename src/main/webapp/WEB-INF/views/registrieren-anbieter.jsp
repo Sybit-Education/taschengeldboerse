@@ -24,7 +24,7 @@
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="anbieter">
                 
                     <div class="form-group col-sm-6">
-                        <form:label path="anrede" class="col-sm-4 control-label">Anrede*</form:label>
+                        <form:label path="anrede" class="col-sm-4 control-label">Anredenlich </form:label>
                             <div class="col-sm-8">
                             <form:select path="anrede" class="form-control col-sm-8">
                                 <form:option value="Herr">Herr</form:option>
@@ -62,7 +62,7 @@
                 <div class="form-group col-sm-6">
                     <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
                         <div class="col-sm-8">
-                        <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
+                        <form:input type="text" disabled="true" class="form-control" path="email" placeholder="e-Mail" />
                             <form:errors class="col-sm-12 error" path="email"/>
                         </div>
                     

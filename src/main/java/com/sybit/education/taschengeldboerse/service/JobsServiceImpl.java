@@ -41,4 +41,8 @@ public class JobsServiceImpl implements JobsService {
         return jobRepository.findOne(id);
     }
     
+    @Override
+    public List<Job> findAllByOrderByDatumDesc() {
+        return jobRepository.findAllByOrderByDatumDesc();
+    }
 }

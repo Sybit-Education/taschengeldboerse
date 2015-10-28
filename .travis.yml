@@ -3,3 +3,6 @@ language: java
 sudo: false
 
 script: "mvn clean install -env=travis"
+
+before_install:
+  - mysql -e "create database IF NOT EXISTS taschengeldboerse;CREATE USER 'boersenadmin'@'%' IDENTIFIED BY 'admin2015!';GRANT ALL PRIVILEGES ON taschengeldboerse.* TO 'boersenadmin'@'%';" -uroot

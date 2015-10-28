@@ -69,7 +69,9 @@ public class Job implements Serializable {
     @Column(name = "erstelldatum")
     private Date erstelldatum;
     
-    
+     @Column(name = "schueler")
+        private String schueler;
+     
     public Job() {
     }
     

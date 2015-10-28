@@ -99,7 +99,7 @@ public class JobController {
         //neuen Job in der Datenbak abspeichern:
         if (result.hasErrors()) {
             modelAndView = new ModelAndView();
-            modelAndView.addObject("error", "iein text");
+            modelAndView.addObject("error", "Es besteht ein Fehler in Ihrer Eingabe");
             modelAndView.addObject(result.getModel());
             modelAndView.addObject("job", job);
             modelAndView.setViewName("job-neu");

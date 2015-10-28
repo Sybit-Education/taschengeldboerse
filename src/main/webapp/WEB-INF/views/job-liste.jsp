@@ -31,9 +31,10 @@
                     <c:forEach var="job" items="${jobList}">
                         
                    
-                        <tr onclick="window.location.href ='<c:url value='/schueler/jobs/detail?id=${job.id}'/>" style="cursor: pointer">
-                            <td><c:out value="${job.bezeichnung}" /></td><td><c:out value="${job.datum}" /></td><td><c:out value="${job.ort}" /></td>
-                             </a> 
+                        <tr>
+                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a></td>
+                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a></td>
+                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a></td>
                         </tr>
                    
                        

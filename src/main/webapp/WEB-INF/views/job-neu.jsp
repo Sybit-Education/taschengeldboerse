@@ -59,6 +59,12 @@
                         <form:input type="text" class="form-control" path="zusaetzlicheInfos" placeholder="z.B. Regenkleidung, etc." />
                     </div>
                 </div>
+                <div class="form-group col-sm-12">
+                    <form:label path="ort" class="col-sm-2 control-form:label">Ort</form:label>
+                        <div class="col-sm-10">
+                        <form:input type="text" class="form-control" path="ort" placeholder="Ort Angabe" />
+                    </div>
+                </div>
                 <input class="btn btn-primary pull-right" type="submit" value="Speichern" />
                 <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
                 <form:hidden path="id" />

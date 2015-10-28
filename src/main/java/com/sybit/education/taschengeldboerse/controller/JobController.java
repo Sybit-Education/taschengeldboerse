@@ -56,10 +56,10 @@ public class JobController {
     @RequestMapping(value = "/schueler/jobs/detail", method = RequestMethod.GET)
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
-
+        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
-
+        modelAndView.addObject("anbieter", anbieter.getName());
         modelAndView.setViewName("job-detail");
 
         return modelAndView;

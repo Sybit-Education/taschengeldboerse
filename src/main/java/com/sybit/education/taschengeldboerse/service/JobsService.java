@@ -20,5 +20,5 @@ public interface JobsService {
     
     Job findById(Integer id);
     
-    List<Job> findAllByOrderByErstelldatumDesc();
+    List<Job> findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
 }

@@ -23,7 +23,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author sat
  */
 @Entity
-@Table(name = "jobs")
+@Table(name = "job")
 public class Job implements Serializable {
 
     /**

@@ -13,6 +13,7 @@ import org.junit.Test;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
+import org.junit.Ignore;
 
 
 /**
@@ -54,12 +55,14 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals("Singen", job.getOrt());
     }
     
+    
     @Test
-    public void testOrderByDate() {
-        List<Job> jobList = service.findAllByOrderByErstelldatumDesc();
-        assertEquals(5, jobList.size());
+    public void testOrderByDateAndNotAsigned() {
+        List<Job> jobList = service.findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
+        assertEquals(4, jobList.size());
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
+    
     
     @Test
     public void testUebernehmenJob() {

@@ -2,8 +2,10 @@ package com.sybit.education.taschengeldboerse.controller;
 
 import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.service.AnbieterService;
 import com.sybit.education.taschengeldboerse.service.JobsService;
+import com.sybit.education.taschengeldboerse.service.SchuelerService;
 import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
@@ -32,9 +34,12 @@ public class JobController {
 
     @Autowired
     private JobsService jobService;
-    
+
     @Autowired
     private AnbieterService anbieterService;
+    
+    @Autowired
+    private SchuelerService schuelerService;
 
     /**
      * Liste für die Schüler alle offenen Jobs auf.
@@ -108,10 +113,10 @@ public class JobController {
             String username = auth.getName();
 
             //anbieter suchen und dem Job zuweisen
-            Anbieter anbieter = anbieterService.getByEmail(username);            
+            Anbieter anbieter = anbieterService.getByEmail(username);
             job.setAnbieter(anbieter.getId());
             job.setErstelldatum(new Date());
-            
+
             jobService.addJob(job);
 
             modelAndView = new ModelAndView();
@@ -120,6 +125,31 @@ public class JobController {
         }
 
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/jobs/zuordnen", method = RequestMethod.POST)
+    public ModelAndView jobZuordnen(@Valid Job job, BindingResult result) {
+
+        //aktuell eingeloggter Benutzer (ist die Email)
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+
+        //anbieter suchen und dem Job zuweisen
+        Schueler schueler = schuelerService.getByEmail(username);
+
+        System.out.println("Job-Id: " + job.getId());
+        System.out.println("Schueler-Id: ??");
+
+        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+
+        //seite wieder anzeigen:
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("job", job);
+        modelAndView.addObject("anbieter", anbieter.getName());
+        modelAndView.setViewName("job-detail");
+
+        return modelAndView;
+
     }
 
 }

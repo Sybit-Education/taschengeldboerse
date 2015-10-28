@@ -5,18 +5,17 @@
  */
 package com.sybit.education.taschengeldboerse.service;
 
-import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import java.util.List;
 
 /**
  *
- * @author sat
+ * @author Schulungsnb04
  */
-public interface JobsService {
+public interface AnbieterService {
     
-    List<Job> findAll();
+    Anbieter getByEmail(String email);
     
-    void addJob(Job job);
+    Anbieter getById(Integer id);
     
-    Job findById(Integer id);
 }

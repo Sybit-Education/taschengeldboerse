@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dataset>
-    <jobs id="1" Bezeichnung="Test Job"/>
+    <jobs id="1" Bezeichnung="Test Job" anbieter="1" datum="01.01.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+            entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen"/>
 </dataset>

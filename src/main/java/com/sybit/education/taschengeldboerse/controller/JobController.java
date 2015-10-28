@@ -1,6 +1,7 @@
 package com.sybit.education.taschengeldboerse.controller;
 
 
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.List;
@@ -30,7 +31,8 @@ public class JobController {
     @Autowired
     private JobsService jobService;
     
-    
+    @Autowired
+    private AnbieterService anbieterService;
     /**
      * Liste für die Schüler alle offenen Jobs auf.
      * @param model
@@ -52,10 +54,10 @@ public class JobController {
     @RequestMapping(value = "/schueler/jobs/detail", method = RequestMethod.GET)
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
-        
+        Anbieter anbieter = anbieterService.findById(job.getAnbieter());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
-
+        modelAndView.addObject("anbieter", anbieter.getName());
         modelAndView.setViewName("job-detail");
 
         return modelAndView;

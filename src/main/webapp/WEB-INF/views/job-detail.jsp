@@ -21,7 +21,9 @@
             <h1>Die Taschengeldbörse</h1>
             <h2>Job-Details</h2>
 
-
+            <c:if test="${not empty error}">
+                ${error}
+            </c:if>
 
             <div class="row">
                 <div class="col-md-3">
@@ -73,14 +75,6 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <b>Schüler:</b>
-                </div>
-                <div class="col-md-9">
-                    <c:out value="${schueler}"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
                     <b>Entlohnung:</b>
                 </div>
                 <div class="col-md-9">
@@ -95,14 +89,10 @@
                     <c:out value="${job.zusaetzlicheInfos}"/>
                 </div>
             </div>
-            <c:url var = "action" value="/jobs/zuordnen" />
-            <form:form class= "form-horizontal" action="${action}" method="post" modelAttribute="job">
-
+            <c:url var = "action" value="/schueler/jobs/zuordnen?id=${job.id}" />
+            <a class= "form-horizontal" href="${action}" >
                 <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" />
-                <form:hidden path="id" />
-                <input type="hidden"	path="${_csrf.parameterName}"	value="${_csrf.token}"/>
-
-            </form:form>
+            </a>
 
         </div>
 

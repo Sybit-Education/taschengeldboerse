@@ -20,75 +20,124 @@
         <div class="container">
             <h1>Die Taschengeldbörse</h1>
             <h2>Job-Details</h2>
-
+            <br/>
             <c:if test="${not empty error}">
                 ${error}
             </c:if>
 
+            <div class="col-md-6">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Bezeichnung:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out  value=" ${job.bezeichnung} "/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Anbieter: </b>
                 </div>
-                <div class="col-md-9">
-                    <c:out  value=" ${anbieter} "/>
+                <div class="col-md-6">
+                    <c:out  value=" ${anbieterName} "/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Ort:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out  value=" ${job.ort} "/>
                 </div>
             </div>                    
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Datum:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out value="${job.datum}"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Uhrzeit:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out value="${job.uhrzeit}"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Zeitaufwand:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out value="${job.zeitaufwand}"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Entlohnung:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out value="${job.entlohnung}"/>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-6">
                     <b>Zusatz-Informationen:</b>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-6">
                     <c:out value="${job.zusaetzlicheInfos}"/>
                 </div>
             </div>
+            </div>    
+            <div class="col-md-6">    
+            <c:if test="${not empty anbieter}">
+                <div class="col-md-6">
+                    <b>E-Mail:</b>
+                </div>
+                <div class="col-md-6">
+                <c:out value="${anbieter.email}"/>
+                </div>
+            </c:if>
+                
+            <c:if test="${not empty anbieter}">
+                <div class="col-md-6">
+                    <b>Telefonnummer:</b>
+                </div>
+                <div class="col-md-6">
+                <c:out value="${anbieter.telefonnummer}"/>
+                </div>
+            </c:if>
+                
+            <c:if test="${not empty anbieter}">
+                <div class="col-md-6">
+                    <b>Straße:</b>
+                </div>
+                <div class="col-md-6">
+                <c:out value="${anbieter.strasse}"/>
+                </div>
+            </c:if>
+                
+                <c:if test="${not empty anbieter}">
+                <div class="col-md-6">
+                    <b>Postleitzahl:</b>
+                </div>
+                <div class="col-md-6">
+                <c:out value="${anbieter.plz}"/>
+                </div>
+            </c:if>
+                
+            <c:if test="${not empty anbieter}">
+                <div class="col-md-6">
+                    <b>Wohnort:</b>
+                </div>
+                <div class="col-md-6">
+                <c:out value="${anbieter.wohnort}"/>
+                </div>
+            </c:if>
+            </div>    
+                
             <c:url var = "action" value="/schueler/jobs/zuordnen?id=${job.id}" />
             <a class= "form-horizontal" href="${action}" >
                 <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" />

@@ -60,7 +60,7 @@ public class JobServiceTest extends AbstractDatabaseTest{
     @Test
     public void testOrderByDateAndNotAsigned() {
         List<Job> jobList = service.findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
-        assertEquals(1, jobList.size());
+        assertEquals(3, jobList.size());
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
     

@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/style.css" />" />
 
 <link rel="icon" href="<c:url value="/resources/favicon.ico" />" />
+<link rel="logo" href="<c:url value="/resources/img/logo.jpg" />" />
 
 <script type="text/javascript" src="<c:url value="/resources/js/jquery-1.11.2.js"/>"></script>
 <script type="text/javascript" src="<c:url value="/resources/js/bootstrap.js" />"></script>

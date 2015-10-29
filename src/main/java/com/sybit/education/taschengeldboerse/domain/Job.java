@@ -16,6 +16,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -42,6 +43,9 @@ public class Job implements Serializable {
     @Column(name = "anbieter")
     private Integer anbieter;
 
+    @Column(name = "schueler")
+    private Integer schueler; 
+
     @Column(name = "Datum")
     @NotEmpty(message="Bitte Datum angeben")
     private String datum; 
@@ -67,15 +71,18 @@ public class Job implements Serializable {
     private String ort;
     
     @Column(name = "erstelldatum")
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date erstelldatum;
+    
     
     
     public Job() {
     }
     
-    public Job(String bezeichnung, Integer Anbieter) {
+    public Job(String bezeichnung, Integer Anbieter, Integer Schueler) {
         this.bezeichnung = bezeichnung;
         this.anbieter = Anbieter;
+        this.schueler = Schueler;
     }
 
     public Integer getId() {
@@ -100,6 +107,14 @@ public class Job implements Serializable {
 
     public void setAnbieter(Integer Anbieter) {
         this.anbieter = Anbieter;
+    }
+    
+    public Integer getSchueler() {
+        return schueler;
+    }
+
+    public void setSchueler(Integer schueler) {
+        this.schueler = schueler;
     }
 
     public String getDatum() {
@@ -156,20 +171,21 @@ public class Job implements Serializable {
     public void setErstelldatum(Date erstelldatum) {
         this.erstelldatum = erstelldatum;
     }
-    
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.id);
-        hash = 17 * hash + Objects.hashCode(this.bezeichnung);
-        hash = 17 * hash + Objects.hashCode(this.anbieter);
-        hash = 17 * hash + Objects.hashCode(this.datum);
-        hash = 17 * hash + Objects.hashCode(this.uhrzeit);
-        hash = 17 * hash + Objects.hashCode(this.zeitaufwand);
-        hash = 17 * hash + Objects.hashCode(this.entlohnung);
-        hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
-        hash = 17 * hash + Objects.hashCode(this.ort);
-        hash = 17 * hash + Objects.hashCode(this.erstelldatum);
+        int hash = 3;
+        hash = 43 * hash + Objects.hashCode(this.id);
+        hash = 43 * hash + Objects.hashCode(this.bezeichnung);
+        hash = 43 * hash + Objects.hashCode(this.anbieter);
+        hash = 43 * hash + Objects.hashCode(this.schueler);
+        hash = 43 * hash + Objects.hashCode(this.datum);
+        hash = 43 * hash + Objects.hashCode(this.uhrzeit);
+        hash = 43 * hash + Objects.hashCode(this.zeitaufwand);
+        hash = 43 * hash + Objects.hashCode(this.entlohnung);
+        hash = 43 * hash + Objects.hashCode(this.zusaetzlicheInfos);
+        hash = 43 * hash + Objects.hashCode(this.ort);
+        hash = 43 * hash + Objects.hashCode(this.erstelldatum);
         return hash;
     }
 
@@ -188,6 +204,9 @@ public class Job implements Serializable {
         if (!Objects.equals(this.bezeichnung, other.bezeichnung)) {
             return false;
         }
+        if (!Objects.equals(this.datum, other.datum)) {
+            return false;
+        }
         if (!Objects.equals(this.uhrzeit, other.uhrzeit)) {
             return false;
         }
@@ -200,7 +219,7 @@ public class Job implements Serializable {
         if (!Objects.equals(this.zusaetzlicheInfos, other.zusaetzlicheInfos)) {
             return false;
         }
-         if (!Objects.equals(this.ort, other.ort)) {
+        if (!Objects.equals(this.ort, other.ort)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
@@ -209,7 +228,10 @@ public class Job implements Serializable {
         if (!Objects.equals(this.anbieter, other.anbieter)) {
             return false;
         }
-        if (!Objects.equals(this.datum, other.datum)) {
+        if (!Objects.equals(this.schueler, other.schueler)) {
+            return false;
+        }
+        if (!Objects.equals(this.erstelldatum, other.erstelldatum)) {
             return false;
         }
         return true;
@@ -217,7 +239,7 @@ public class Job implements Serializable {
 
     @Override
     public String toString() {
-        return "jobs{" + "id=" + id + ", Bezeichnung=" + bezeichnung + ", Anbieter=" + anbieter + ", Datum=" + datum + ", Uhrzeit=" + uhrzeit + ", Zeitaufwand=" + zeitaufwand + ", Entlohnung=" + entlohnung + ", ZusaetzlicheInfos=" + zusaetzlicheInfos + ", Ort=" + ort + ", Erstelldatum=" + erstelldatum + '}';
+        return "Job{" + "id=" + id + ", bezeichnung=" + bezeichnung + ", anbieter=" + anbieter + ", schueler=" + schueler + ", datum=" + datum + ", uhrzeit=" + uhrzeit + ", zeitaufwand=" + zeitaufwand + ", entlohnung=" + entlohnung + ", zusaetzlicheInfos=" + zusaetzlicheInfos + ", ort=" + ort + ", erstelldatum=" + erstelldatum + '}';
     }
-
+    
 }

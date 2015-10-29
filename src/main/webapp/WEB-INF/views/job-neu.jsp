@@ -22,7 +22,14 @@
             <p>&nbsp;</p>
             <c:url var = "action" value="/anbieter/jobs/neu" />
             <form:form class="form-horizontal" action="${action}" method="post"  modelAttribute="job">
-
+                
+                
+                <c:if test="${not empty success}">
+                    <div class="container col-sm-3">
+                        <p><i><b><font color="green">${success}</font></b></i></p>
+                    </div>
+                </c:if>
+                
                 <div class="form-group col-sm-12">
                     <form:label path="bezeichnung" class="col-sm-2 control-label">Jobbezeichnung</form:label>
                         <div class="col-sm-10">

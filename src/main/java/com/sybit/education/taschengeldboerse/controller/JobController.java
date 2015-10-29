@@ -56,7 +56,31 @@ public class JobController {
         logger.debug("All Jobs <------");
         return "job-liste";
     }
+    
+    /**
+     * Liste für den Anbieter seine erstellten Jobs auf
+     * @param model
+     * @param request
+     * @return 
+     */
+    @RequestMapping(value = "/anbieter/jobs/eigene", method = RequestMethod.GET)
+    public String jobListAnbieter(final Model model, final HttpServletRequest request) {
+        logger.debug("All Jobs---->");
+        
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
 
+        //anbieter suchen und dem Job zuweisen
+        Anbieter anbieter = anbieterService.getByEmail(username);
+        
+        final List<Job> jobList = jobService.findByAnbieterId(anbieter.getId());
+        
+        model.addAttribute("jobList", jobList);
+        
+        logger.debug("All Jobs <------");
+        return "job-liste";
+    
+    }
     @RequestMapping(value = "/schueler/jobs/detail", method = RequestMethod.GET)
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);

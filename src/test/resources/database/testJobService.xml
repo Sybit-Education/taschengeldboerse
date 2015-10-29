@@ -16,7 +16,7 @@
     <Job id="4" Bezeichnung="Test Job" anbieter="1" datum="21.12.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"
             />
-    <Job id="1" Bezeichnung="Test Job" anbieter="1" datum="01.06.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <Job id="1" Bezeichnung="Test Job" anbieter="2" datum="01.06.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"
             schueler="1"/>
     

@@ -9,7 +9,7 @@ span.error {
 h1 {
     
     font-family: Verdana;
-    font-style: normal;
+    font-style: bold;
     margin-top: 0pt;
     margin-bottom: 0pt;
     
@@ -25,26 +25,53 @@ h2 {
     
    }
    
-   #gff, table  {
+   #gff, table  
+   
+       {
       
       
        width: 700px;
        margin-left: auto;
        margin-right: auto;
+       border-collapse: collapse;
       
       
              
-      }
+       }
    #gff
       th,tr,td {
           
-          border-width: 4px;
+          border-width: 0px;
           border-style: solid;
           border-color: #BDBDBD;
           padding: 10px;
           
           
-            }
+               }
+   
+               
+   #gff td 
+   
+   {
+       
+    border-collapse: collapse;
+    border-spacing: 2;
+    amrgin: 2;
+    padding: 2;
+       
+  
+   }
+   
+   #gff th
+   
+   {
+       
+        border-width: 2px;
+        border-style: solid;
+        border-color: #BDBDBD;
+       
+       
+   }
    
    
    

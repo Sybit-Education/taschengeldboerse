@@ -24,27 +24,43 @@
            
                 
             <div class="row" id="gff">
-                 <table>   
-                     <tr>
-                         <th>Bezeichnung</th><th>Datum</th><th>Ort</th>
-                     </tr>
-                    <c:forEach var="job" items="${jobList}">
-                        
-                   
-                        <tr>
-                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a></td>
-                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a></td>
-                            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a></td>
-                        </tr>
-                   
-                       
+                
+             
+                
+                             
+                   <table class="table table-hover">
+                    <thead>
+        <tr>
+            <th>Bezeichnung</th>
+            <th>Datum</th>
+            <th>Ort</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+         
+        <tr>
+           
+            <c:forEach var="job" items="${jobList}">
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a></td>
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a></td>
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a></td>
+            
+          
+            </c:forEach>    
+        </tr>
+        
+         </tbody>
+     </table>
+            
+                </div>
 
-                    </c:forEach>
-                </table>
+                   
+                
             </div>
         </div>
        <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
-        </div>
+        
 
         <c:import url="inc/footer.jsp" />
     </body>

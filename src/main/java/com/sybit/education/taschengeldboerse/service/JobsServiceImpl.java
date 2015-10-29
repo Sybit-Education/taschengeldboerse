@@ -64,4 +64,9 @@ public class JobsServiceImpl implements JobsService {
     public Schueler getSchuelerById(Integer id ) {
         return schuelerRepository.findById(id).get(0);
     }
+
+    @Override
+    public List<Job> findBySchueler(Integer schueler) {
+        return jobRepository.findById(id).get(1); //To change body of generated methods, choose Tools | Templates.
+    }
 }

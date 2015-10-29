@@ -91,6 +91,11 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals("Paul", schueler.getVorname());
     }
     
+    @Test
+    public void testSchuelerJob() {
+        List<Job> jobList = service.findBySchueler((Integer)1);
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

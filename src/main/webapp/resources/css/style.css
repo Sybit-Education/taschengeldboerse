@@ -55,7 +55,10 @@ h2 {
 }
 
 #footerRow {
-    background-color: black;
+    background-color: whitesmoke;
+    padding: 6px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
    

@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.service;
 
 import com.sybit.education.taschengeldboerse.domain.Schueler;
+import java.util.List;
 
 /**
  *

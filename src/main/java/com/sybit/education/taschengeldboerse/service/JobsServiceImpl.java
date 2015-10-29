@@ -10,8 +10,8 @@ import com.sybit.education.taschengeldboerse.domain.Schueler;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sybit.education.taschengeldboerse.repository.JobsRepository;
 import com.sybit.education.taschengeldboerse.repository.SchuelerRepository;
+import com.sybit.education.taschengeldboerse.repository.JobRepository;
 
 /**
  *
@@ -22,7 +22,7 @@ import com.sybit.education.taschengeldboerse.repository.SchuelerRepository;
 public class JobsServiceImpl implements JobsService {
 
     @Autowired
-    JobsRepository jobRepository;
+    JobRepository jobRepository;
     
     @Autowired
     SchuelerRepository schuelerRepository;
@@ -56,8 +56,8 @@ public class JobsServiceImpl implements JobsService {
     }  
     
     @Override
-    public List<Job> findAllByOrderByErstelldatumDesc(){
-        return jobRepository.findAllByOrderByErstelldatumDesc();
+    public List<Job> findAllByOrderByErstelldatumDescWhereSchuelerIsNull(){
+        return jobRepository.notassignedList();
     }
     
     @Override

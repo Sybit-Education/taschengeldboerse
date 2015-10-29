@@ -24,7 +24,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author sat
  */
 @Entity
-@Table(name = "jobs")
+@Table(name = "job")
 public class Job implements Serializable {
 
     /**
@@ -170,7 +170,6 @@ public class Job implements Serializable {
         this.erstelldatum = erstelldatum;
     }
 
-<<<<<<< HEAD
     @Override
     public int hashCode() {
         int hash = 3;
@@ -185,31 +184,7 @@ public class Job implements Serializable {
         hash = 43 * hash + Objects.hashCode(this.zusaetzlicheInfos);
         hash = 43 * hash + Objects.hashCode(this.ort);
         hash = 43 * hash + Objects.hashCode(this.erstelldatum);
-=======
-    public Integer getSchueler() {
-        return schueler;
-    }
 
-    public void setSchueler(Integer schueler) {
-        this.schueler = schueler;
-    }
-    
-    
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 17 * hash + Objects.hashCode(this.id);
-        hash = 17 * hash + Objects.hashCode(this.bezeichnung);
-        hash = 17 * hash + Objects.hashCode(this.anbieter);
-        hash = 17 * hash + Objects.hashCode(this.datum);
-        hash = 17 * hash + Objects.hashCode(this.uhrzeit);
-        hash = 17 * hash + Objects.hashCode(this.zeitaufwand);
-        hash = 17 * hash + Objects.hashCode(this.entlohnung);
-        hash = 17 * hash + Objects.hashCode(this.zusaetzlicheInfos);
-        hash = 17 * hash + Objects.hashCode(this.ort);
-        hash = 17 * hash + Objects.hashCode(this.erstelldatum);
-        hash = 17 * hash + Objects.hashCode(this.schueler);
->>>>>>> Job_Übernehmen
         return hash;
     }
 

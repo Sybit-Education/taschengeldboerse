@@ -25,12 +25,11 @@
 
           <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
+                <%--<div class="item active">
+                    <iframe width="100%" height="100%" src="https://goanimate.com/player/embed/0RVNfApDj9Gk" frameborder="0" allowfullscreen=""></iframe>
+                </div>--%>
                 
                 <div class="item active">
-                    <iframe width="100%" height="100%" src="https://www.youtube.com/watch?v=LmUXMMCXwdE" frameborder="0" allowfullscreen=""></iframe>
-                </div>
-                
-                <div class="item">
                     <img src="<c:url value="/resources/img/photo.jpg" />" alt="Chania">
                     <div class="carousel-caption">
                       <h3>Chania</h3>

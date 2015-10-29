@@ -121,6 +121,7 @@ public class JobController {
             jobService.addJob(job);
 
             modelAndView = new ModelAndView();
+            modelAndView.addObject("success", "Job wurde gespeichert!");
             modelAndView.addObject("job", job);
             modelAndView.setViewName("job-neu");
         }

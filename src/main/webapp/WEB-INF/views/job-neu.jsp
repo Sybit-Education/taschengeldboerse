@@ -30,7 +30,7 @@
                     </div>
                 </c:if>
                 
-                <div class="form-group col-sm-12">
+                <div class="form-group">
                     <form:label path="bezeichnung" class="col-sm-2 control-label">Jobbezeichnung</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="bezeichnung" placeholder="Welche Art von Job wollen Sie anbieten?" />
@@ -65,14 +65,14 @@
                         <form:errors class="col-sm-12 error" path="entlohnung" />
                     </div>
                 </div>
-                <div class="form-group col-sm-12">
+                <div class="form-group">
                     <form:label path="zusaetzlicheInfos" class="col-sm-2 control-label">Zusatz-Informationen</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="zusaetzlicheInfos" placeholder="z.B. Regenkleidung, etc." />
                         <form:errors class="col-sm-12 error" path="zusaetzlicheInfos" />
                     </div>
                 </div>
-                <div class="form-group col-sm-12">
+                <div class="form-group">
                     <form:label path="ort" class="col-sm-2 control-label">Ort</form:label>
                         <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="ort" placeholder="Wo soll der Job ausgeführt werden?" />

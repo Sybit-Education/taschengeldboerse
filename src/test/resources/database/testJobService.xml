@@ -3,7 +3,7 @@
 <dataset>
     <Job id="2" Bezeichnung="Test Job" anbieter="1" datum="01.09.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"
-            />
+            schueler="5"/>
     
     <Job id="5" Bezeichnung="Test Job" anbieter="1" datum="01.05.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"

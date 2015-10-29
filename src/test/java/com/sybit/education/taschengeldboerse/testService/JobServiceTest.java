@@ -61,6 +61,22 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
     
+    @Test
+    public  void testAddSchuelerToJob() {
+        List<Job> jobList = service.findAll();
+        Job job = jobList.get(0);
+        service.addSchuelerToJob(job, 1);
+        assertEquals((Integer)1, job.getSchueler());
+    }
+    
+    @Test
+    public  void testJobBelegt() {
+        List<Job> jobList = service.findAll();
+        Job job = jobList.get(0);
+        job.setSchueler(2);
+        service.addSchuelerToJob(job, 1);
+        assertEquals((Integer)2, job.getSchueler());
+    }
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

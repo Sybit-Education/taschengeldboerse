@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.service;
 
 import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import java.util.List;
 
 /**
@@ -18,7 +19,9 @@ public interface JobsService {
     
     void addJob(Job job);
     
-    Job findById(Integer id);
+    void addSchuelerToJob(Job job, Integer id);
     
+    Job findById(Integer id);
+   
     List<Job> findAllByOrderByErstelldatumDesc();
 }

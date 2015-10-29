@@ -15,4 +15,6 @@ import java.util.List;
 public interface JobRepositoryCustom {
     
     List<Job> notassignedList();
+    
+    List<Job> schuelerJobs(Integer schuelerID);
 }

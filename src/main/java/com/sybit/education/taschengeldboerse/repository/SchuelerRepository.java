@@ -2,6 +2,7 @@ package com.sybit.education.taschengeldboerse.repository;
 
 
 import com.sybit.education.taschengeldboerse.domain.Schueler;
+import com.sybit.education.taschengeldboerse.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -13,7 +14,7 @@ public interface SchuelerRepository extends JpaRepository<Schueler,Long> {
 
     List<Schueler> findByEmail(String email);
 
-
     List<Schueler> findById (Integer id);
     
+    List<Schueler> findByName(String username);
 }

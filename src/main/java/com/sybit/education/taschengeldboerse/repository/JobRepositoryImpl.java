@@ -49,4 +49,24 @@ public class JobRepositoryImpl implements JobRepositoryCustom {
         
         return jobListe;
     } 
+    
+    @Override
+    public List<Job> schuelerJobs(Integer schuelerID) {
+        
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        
+        CriteriaQuery<Job> cq = cb.createQuery(Job.class);
+        
+        Root<Job> job = cq.from(Job.class);
+        
+        Expression<Integer> schueler = job.get("schueler");
+        
+        
+        cq.select(job).where(cb.equal(schueler, schuelerID));
+        
+        Query query = entityManager.createQuery(cq);
+        
+        List<Job> schuelerJobsListe = query.getResultList();
+        return schuelerJobsListe;
+    }
 }

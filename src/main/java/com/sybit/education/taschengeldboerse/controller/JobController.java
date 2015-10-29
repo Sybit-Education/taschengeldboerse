@@ -61,9 +61,11 @@ public class JobController {
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+        Schueler schueler = schuelerService.findById(job.getSchueler());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieter", anbieter.getName());
+        modelAndView.addObject("schueler", schueler.getName());
         modelAndView.setViewName("job-detail");
 
         return modelAndView;

@@ -28,4 +28,9 @@ public class SchuelerServiceImpl implements SchuelerService {
         }
         
     }
+    
+    @Override
+    public List<Schueler> findById(Integer id) {       
+        return schuelerRepository.findById(id);
+    }
 }

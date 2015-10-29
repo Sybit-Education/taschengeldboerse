@@ -73,6 +73,14 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
+                    <b>Schüler:</b>
+                </div>
+                <div class="col-md-9">
+                    <c:out value="${schueler}"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
                     <b>Entlohnung:</b>
                 </div>
                 <div class="col-md-9">

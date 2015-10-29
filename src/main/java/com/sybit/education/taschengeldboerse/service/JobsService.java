@@ -29,6 +29,4 @@ public interface JobsService {
 
     List<Job> findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
     
-    List<Job> findBySchueler(Integer schueler);
-    
 }

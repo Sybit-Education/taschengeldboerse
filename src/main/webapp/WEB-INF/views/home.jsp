@@ -65,7 +65,7 @@
                     <div class="caption">
                       <h3>Starte Jetzt!</h3>
                        <p>Registriere Dich heute noch!</p>
-                      <p><a href="#" class="btn btn-primary" role="button">Jetzt registrieren</a></p>
+                      <p><a href="#" class="btn btn-primary" role="button" >Jetzt registrieren</a></p>
                     </div>
                   </div>
                 </div>
@@ -80,12 +80,6 @@
                 </div>
             </div>
         </div>
-        
-                    <!--<div class="embed-responsive embed-responsive-16by9">
-                    <iframe    scrolling="no"    allowTransparency="true"    frameborder="0"    width="400" height="225"   
-                           src="https://goanimate.com/player/embed/0RVNfApDj9Gk"></iframe>
-                    </div> -->
-
         <c:import url="inc/footer.jsp" />
     </body>
 </html>

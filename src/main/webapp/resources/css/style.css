@@ -54,7 +54,9 @@ h2 {
     margin-top: 20px;
 }
 
-#footerRow {
+#footer {
+    bottom: 0;
+    width: 100%;
     background-color: black;
 }
 

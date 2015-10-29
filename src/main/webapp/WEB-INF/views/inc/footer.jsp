@@ -22,7 +22,8 @@
            name="${_csrf.parameterName}"
            value="${_csrf.token}" />
 </form>
-<div id="footerRow">
+
+<footer id="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -35,6 +36,4 @@
             </div>
         </div>
     </div>
-</div>
-
-
+</footer>

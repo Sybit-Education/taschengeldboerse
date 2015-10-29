@@ -8,16 +8,15 @@ span.error {
 
 h1 {
     
-    font-family: Verdana;
+    font-family: Century Gothic;
     font-style: normal;
     margin-top: 0pt;
     margin-bottom: 0pt;
-    
+    color: green;
     
 }
 
 h2 {
-    
     font-family: Verdana;
     font-style: normal;
     margin-top: 0pt;
@@ -26,8 +25,6 @@ h2 {
    }
    
    #gff, table  {
-      
-      
        width: 700px;
        margin-left: auto;
        margin-right: auto;
@@ -37,7 +34,6 @@ h2 {
       }
    #gff
       th,tr,td {
-          
           border-width: 4px;
           border-style: solid;
           border-color: #BDBDBD;
@@ -45,13 +41,27 @@ h2 {
           
           
             }
+            
+#navbar {
+    margin-bottom: 0px;
+}
 
-   
-   
-   
-   
-   
-   
-   
-   
-   
+#thumbnailContainer {
+    margin-top: 20px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+}

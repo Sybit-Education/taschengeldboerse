@@ -51,6 +51,11 @@ public class JobsServiceImpl implements JobsService {
     }
     
     @Override
+    public List<Job> findJobsBySchuelerID(Integer id) {
+        return jobRepository.schuelerJobs(id);
+    }
+    
+    @Override
     public Job findById(Integer id) {
         return jobRepository.findOne(id);
     }  

@@ -88,7 +88,7 @@ public class JobController {
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
-        modelAndView.addObject("anbieter", anbieter.getName());
+        modelAndView.addObject("anbieterName", anbieter.getName());
         modelAndView.setViewName("job-detail");
 
         return modelAndView;
@@ -168,7 +168,8 @@ public class JobController {
             //seite wieder anzeigen:
             ModelAndView modelAndView = new ModelAndView();
             modelAndView.addObject("job", job);
-            modelAndView.addObject("anbieter", anbieter.getName());
+            modelAndView.addObject("anbieterName", anbieter.getName());
+            modelAndView.addObject("anbieter", anbieter);
             modelAndView.setViewName("job-detail");
        
         return modelAndView;

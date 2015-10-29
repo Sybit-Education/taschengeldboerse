@@ -9,7 +9,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-<nav class="navbar navbar-inverse hidden-print">
+<nav class="navbar navbar-inverse hidden-print" id="navbar">
 
 
     <div class="container">
@@ -34,6 +34,7 @@
                     <a href="<c:url value="/schueler"/>" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Schüler<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<c:url value="/schueler/jobs" />">Job-Übersicht</a></li>
+                        <li><a href="<c:url value="/schueler/schueler-uebernommen" />">Meine Jobs</a></li>
                     </ul>
                 </li> 
                 <li class="dropdown">

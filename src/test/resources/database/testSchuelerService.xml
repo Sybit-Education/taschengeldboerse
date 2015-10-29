@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+    <schueler id="1" wohnort="Singen" geburtsdatum="01.03.2015" plz="78754" name="Mustermann" 
+              vorname="Max" email="gustav@web.de" straße="Musterstraße"/>
+    <schueler id="2" wohnort="Singen" geburtsdatum="01.03.2015" plz="78754" name="Mustermann" 
+              vorname="Max" email="gustav@web.de" straße="Musterstraße"/>
+    <schueler id="3" wohnort="Singen" geburtsdatum="01.03.2015" plz="78754" name="Mustermann" 
+              vorname="Max" email="gustav@web.de" straße="Musterstraße"/>
+    <schueler id="4" wohnort="Singen" geburtsdatum="01.03.2015" plz="78754" name="Mustermann" 
+              vorname="Max" email="gustav@web.de" straße="Musterstraße"/>
+</dataset>

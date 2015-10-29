@@ -16,4 +16,5 @@ public interface SchuelerRepository extends JpaRepository<Schueler,Long> {
 
     List<Schueler> findById (Integer id);
     
+    List<Schueler> findByName(String username);
 }

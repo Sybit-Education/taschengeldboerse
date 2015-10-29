@@ -21,6 +21,8 @@ public interface JobsService {
     
     void addSchuelerToJob(Job job, Integer id);
     
+    List<Job> findJobsBySchuelerID(Integer id);
+    
     Job findById(Integer id);
 
     public Schueler getSchuelerById(Integer schueler);

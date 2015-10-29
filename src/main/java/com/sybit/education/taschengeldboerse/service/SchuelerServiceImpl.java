@@ -30,13 +30,13 @@ public class SchuelerServiceImpl implements SchuelerService {
     }
     
     @Override
-    public Schueler findById(Integer id) {       
-        return schuelerRepository.findById(id).get(0);
+    public Schueler getById(Integer id) {
+        List<Schueler> schuelerList = schuelerRepository.findById(id);
+        
+        if(schuelerList.size() > 0) {
+            return schuelerList.get(0);
+        } else {
+            return null;
+        }
     }
-    
-    @Override
-    public List<Schueler> findByName(String username){
-        return schuelerRepository.findByName(username);
-    }
-    
 }

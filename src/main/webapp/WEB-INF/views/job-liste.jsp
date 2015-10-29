@@ -16,14 +16,15 @@
         <c:import url="inc/navigation.jsp" />
 
         <div class="container">
-          
+
             <div class="page-header">
                 <h1>Die Taschengeldbörse</h1>
-                
+
             </div>
-           
-                
+
+
             <div class="row" id="gff">
+
                 
              
                 
@@ -58,9 +59,36 @@
                    
                 
             </div>
-        </div>
        <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
-        
+
+                <div class="col-xs-4 col-md-4 col-lg-4">
+                    <b>Bezeichnung:</b>
+                    <c:forEach var="job" items="${jobList}"> 
+                        <div class="row">
+                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a>
+                        </div>
+                    </c:forEach>
+                </div>
+
+                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
+                    <b>Ort:</b>
+                    <c:forEach var="job" items="${jobList}">
+                        <div class="row">
+                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a>
+                        </div>
+                    </c:forEach>
+                </div>
+
+                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
+                    <b>Datum:</b>
+                    <c:forEach var="job" items="${jobList}">
+                        <div class="row">
+                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a>
+                        </div>
+                    </c:forEach>
+                </div>
+            <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
+        </div>
 
         <c:import url="inc/footer.jsp" />
     </body>

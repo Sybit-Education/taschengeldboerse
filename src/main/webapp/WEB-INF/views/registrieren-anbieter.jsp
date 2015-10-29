@@ -71,7 +71,7 @@
                     </div>
                 </div>
                     
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.</form:label>
                     <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />

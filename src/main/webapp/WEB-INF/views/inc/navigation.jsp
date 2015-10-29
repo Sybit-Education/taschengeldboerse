@@ -15,9 +15,8 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="<c:url value="/"/>"> 
-                <img width=52px" height="35px" alt="Taschengeldbörse" src="<c:url value="/resources/img/app.jpg" />" />
+                <img alt="Taschengeldbörse" src="<c:url value="/resources/img/app.png" />" />
             </a>
-            <a class="navbar-brand" href="<c:url value="/" />">Taschengeldbörse</a>
 
             <button type="button" class="navbar-toggle collapsed"
                     data-toggle="collapse" data-target="#navbar" aria-expanded="false"

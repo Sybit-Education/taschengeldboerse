@@ -95,6 +95,8 @@ public class JobServiceTest extends AbstractDatabaseTest{
     public void testSchuelerJob() {
         List<Job> jobList = service.findJobsBySchuelerID((Integer)1);
         
+        assertEquals(3,jobList.size());
+        
         assertEquals((Integer)1,jobList.get(0).getSchueler());
     }
     

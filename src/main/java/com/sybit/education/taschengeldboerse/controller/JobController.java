@@ -91,7 +91,7 @@ public class JobController {
      * @param request
      * @return
      */
-    @RequestMapping(value = "/schueler/jobs/detail", method = RequestMethod.GET)
+    @RequestMapping(value = "/job/detail", method = RequestMethod.GET)
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());

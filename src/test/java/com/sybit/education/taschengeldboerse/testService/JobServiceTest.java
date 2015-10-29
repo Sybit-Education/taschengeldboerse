@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.testService;
 
 import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +78,16 @@ public class JobServiceTest extends AbstractDatabaseTest{
         service.addSchuelerToJob(job, 1);
         assertEquals((Integer)2, job.getSchueler());
     }
+    
+    @Test
+    public void testUebernehmenJob() {
+        Job job = service.findById(1);
+        
+        Schueler schueler = service.getSchuelerById(job.getSchueler());
+        
+        assertEquals("Paul", schueler.getVorname());
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

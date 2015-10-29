@@ -11,6 +11,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sybit.education.taschengeldboerse.repository.JobsRepository;
+import com.sybit.education.taschengeldboerse.repository.SchuelerRepository;
 
 /**
  *
@@ -23,6 +24,8 @@ public class JobsServiceImpl implements JobsService {
     @Autowired
     JobsRepository jobRepository;
     
+    @Autowired
+    SchuelerRepository schuelerRepository;
     
     @Override
     public List<Job> findAll() {
@@ -55,5 +58,10 @@ public class JobsServiceImpl implements JobsService {
     @Override
     public List<Job> findAllByOrderByErstelldatumDesc(){
         return jobRepository.findAllByOrderByErstelldatumDesc();
+    }
+    
+    @Override
+    public Schueler getSchuelerById(Integer id ) {
+        return schuelerRepository.findById(id).get(0);
     }
 }

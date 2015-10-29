@@ -61,7 +61,7 @@ public class JobController {
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-        Schueler schueler = schuelerService.findById(job.getSchueler());
+        Schueler schueler = schuelerService.getById(job.getSchueler());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieter", anbieter.getName());
@@ -138,7 +138,7 @@ public class JobController {
         Schueler schueler = schuelerService.getByEmail(username);
 
         System.out.println("Job-Id: " + job.getId());
-        System.out.println("Schueler-Id: ??");
+        System.out.println("Schueler-Id: ??" + schueler.getId());
 
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
 

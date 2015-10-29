@@ -38,7 +38,7 @@ public class JobController {
 
     @Autowired
     private AnbieterService anbieterService;
-    
+
     @Autowired
     private SchuelerService schuelerService;
 
@@ -57,31 +57,40 @@ public class JobController {
         logger.debug("All Jobs <------");
         return "job-liste";
     }
-    
+
     /**
      * Liste für den Anbieter seine erstellten Jobs auf
+     *
      * @param model
      * @param request
-     * @return 
+     * @return
      */
     @RequestMapping(value = "/anbieter/jobs/eigene", method = RequestMethod.GET)
     public String jobListAnbieter(final Model model, final HttpServletRequest request) {
         logger.debug("All Jobs---->");
-        
+
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
 
         //anbieter suchen und dem Job zuweisen
         Anbieter anbieter = anbieterService.getByEmail(username);
-        
+
         final List<Job> jobList = jobService.findByAnbieterId(anbieter.getId());
-        
+
         model.addAttribute("jobList", jobList);
-        
+
         logger.debug("All Jobs <------");
         return "job-liste";
-    
+
     }
+
+    /**
+     *
+     * @param id
+     * @param model
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/schueler/jobs/detail", method = RequestMethod.GET)
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
@@ -115,8 +124,7 @@ public class JobController {
     /**
      *
      * @param job
-     * @param model
-     * @param request
+     * @param result
      * @return
      */
     @RequestMapping(value = "/anbieter/jobs/neu", method = RequestMethod.POST)
@@ -152,26 +160,31 @@ public class JobController {
 
         return modelAndView;
     }
-    
+
+    /**
+     *
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/schueler/jobs/zuordnen", method = RequestMethod.GET)
     public ModelAndView jobZuordnen(@RequestParam("id") Integer id) {
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            String username = auth.getName();
-            Schueler schueler = schuelerService.getByEmail(username);
-            System.out.println("Job-Id: " + id);
-            System.out.println("Schueler-Id: ??" + schueler.getId());
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        Schueler schueler = schuelerService.getByEmail(username);
+        System.out.println("Job-Id: " + id);
+        System.out.println("Schueler-Id: ??" + schueler.getId());
 
-            Job job = jobService.findById(id);
-            jobService.addSchuelerToJob(job, schueler.getId());
-            Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+        Job job = jobService.findById(id);
+        jobService.addSchuelerToJob(job, schueler.getId());
+        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
 
-            //seite wieder anzeigen:
-            ModelAndView modelAndView = new ModelAndView();
-            modelAndView.addObject("job", job);
-            modelAndView.addObject("anbieterName", anbieter.getName());
-            modelAndView.addObject("anbieter", anbieter);
-            modelAndView.setViewName("job-detail");
-       
+        //seite wieder anzeigen:
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("job", job);
+        modelAndView.addObject("anbieterName", anbieter.getName());
+        modelAndView.addObject("anbieter", anbieter);
+        modelAndView.setViewName("job-detail");
+
         return modelAndView;
 
     }

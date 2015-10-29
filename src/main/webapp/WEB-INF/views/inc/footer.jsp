@@ -26,7 +26,10 @@
 
 <div class="row">
 
-    <div class="col-md-12">
+    <p>&nbsp;</p>
+    
+    <div class="col-sm-1"></div>
+    <div class="col-md-11">
 
         &copy; 2015 Sybit | 
         <a href="<c:url value="/impressum" />">Impressum</a> |

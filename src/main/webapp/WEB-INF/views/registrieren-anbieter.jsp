@@ -56,10 +56,10 @@
                     </div>
                 </div>
                         
-                <div class="form-group col-sm-6">
+                <div hidden=true class="form-group col-sm-6">
                     <form:label path="email" class="col-sm-4 control-label">e-Mail*</form:label>
                         <div class="col-sm-8">
-                        <form:input type="text" disabled="true" class="form-control" path="email" placeholder="e-Mail" />
+                        <form:input type="text" class="form-control" path="email" placeholder="e-Mail" />
                             <form:errors class="col-sm-12 error" path="email"/>
                         </div>
                 </div>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                     
-                <div class="form-group">
+                <div class="form-group col-sm-12">
                     <form:label path="strasse" class="col-sm-2 control-label">Straße, Nr.</form:label>
                     <div class="col-sm-10">
                         <form:input type="text" class="form-control" path="strasse" placeholder="Straße, Nr." />

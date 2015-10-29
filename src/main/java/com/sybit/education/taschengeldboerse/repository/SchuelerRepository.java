@@ -12,6 +12,8 @@ import java.util.List;
 public interface SchuelerRepository extends JpaRepository<Schueler,Long> {
 
     List<Schueler> findByEmail(String email);
+
+
+    List<Schueler> findById (Integer id);
     
-    List<Schueler> findById(Integer id);
 }

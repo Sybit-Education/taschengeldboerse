@@ -22,6 +22,8 @@ public interface JobsService {
     void addSchuelerToJob(Job job, Integer id);
     
     Job findById(Integer id);
-   
-    List<Job> findAllByOrderByErstelldatumDesc();
+
+    public Schueler getSchuelerById(Integer schueler);
+
+    List<Job> findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
 }

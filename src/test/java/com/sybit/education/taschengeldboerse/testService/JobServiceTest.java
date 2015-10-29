@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.testService;
 
 import com.sybit.education.taschengeldboerse.domain.Job;
+import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.junit.Test;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
+import org.junit.Ignore;
 
 
 /**
@@ -54,12 +56,14 @@ public class JobServiceTest extends AbstractDatabaseTest{
         assertEquals("Singen", job.getOrt());
     }
     
+    
     @Test
-    public void testOrderByDate() {
-        List<Job> jobList = service.findAllByOrderByErstelldatumDesc();
-        assertEquals(5, jobList.size());
+    public void testOrderByDateAndNotAsigned() {
+        List<Job> jobList = service.findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
+        assertEquals(3, jobList.size());
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
+    
     
     @Test
     public  void testAddSchuelerToJob() {
@@ -77,6 +81,16 @@ public class JobServiceTest extends AbstractDatabaseTest{
         service.addSchuelerToJob(job, 1);
         assertEquals((Integer)2, job.getSchueler());
     }
+    
+    @Test
+    public void testUebernehmenJob() {
+        Job job = service.findById(1);
+        
+        Schueler schueler = service.getSchuelerById(job.getSchueler());
+        
+        assertEquals("Paul", schueler.getVorname());
+    }
+    
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

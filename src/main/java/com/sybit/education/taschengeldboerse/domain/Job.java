@@ -24,7 +24,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  * @author sat
  */
 @Entity
-@Table(name = "jobs")
+@Table(name = "job")
 public class Job implements Serializable {
 
     /**
@@ -73,9 +73,7 @@ public class Job implements Serializable {
     @Column(name = "erstelldatum")
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date erstelldatum;
-    
-    
-    
+
     public Job() {
     }
     
@@ -186,6 +184,7 @@ public class Job implements Serializable {
         hash = 43 * hash + Objects.hashCode(this.zusaetzlicheInfos);
         hash = 43 * hash + Objects.hashCode(this.ort);
         hash = 43 * hash + Objects.hashCode(this.erstelldatum);
+
         return hash;
     }
 
@@ -232,6 +231,9 @@ public class Job implements Serializable {
             return false;
         }
         if (!Objects.equals(this.erstelldatum, other.erstelldatum)) {
+            return false;
+        }
+        if (!Objects.equals(this.schueler, other.schueler)) {
             return false;
         }
         return true;

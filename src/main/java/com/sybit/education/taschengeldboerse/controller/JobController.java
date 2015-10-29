@@ -19,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -51,7 +52,7 @@ public class JobController {
     @RequestMapping(value = "/schueler/jobs", method = RequestMethod.GET)
     public String jobList(final Model model, final HttpServletRequest request) {
         logger.debug("All Jobs---->");
-        final List<Job> jobList = jobService.findAllByOrderByErstelldatumDesc();
+        final List<Job> jobList = jobService.findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
         model.addAttribute("jobList", jobList);
         logger.debug("All Jobs <------");
         return "job-liste";
@@ -61,11 +62,9 @@ public class JobController {
     public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
         Job job = jobService.findById(id);
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-        Schueler schueler = schuelerService.getById(job.getSchueler());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieter", anbieter.getName());
-        modelAndView.addObject("schueler", schueler.getName());
         modelAndView.setViewName("job-detail");
 
         return modelAndView;
@@ -128,28 +127,25 @@ public class JobController {
 
         return modelAndView;
     }
+    
+    @RequestMapping(value = "/schueler/jobs/zuordnen", method = RequestMethod.GET)
+    public ModelAndView jobZuordnen(@RequestParam("id") Integer id) {
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String username = auth.getName();
+            Schueler schueler = schuelerService.getByEmail(username);
+            System.out.println("Job-Id: " + id);
+            System.out.println("Schueler-Id: ??" + schueler.getId());
 
-    @RequestMapping(value = "/jobs/zuordnen", method = RequestMethod.POST)
-    public ModelAndView jobZuordnen(@Valid Job job, BindingResult result) {
+            Job job = jobService.findById(id);
+            jobService.addSchuelerToJob(job, schueler.getId());
+            Anbieter anbieter = anbieterService.getById(job.getAnbieter());
 
-        //aktuell eingeloggter Benutzer (ist die Email)
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String username = auth.getName();
-
-        //anbieter suchen und dem Job zuweisen
-        Schueler schueler = schuelerService.getByEmail(username);
-
-        System.out.println("Job-Id: " + job.getId());
-        System.out.println("Schueler-Id: ??" + schueler.getId());
-
-        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-
-        //seite wieder anzeigen:
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("job", job);
-        modelAndView.addObject("anbieter", anbieter.getName());
-        modelAndView.setViewName("job-detail");
-
+            //seite wieder anzeigen:
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("job", job);
+            modelAndView.addObject("anbieter", anbieter.getName());
+            modelAndView.setViewName("job-detail");
+       
         return modelAndView;
 
     }

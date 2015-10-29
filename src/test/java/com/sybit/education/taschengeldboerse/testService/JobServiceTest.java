@@ -14,7 +14,6 @@ import org.junit.Test;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
-import org.junit.Ignore;
 
 
 /**

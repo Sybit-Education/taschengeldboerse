@@ -25,9 +25,7 @@
                 
                 
                 <c:if test="${not empty success}">
-                    <div class="container col-sm-3">
-                        <p><i><b><font color="green">${success}</font></b></i></p>
-                    </div>
+                    <div class="alert alert-success" role="alert">Der Job wurde erfolgreich gespeichert!</div>
                 </c:if>
                 
                 <div class="form-group">

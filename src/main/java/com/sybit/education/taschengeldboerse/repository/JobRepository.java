@@ -13,11 +13,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author sat
  */
-public interface JobsRepository extends JpaRepository<Job, Integer>{
+public interface JobRepository extends JpaRepository<Job, Integer>, JobRepositoryCustom {
     
-    List<Job> findAll();
     
     Job findById(Integer id);
     
-    List<Job> findAllByOrderByErstelldatumDesc(); 
+    List<Job> findAllByOrderByErstelldatumDesc();
 }

@@ -130,11 +130,9 @@ public class JobController {
     @RequestMapping(value = "/jobs/zuordnen", method = RequestMethod.POST)
     public ModelAndView jobZuordnen(@Valid Job job, BindingResult result) {
 
-        //aktuell eingeloggter Benutzer (ist die Email)
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String username = auth.getName();
 
-        //anbieter suchen und dem Job zuweisen
         Schueler schueler = schuelerService.getByEmail(username);
 
         System.out.println("Job-Id: " + job.getId());

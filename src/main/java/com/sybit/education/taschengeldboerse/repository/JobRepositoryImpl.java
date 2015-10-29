@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.repository;
 
 import com.sybit.education.taschengeldboerse.domain.Job;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Query;
 import javax.persistence.EntityManager;
@@ -13,7 +14,6 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
-import org.junit.Ignore;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -49,24 +49,26 @@ public class JobRepositoryImpl implements JobRepositoryCustom {
         
         return jobListe;
     } 
-    
+
     @Override
-    public List<Job> schuelerJobs(Integer schuelerID) {
+    public List<Job> findByAnbieter(Integer anbieterId) {
+        System.out.println("anbieterId= "+ anbieterId);
         
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        List<Job> jobListe = new ArrayList<>();
         
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();  
         CriteriaQuery<Job> cq = cb.createQuery(Job.class);
         
         Root<Job> job = cq.from(Job.class);
         
-        Expression<Integer> schueler = job.get("schueler");
+        Expression<Integer> anbieter = job.get("anbieter");
         
-        
-        cq.select(job).where(cb.equal(schueler, schuelerID));
+        cq.select(job).where(cb.equal(anbieter, anbieterId));
         
         Query query = entityManager.createQuery(cq);
-        
-        List<Job> schuelerJobsListe = query.getResultList();
-        return schuelerJobsListe;
+                
+        jobListe = query.getResultList();        
+             
+        return jobListe;
     }
 }

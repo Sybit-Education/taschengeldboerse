@@ -5,6 +5,7 @@
  */
 package com.sybit.education.taschengeldboerse.testService;
 
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
@@ -14,6 +15,7 @@ import org.junit.Test;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
+import org.junit.Ignore;
 
 
 /**
@@ -91,12 +93,10 @@ public class JobServiceTest extends AbstractDatabaseTest{
     }
     
     @Test
-    public void testSchuelerJob() {
-        List<Job> jobList = service.findJobsBySchuelerID((Integer)1);
-        
-        assertEquals(3,jobList.size());
-        
-        assertEquals((Integer)1,jobList.get(0).getSchueler());
+    public void findByAnbieterId() {
+        List<Job> jobList = service.findByAnbieterId((Integer) 1);
+   
+        assertEquals(4,jobList.size());
     }
     
     @Override

@@ -25,36 +25,36 @@
 
             <div class="row" id="gff">
 
-                <div class="col-xs-4 col-md-4 col-lg-4">
-                    <b>Bezeichnung:</b>
-                    <c:forEach var="job" items="${jobList}"> 
-                        <div class="row">
-                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a>
-                        </div>
-                    </c:forEach>
+                
+             
+                
+                             
+                   <table class="table table-hover">
+                    <thead>
+        <tr>
+            <th>Bezeichnung</th>
+            <th>Datum</th>
+            <th>Ort</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        <c:forEach var="job" items="${jobList}">
+        <tr>
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a></td>
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a></td>
+            <td><a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a></td>
+        </tr>
+        </c:forEach>  
+         </tbody>
+     </table>
+            
                 </div>
 
-                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
-                    <b>Ort:</b>
-                    <c:forEach var="job" items="${jobList}">
-                        <div class="row">
-                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a>
-                        </div>
-                    </c:forEach>
-                </div>
-
-                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
-                    <b>Datum:</b>
-                    <c:forEach var="job" items="${jobList}">
-                        <div class="row">
-                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a>
-                        </div>
-                    </c:forEach>
-                </div>
-
-
-
+                   
+                
             </div>
+       <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
             <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
         </div>
 

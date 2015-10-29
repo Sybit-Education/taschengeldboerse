@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <dataset>
-    <job id="2" Bezeichnung="Test Job" anbieter="1" datum="01.09.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <jobs id="2" Bezeichnung="Test Job" anbieter="1" datum="01.09.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"/>
     
-    <job id="5" Bezeichnung="Test Job" anbieter="1" datum="01.05.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <jobs id="5" Bezeichnung="Test Job" anbieter="1" datum="01.05.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"/>
     
-    <job id="3" Bezeichnung="Test Job" anbieter="1" datum="31.12.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <jobs id="3" Bezeichnung="Test Job" anbieter="1" datum="31.12.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-12-01"/>
     
-    <job id="4" Bezeichnung="Test Job" anbieter="1" datum="21.12.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <jobs id="4" Bezeichnung="Test Job" anbieter="1" datum="21.12.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"/>
     
-    <job id="1" Bezeichnung="Test Job" anbieter="1" datum="01.06.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
+    <jobs id="1" Bezeichnung="Test Job" anbieter="1" datum="01.06.2015" uhrzeit="18:00 Uhr" zeitaufwand="3 std"
             entlohnung="5€/h" zusaetzliche_Infos="testtesttest" ort="Testhausen" erstelldatum="2015-10-01"/>
 </dataset>

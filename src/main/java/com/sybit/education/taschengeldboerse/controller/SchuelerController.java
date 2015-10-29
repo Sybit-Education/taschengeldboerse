@@ -1,10 +1,16 @@
 package com.sybit.education.taschengeldboerse.controller;
 
+import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
+import com.sybit.education.taschengeldboerse.service.JobsService;
+import com.sybit.education.taschengeldboerse.service.SchuelerService;
 import com.sybit.education.taschengeldboerse.service.UserService;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -20,7 +26,11 @@ public class SchuelerController {
     
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private JobsService jobService;
+    
+    @Autowired
+    SchuelerService schuelerService;
     /**
      * Liste der dem Anbieter alle Bewerber auf.
      *
@@ -49,7 +59,33 @@ public class SchuelerController {
 
         return modelAndView;
     }
+    
+    
+@RequestMapping(value = "/schueler/schueler-uebernommen", method = RequestMethod.GET)
+    public ModelAndView meineJobsList(final HttpServletRequest request) {
 
+        ModelAndView modelAndView = new ModelAndView();
+        
+       
+        
+        
+            //aktuell eingeloggter Benutzer (ist die Email)
+            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+            String username = auth.getName();
+
+            //anbieter suchen und dem Job zuweisen
+            Schueler schueler = schuelerService.getByEmail(username);
+        
+        List<Job> jobList = jobService.findJobsBySchuelerID(schueler.getId());
+        
+        modelAndView.addObject("jobs", jobList);
+
+        modelAndView.setViewName("job-liste");
+
+        return modelAndView;
+    }
+    
+    
     /**
      * Speichere neuen Schüler.
      *

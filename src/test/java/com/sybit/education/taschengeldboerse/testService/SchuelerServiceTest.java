@@ -24,16 +24,9 @@ public class SchuelerServiceTest extends AbstractDatabaseTest{
     
     @Test
     public void testFindSchuelerById() {
-        Schueler schueler = schuelerService.findById(1);
+        Schueler schueler = schuelerService.getById(1);
         
         assertEquals("Max", schueler.getVorname());
-    }
-    
-    @Test
-    public void testFindByName() {
-        List<Schueler> schuelerListe = schuelerService.findByName("Mustermann");
-        
-        System.err.print(schuelerListe.size());
     }
     
     @Override

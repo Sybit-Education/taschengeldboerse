@@ -16,7 +16,6 @@ public interface SchuelerService {
     
     Schueler getByEmail(String email);
     
-    Schueler findById(Integer id);
+    Schueler getById(Integer id);
     
-    List<Schueler> findByName(String username);
 }

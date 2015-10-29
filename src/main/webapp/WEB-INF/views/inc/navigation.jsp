@@ -9,7 +9,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
-<nav class="navbar navbar-inverse hidden-print">
+<nav class="navbar navbar-inverse hidden-print" id="navbar">
 
 
     <div class="container">

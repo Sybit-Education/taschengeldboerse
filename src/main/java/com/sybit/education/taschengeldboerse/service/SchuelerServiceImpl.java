@@ -28,4 +28,15 @@ public class SchuelerServiceImpl implements SchuelerService {
         }
         
     }
+    
+    @Override
+    public Schueler getById(Integer id) {
+        List<Schueler> schuelerList = schuelerRepository.findById(id);
+        
+        if(schuelerList.size() > 0) {
+            return schuelerList.get(0);
+        } else {
+            return null;
+        }
+    }
 }

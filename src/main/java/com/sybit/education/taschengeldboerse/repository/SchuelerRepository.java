@@ -14,4 +14,6 @@ public interface SchuelerRepository extends JpaRepository<Schueler,Long> {
 
     List<Schueler> findByEmail(String email);
 
+    public List<Schueler> findById(Integer id);
+
 }

@@ -14,4 +14,6 @@ import com.sybit.education.taschengeldboerse.domain.Schueler;
 public interface SchuelerService {
     
     Schueler getByEmail(String email);
+    
+    Schueler getById(Integer id);
 }

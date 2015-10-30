@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import org.springframework.stereotype.Controller;
@@ -100,8 +101,8 @@ public class JobController {
         String username = auth.getName();
 
         Job job = jobService.findById(id);
-        ModelAndView modelAndView = new ModelAndView();
-        if (auth.getAuthorities().contains("ROLE_SCHUELER")) {
+        
+        if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_SCHUELER"))) {
              // ein Schüler guckt sich den Job an
              
              if (job.getSchueler() != null) {
@@ -114,11 +115,6 @@ public class JobController {
                      //Das ist der vom Schüler übernommene Job: Details anzeigen!
                      
                      //TODO
-                     
-                     Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-                     modelAndView.addObject("job", job);
-                     modelAndView.addObject("anbieter", anbieter);
-                     
                      
                      
                  } else {
@@ -135,7 +131,7 @@ public class JobController {
              }
              
 
-        } else if (auth.getAuthorities().contains("ROLE_ANBIETER")) {
+        } else if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ANBIETER"))) {
              // ein Anbieter schaut
              
              //keine Kontaktdaten anzeigen
@@ -158,12 +154,10 @@ public class JobController {
         }
 
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-        
+        ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieterName", anbieter.getName());
-        
         modelAndView.addObject("anbieter", anbieter);
-        
         modelAndView.setViewName("job-detail");
 
         return modelAndView;
@@ -253,10 +247,6 @@ public class JobController {
 
         return modelAndView;
 
-    }
-
-    private Anbieter findByAnbieterId() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

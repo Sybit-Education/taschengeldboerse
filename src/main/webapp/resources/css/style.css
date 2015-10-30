@@ -6,42 +6,6 @@ span.error {
     color: red;
 }
 
-h1 {
-    
-    font-family: Century Gothic;
-    font-style: normal;
-    margin-top: 0pt;
-    margin-bottom: 0pt;
-    color: green;
-    
-}
-
-h2 {
-    font-family: Verdana;
-    font-style: normal;
-    margin-top: 0pt;
-    margin-bottom: 0pt;
-    
-   }
-   
-   #gff, table  {
-       width: 700px;
-       margin-left: auto;
-       margin-right: auto;
-      
-      
-             
-      }
-   #gff
-      th,tr,td {
-          border-width: 4px;
-          border-style: solid;
-          border-color: #BDBDBD;
-          padding: 10px;
-          
-          
-            }
-            
 #navbar {
     margin-bottom: 0px;
 }

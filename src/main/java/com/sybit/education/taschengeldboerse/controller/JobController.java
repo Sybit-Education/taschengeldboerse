@@ -101,6 +101,7 @@ public class JobController {
         String username = auth.getName();
 
         Job job = jobService.findById(id);
+        ModelAndView modelAndView = new ModelAndView();
         
         if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_SCHUELER"))) {
              // ein Schüler guckt sich den Job an
@@ -115,6 +116,13 @@ public class JobController {
                      //Das ist der vom Schüler übernommene Job: Details anzeigen!
                      
                      //TODO
+                     
+                     Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+                     modelAndView.addObject("job", job);
+                     modelAndView.addObject("anbieter", anbieter);
+                     modelAndView.addObject("disabled","style=\"display: none\"") ;
+                     
+                     
                      
                      
                  } else {
@@ -154,7 +162,6 @@ public class JobController {
         }
 
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-        ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieterName", anbieter.getName());
         modelAndView.addObject("anbieter", anbieter);

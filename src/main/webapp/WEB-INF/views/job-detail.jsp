@@ -130,7 +130,7 @@
                 
             <c:url var = "action" value="/schueler/jobs/zuordnen?id=${job.id}" />
             <a class= "form-horizontal" href="${action}" >
-                <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" />
+                <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" ${disabled}/>
             </a>
 
         </div>

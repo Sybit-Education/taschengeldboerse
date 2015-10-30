@@ -38,7 +38,7 @@
                     <b>Ort:</b>
                     <c:forEach var="job" items="${jobList}">
                         <div class="row">
-                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a>
+                            <a href="<c:url value='/job/detail?id=${job.id}'/>"> <c:out value="${job.ort}" /> </a>
                         </div>
                     </c:forEach>
                 </div>
@@ -47,7 +47,7 @@
                     <b>Datum:</b>
                     <c:forEach var="job" items="${jobList}">
                         <div class="row">
-                            <a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a>
+                            <a href="<c:url value='/job/detail?id=${job.id}'/>"> <c:out value="${job.datum}" /> </a>
                         </div>
                     </c:forEach>
                 </div>

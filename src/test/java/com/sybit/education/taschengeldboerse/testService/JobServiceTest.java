@@ -5,6 +5,7 @@
  */
 package com.sybit.education.taschengeldboerse.testService;
 
+import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
@@ -15,26 +16,25 @@ import com.sybit.education.taschengeldboerse.service.JobsService;
 import java.util.Date;
 import static org.junit.Assert.assertEquals;
 
-
 /**
  *
  * @author sat
  */
-public class JobServiceTest extends AbstractDatabaseTest{
-    
+public class JobServiceTest extends AbstractDatabaseTest {
+
     @Autowired
     JobsService service;
-    
+
     @Test
-    public void testFindAll(){
+    public void testFindAll() {
         List<Job> jobList;
-        jobList=service.findAll();
+        jobList = service.findAll();
         //assertEquals(1, jobList.size());
-        
+
         Job job = jobList.get(0);
         assertEquals("Test Job", job.getBezeichnung());
     }
-    
+
     @Test
     public void testSaveJob() {
         Job job = new Job();
@@ -48,57 +48,61 @@ public class JobServiceTest extends AbstractDatabaseTest{
         job.setZusaetzlicheInfos("Test");
         job.setUhrzeit("15:00");
         job.setZeitaufwand("3h");
-        
+
         service.addJob(job);
-        
+
         assertEquals(Integer.valueOf(1), job.getId());
         assertEquals("Singen", job.getOrt());
     }
-    
-    
+
     @Test
     public void testOrderByDateAndNotAsigned() {
         List<Job> jobList = service.findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
         assertEquals(3, jobList.size());
         assertEquals(Integer.valueOf(3), jobList.get(0).getId());
     }
-    
-    
+
     @Test
-    public  void testAddSchuelerToJob() {
+    public void testAddSchuelerToJob() {
         List<Job> jobList = service.findAll();
         Job job = jobList.get(0);
         service.addSchuelerToJob(job, 1);
-        assertEquals((Integer)1, job.getSchueler());
+        assertEquals((Integer) 1, job.getSchueler());
     }
-    
+
     @Test
-    public  void testJobBelegt() {
+    public void testJobBelegt() {
         List<Job> jobList = service.findAll();
         Job job = jobList.get(0);
         job.setSchueler(2);
         service.addSchuelerToJob(job, 1);
-        assertEquals((Integer)2, job.getSchueler());
+        assertEquals((Integer) 2, job.getSchueler());
     }
-    
+
     @Test
     public void testUebernehmenJob() {
         Job job = service.findById(1);
-        
+
         Schueler schueler = service.getSchuelerById(job.getSchueler());
-        
+
         assertEquals("Paul", schueler.getVorname());
     }
-    
+
     @Test
-    public void testSchuelerJob() {
-        List<Job> jobList = service.findJobsBySchuelerID((Integer)1);
-        
-        assertEquals(3,jobList.size());
-        
-        assertEquals((Integer)1,jobList.get(0).getSchueler());
+    public void findByAnbieterId() {
+        List<Job> jobList = service.findByAnbieterId((Integer) 1);
+
+        assertEquals(4, jobList.size());
     }
-    
+
+    public void testSchuelerJob() {
+        List<Job> jobList = service.findJobsBySchuelerID((Integer) 1);
+
+        assertEquals(3, jobList.size());
+
+        assertEquals((Integer) 1, jobList.get(0).getSchueler());
+    }
+
     @Override
     public String getDataset() {
         return "database/testJobService.xml";

@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -53,11 +54,11 @@ public class Schueler implements Serializable {
     @Column
     private String strasse;
     
-    @NotEmpty(message="Bitte Plz/Wohnort eingeben")
+    @NotEmpty(message="Bitte Plz eingeben")
     @Column
     private String plz;
     
-    @NotEmpty()
+    @NotEmpty(message="Bitte Wohnort angeben")
     @Column
     private String wohnort;
     
@@ -78,9 +79,11 @@ public class Schueler implements Serializable {
     private Boolean hatUnfallVers;
     
     @Column(name = "merkblatt")
+    @AssertTrue(message="Sie müssen das Merkblatt akzeptiert haben!")
     private Boolean hatMerkblattGelesen;
     
     @Column(name = "datenschutz")
+    @AssertTrue(message="Datenschutz Richtlinien müssen akzeptiert werden!")
     private Boolean hatDatenschutzGelesen;
 
     public Schueler() {

@@ -115,27 +115,29 @@ public class JobController {
                  if (Objects.equals(job.getSchueler(), schueler.getId())) {
                      //Das ist der vom Schüler übernommene Job: Details anzeigen!
                      
-                     //TODO
-                     
                      Anbieter anbieter = anbieterService.getById(job.getAnbieter());
                      modelAndView.addObject("job", job);
                      modelAndView.addObject("anbieter", anbieter);
+                     modelAndView.addObject("anbieterName", anbieter.getName());
                      modelAndView.addObject("disabled","style=\"display: none\"") ;
+                     modelAndView.setViewName("job-detail");
                      
                      
                      
                      
                  } else {
                      //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
-                     response.sendError(HttpServletResponse.SC_FORBIDDEN, "Zugriff nicht erlaubt: Das ist nicht dein Job!");
+                     modelAndView.setViewName("home");
                      
                  }
                  
              } else {
                  //Job noch verfügbar, keinem Schüler zugeordnet
                  //Job wird one Anbieterdaten angezeigt
-                 
-                 //TODO
+                 Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+                 modelAndView.addObject("job", job);
+                 modelAndView.addObject("anbieterName", anbieter.getName());
+                 modelAndView.setViewName("job-detail");
              }
              
 
@@ -146,12 +148,14 @@ public class JobController {
              Anbieter anbieter = anbieterService.getByEmail(username);
              if(Objects.equals(job.getAnbieter(), anbieter.getId())) {
                  //Das ist der Job des Anbieters: Anzeigen, ohne Anbieterdetails und ohne Übernehmen-Button
-                 
-                 //TODO
+                     modelAndView.addObject("job", job);
+                     modelAndView.addObject("anbieterName", anbieter.getName());
+                     modelAndView.addObject("disabled","style=\"display: none\"") ;
+                     modelAndView.setViewName("job-detail");
                  
              } else {
                  //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
-                 response.sendError(HttpServletResponse.SC_FORBIDDEN, "Zugriff nicht erlaubt: Das ist nicht dein Job!");
+                 modelAndView.setViewName("home");
                  
              }
              
@@ -161,11 +165,13 @@ public class JobController {
             throw new IllegalAccessError("Unhandled role: " + auth.getAuthorities());
         }
 
-        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-        modelAndView.addObject("job", job);
-        modelAndView.addObject("anbieterName", anbieter.getName());
-        modelAndView.addObject("anbieter", anbieter);
-        modelAndView.setViewName("job-detail");
+//        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+//        modelAndView.addObject("job", job);
+//        modelAndView.addObject("anbieterName", anbieter.getName());
+//        modelAndView.addObject("anbieter", anbieter);
+       
+        
+
 
         return modelAndView;
 

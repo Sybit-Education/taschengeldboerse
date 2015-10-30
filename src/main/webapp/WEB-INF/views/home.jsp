@@ -21,6 +21,8 @@
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
               <li data-target="#myCarousel" data-slide-to="2"></li>
+              <li data-target="#myCarousel" data-slide-to="3"></li>
+              <li data-target="#myCarousel" data-slide-to="4"></li>
             </ol>
 
           <!-- Wrapper for slides -->
@@ -30,11 +32,21 @@
                 </div>--%>
                 
                 <div class="item active">
-                    <img src="<c:url value="/resources/img/photo.jpg" />" alt="Chania">
+                    <img src="<c:url value="/resources/img/WirSlider.jpg" />" alt="Wir über uns">
                     <div class="carousel-caption">
-                      <h3>Chania</h3>
-                      <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
                     </div>
+                </div>
+                <div class="item">
+                    <img src="<c:url value="/resources/img/DogSlider.jpg" />" alt="DogWalk">
+                </div>
+                <div class="item">
+                    <img src="<c:url value="/resources/img/MoneySlider.jpg" />" alt="Money">
+                </div>
+                <div class="item">
+                    <img src="<c:url value="/resources/img/GardenSlider.jpg" />" alt="Garden">
+                </div>
+                <div class="item">
+                    <img src="<c:url value="/resources/img/SupermarktSlider.jpg" />" alt="Supermarkt">
                 </div>
 
                 <!-- Left and right controls -->

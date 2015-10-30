@@ -25,50 +25,69 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 @Transactional
 public class JobRepositoryImpl implements JobRepositoryCustom {
-    
+
     @Autowired
     private EntityManager entityManager;
-    
-    
+
     @Override
-    public List<Job> notassignedList(){
-                
+    public List<Job> notassignedList() {
+
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-        
+
         CriteriaQuery<Job> cq = cb.createQuery(Job.class);
 
         Root<Job> job = cq.from(Job.class);
 
         Expression<Integer> schueler = job.get("schueler");
-        
+
         cq.select(job).where(cb.isNull(schueler)).orderBy(cb.desc(job.get("erstelldatum")));
-        
+
         Query query = entityManager.createQuery(cq);
-                
+
         List<Job> jobListe = query.getResultList();
-        
+
         return jobListe;
-    } 
+    }
 
     @Override
     public List<Job> findByAnbieter(Integer anbieterId) {
-        System.out.println("anbieterId= "+ anbieterId);
-        
+        System.out.println("anbieterId= " + anbieterId);
+
         List<Job> jobListe = new ArrayList<>();
-        
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();  
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Job> cq = cb.createQuery(Job.class);
-        
+
         Root<Job> job = cq.from(Job.class);
-        
+
         Expression<Integer> anbieter = job.get("anbieter");
-        
+
         cq.select(job).where(cb.equal(anbieter, anbieterId));
-        
+
         Query query = entityManager.createQuery(cq);
-                
-        jobListe = query.getResultList();        
-             
+
+        jobListe = query.getResultList();
+
         return jobListe;
+    }
+
+    @Override
+    public List<Job> schuelerJobs(Integer schuelerID) {
+
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+
+        CriteriaQuery<Job> cq = cb.createQuery(Job.class);
+
+        Root<Job> job = cq.from(Job.class);
+
+        Expression<Integer> schueler = job.get("schueler");
+
+        cq.select(job).where(cb.equal(schueler, schuelerID));
+
+        Query query = entityManager.createQuery(cq);
+
+        List<Job> schuelerJobsListe = query.getResultList();
+        return schuelerJobsListe;
+
     }
 }

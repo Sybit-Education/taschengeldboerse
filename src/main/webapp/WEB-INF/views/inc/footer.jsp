@@ -23,7 +23,7 @@
            value="${_csrf.token}" />
 </form>
 
-<footer id="footer">
+<footer class="footer">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -37,3 +37,5 @@
         </div>
     </div>
 </footer>
+                
+                

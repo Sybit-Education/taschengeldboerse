@@ -8,7 +8,6 @@ package com.sybit.education.taschengeldboerse.testService;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.service.SchuelerService;
 import com.sybit.education.taschengeldboerse.testutil.AbstractDatabaseTest;
-import java.util.List;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

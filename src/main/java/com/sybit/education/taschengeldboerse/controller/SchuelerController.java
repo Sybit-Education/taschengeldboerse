@@ -23,14 +23,15 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class SchuelerController {
-    
+
     @Autowired
     private UserService userService;
     @Autowired
     private JobsService jobService;
-    
+
     @Autowired
     SchuelerService schuelerService;
+
     /**
      * Liste der dem Anbieter alle Bewerber auf.
      *
@@ -59,33 +60,28 @@ public class SchuelerController {
 
         return modelAndView;
     }
-    
-    
-@RequestMapping(value = "/schueler/schueler-uebernommen", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/schueler/schueler-uebernommen", method = RequestMethod.GET)
     public ModelAndView meineJobsList(final HttpServletRequest request) {
 
         ModelAndView modelAndView = new ModelAndView();
-        
-       
-        
-        
-            //aktuell eingeloggter Benutzer (ist die Email)
-            Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-            String username = auth.getName();
 
-            //anbieter suchen und dem Job zuweisen
-            Schueler schueler = schuelerService.getByEmail(username);
-        
+        //aktuell eingeloggter Benutzer (ist die Email)
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+
+        //anbieter suchen und dem Job zuweisen
+        Schueler schueler = schuelerService.getByEmail(username);
+
         List<Job> jobList = jobService.findJobsBySchuelerID(schueler.getId());
-        
-        modelAndView.addObject("jobs", jobList);
+
+        modelAndView.addObject("jobList", jobList);
 
         modelAndView.setViewName("job-liste");
 
         return modelAndView;
     }
-    
-    
+
     /**
      * Speichere neuen Schüler.
      *
@@ -94,12 +90,12 @@ public class SchuelerController {
      */
     @RequestMapping(value = "/registrieren/schueler", method = RequestMethod.POST)
     public ModelAndView saveForm(@Valid Schueler schueler, BindingResult result) {
-           ModelAndView modelAndView = new ModelAndView();
-        if(result.hasErrors()) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (result.hasErrors()) {
             modelAndView.addObject(result.getModel());
             modelAndView.setViewName("registrieren-schueler");
-            
-        } else { 
+
+        } else {
             schueler = userService.saveSchueler(schueler);
             modelAndView.addObject("schueler", schueler);
 

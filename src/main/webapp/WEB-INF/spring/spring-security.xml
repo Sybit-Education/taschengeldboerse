@@ -16,6 +16,7 @@
         
         <security:intercept-url pattern="/schueler/**" access="hasRole('ROLE_SCHUELER')" />
         <security:intercept-url pattern="/anbieter/**" access="hasRole('ROLE_ANBIETER')" />
+        <security:intercept-url pattern="/job/**" access="hasAnyRole('ROLE_ANBIETER', 'ROLE_SCHUELER')" />
         <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
         <security:intercept-url pattern="/**" access="permitAll" />
         <security:intercept-url pattern="/resources/**" access="permitAll" />

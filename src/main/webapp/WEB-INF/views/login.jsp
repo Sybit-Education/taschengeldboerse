@@ -20,7 +20,7 @@
         <c:import url="inc/navigation.jsp" />
         <div class="container">
             &nbsp;<br>&nbsp;
-            <form id="form" action="<c:url value='login' />" method="post">
+            <form id="form" action="<c:url value='/login' />" method="post">
                 <div id="loginModal" class="modal-dialog modal-sm">
                     <div class="modal-content">
                         <div class="modal-header">

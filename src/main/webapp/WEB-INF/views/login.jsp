@@ -54,7 +54,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            Kein Zugang? <a href="<c:url value='registrieren' />" class="btn btn-large">Registrieren</a>
+                            Kein Zugang? <a href="<c:url value='/registrieren' />" class="btn btn-large">Registrieren</a>
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
                             <button class="btn btn-large btn-primary">Login</button>
                         </div>

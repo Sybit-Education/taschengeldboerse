@@ -110,6 +110,7 @@
                     <form:label path="hatHaftpflichtVers">
                         <form:checkbox path="hatHaftpflichtVers" />
                         Ich besitze eine Haftpflichtversicherung.
+                    <small><form:errors class="col-sm-12 error" path="hatHaftpflichtVers"/></small>
                     </form:label>
                 </div>
                         
@@ -126,6 +127,7 @@
                     <form:label path="hatMerkblattGelesen">
                         <form:checkbox path="hatMerkblattGelesen" />
                         Ich habe das Merkblatt gelesen.*
+                   <small><form:errors class="col-sm-12 error" path="hatMerkblattGelesen" /></small>
                     </form:label>
                 </div>
                 
@@ -134,6 +136,7 @@
                     <form:label path="hatDatenschutzGelesen">
                         <form:checkbox  path="hatDatenschutzGelesen" />
                         Ich bin mit den Datenschutz-Richtlinien einverstanden.*
+                     <small><form:errors class="col-sm-12 error" path="hatDatenschutzGelesen" /></small>
                     </form:label>
                 </div>
                 

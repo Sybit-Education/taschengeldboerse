@@ -99,36 +99,26 @@
                 <div class="col-md-6">
                 <c:out value="${anbieter.email}"/>
                 </div>
-            </c:if>
-                
-            <c:if test="${not empty anbieter}">
+
                 <div class="col-md-6">
                     <b>Telefonnummer:</b>
                 </div>
                 <div class="col-md-6">
                 <c:out value="${anbieter.telefonnummer}"/>
                 </div>
-            </c:if>
-                
-            <c:if test="${not empty anbieter}">
                 <div class="col-md-6">
                     <b>Straße:</b>
                 </div>
                 <div class="col-md-6">
                 <c:out value="${anbieter.strasse}"/>
                 </div>
-            </c:if>
-                
-                <c:if test="${not empty anbieter}">
+
                 <div class="col-md-6">
                     <b>Postleitzahl:</b>
                 </div>
                 <div class="col-md-6">
                 <c:out value="${anbieter.plz}"/>
                 </div>
-            </c:if>
-                
-            <c:if test="${not empty anbieter}">
                 <div class="col-md-6">
                     <b>Wohnort:</b>
                 </div>

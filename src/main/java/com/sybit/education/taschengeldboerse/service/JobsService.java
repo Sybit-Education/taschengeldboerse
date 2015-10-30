@@ -28,4 +28,6 @@ public interface JobsService {
     List<Job> findAllByOrderByErstelldatumDescWhereSchuelerIsNull();
     
     List<Job> findByAnbieterId(Integer id);
+    
+    List<Job> findJobsBySchuelerID(Integer id);
 }

@@ -6,9 +6,12 @@ import com.sybit.education.taschengeldboerse.domain.Schueler;
 import com.sybit.education.taschengeldboerse.service.AnbieterService;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import com.sybit.education.taschengeldboerse.service.SchuelerService;
+import java.io.IOException;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +22,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -92,12 +94,69 @@ public class JobController {
      * @return
      */
     @RequestMapping(value = "/job/detail", method = RequestMethod.GET)
-    public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletRequest request) {
+    public ModelAndView getJobDetail(@RequestParam("id") final Integer id, final Model model, final HttpServletResponse response) throws IOException {
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+
         Job job = jobService.findById(id);
+        
+        if (auth.getAuthorities().contains("ROLE_SCHUELER")) {
+             // ein Schüler guckt sich den Job an
+             
+             if (job.getSchueler() != null) {
+                 //Job ist einem Schüler zugeordnet!
+                 
+                 //prüfen ob dann die SchülerID gleich der des angemeldenten schülers ist:
+                 Schueler schueler = schuelerService.getByEmail(username);
+                 
+                 if (Objects.equals(job.getSchueler(), schueler.getId())) {
+                     //Das ist der vom Schüler übernommene Job: Details anzeigen!
+                     
+                     //TODO
+                     
+                     
+                 } else {
+                     //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
+                     response.sendError(HttpServletResponse.SC_FORBIDDEN, "Zugriff nicht erlaubt: Das ist nicht dein Job!");
+                     
+                 }
+                 
+             } else {
+                 //Job noch verfügbar, keinem Schüler zugeordnet
+                 //Job wird one Anbieterdaten angezeigt
+                 
+                 //TODO
+             }
+             
+
+        } else if (auth.getAuthorities().contains("ROLE_ANBIETER")) {
+             // ein Anbieter schaut
+             
+             //keine Kontaktdaten anzeigen
+             Anbieter anbieter = anbieterService.getByEmail(username);
+             if(Objects.equals(job.getAnbieter(), anbieter.getId())) {
+                 //Das ist der Job des Anbieters: Anzeigen, ohne Anbieterdetails und ohne Übernehmen-Button
+                 
+                 //TODO
+                 
+             } else {
+                 //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
+                 response.sendError(HttpServletResponse.SC_FORBIDDEN, "Zugriff nicht erlaubt: Das ist nicht dein Job!");
+                 
+             }
+             
+             
+
+        } else {
+            throw new IllegalAccessError("Unhandled role: " + auth.getAuthorities());
+        }
+
         Anbieter anbieter = anbieterService.getById(job.getAnbieter());
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("job", job);
         modelAndView.addObject("anbieterName", anbieter.getName());
+        modelAndView.addObject("anbieter", anbieter);
         modelAndView.setViewName("job-detail");
 
         return modelAndView;

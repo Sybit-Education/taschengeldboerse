@@ -18,4 +18,4 @@ Projektwoche bei Sybit 2015
 Dazu das Script [create-database.sql](src/main/resources/db/migration/create_database.sql) auf der MySQL-Datenbank ausführen.
 
 ## Projekt kompilieren
-''mvn install
+´´mvn install

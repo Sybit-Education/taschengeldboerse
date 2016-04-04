@@ -12,7 +12,6 @@
         <title>Taschengeldbörse</title>
     </head>
     <body>
-
         <c:import url="inc/navigation.jsp" />
         
         <div id="myCarousel" class="carousel slide" data-ride="carousel">

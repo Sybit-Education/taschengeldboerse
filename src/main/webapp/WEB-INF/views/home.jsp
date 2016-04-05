@@ -9,7 +9,7 @@
 <html>
     <head>
         <c:import url="inc/header.jsp" />
-        <title>Taschengeldbörse</title>
+        <title>Taschengeldboerse</title>
     </head>
     <body>
         <c:import url="inc/navigation.jsp" />

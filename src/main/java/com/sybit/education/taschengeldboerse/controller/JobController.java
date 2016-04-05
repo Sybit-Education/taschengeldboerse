@@ -120,11 +120,7 @@ public class JobController {
                      modelAndView.addObject("anbieter", anbieter);
                      modelAndView.addObject("anbieterName", anbieter.getName());
                      modelAndView.addObject("disabled","style=\"display: none\"") ;
-                     modelAndView.setViewName("job-detail");
-                     
-                     
-                     
-                     
+                     modelAndView.setViewName("job-detail");         
                  } else {
                      //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
                      modelAndView.setViewName("home");
@@ -158,8 +154,6 @@ public class JobController {
                  modelAndView.setViewName("home");
                  
              }
-             
-             
 
         } else {
             throw new IllegalAccessError("Unhandled role: " + auth.getAuthorities());

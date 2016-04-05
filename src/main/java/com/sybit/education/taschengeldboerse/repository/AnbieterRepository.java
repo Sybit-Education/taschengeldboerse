@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface AnbieterRepository extends JpaRepository<Anbieter,Long> {
     
-    public List<Anbieter> findById(Integer id);
+    Anbieter findById(Integer id);
 
     List<Anbieter> findByEmail(String email);
 

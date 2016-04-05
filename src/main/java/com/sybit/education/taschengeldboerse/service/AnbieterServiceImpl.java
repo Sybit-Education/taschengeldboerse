@@ -25,13 +25,8 @@ public class AnbieterServiceImpl implements AnbieterService {
 
     @Override
     public Anbieter getByEmail(String email) {
-        List<Anbieter> anbieterList = repository.findByEmail(email);
         
-        if(anbieterList.size() > 0) {
-            return anbieterList.get(0);
-        } else {
-            return null;
-        }
+        return repository.findByEmail(email);
         
     }
 

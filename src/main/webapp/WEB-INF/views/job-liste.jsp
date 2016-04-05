@@ -19,45 +19,32 @@
 
             <div class="page-header">
                 <h1>Die Taschengeldbörse</h1>
-
             </div>
-            
-            test
 
+                <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading" style="color : green">Jobuebersicht</div>
 
-            <div class="row" id="gff">
-
-                <div class="col-xs-4 col-md-4 col-lg-4">
-                    <b>Bezeichnung:</b>
-                    <c:forEach var="job" items="${jobList}"> 
-                        <div class="row">
-                            <a href="<c:url value='/job/detail?id=${job.id}'/>"> <c:out value="${job.bezeichnung}" /> </a>
-                        </div>
-                    </c:forEach>
+                  <!-- Table -->
+                  <table class="table">
+                      <tr id="tabelle">
+                          <th>Bezeichnung</th>
+                          <th>Ort</th>
+                          <th>Datum</th>
+                      </tr>
+                      <c:forEach var="job" items="${jobList}"> 
+                        <tr onclick="location.href = '<c:url value='/job/detail?id=${job.id}'/>'" style="cursor: pointer">
+                                <td>${job.bezeichnung}</td>
+                                <td>${job.ort}</td>
+                                <td>${job.datum}</td>
+                        </tr>
+                      </c:forEach>
+                  </table>
                 </div>
-
-                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
-                    <b>Ort:</b>
-                    <c:forEach var="job" items="${jobList}">
-                        <div class="row">
-                            <p> <c:out value="${job.ort}" /> </p>
-                        </div>
-                    </c:forEach>
-                </div>
-
-                <div class="col-xs-4 col-md-4 col-lg-4 hidden-xs">
-                    <b>Datum:</b>
-                    <c:forEach var="job" items="${jobList}">
-                        <div class="row">
-                            <p> <c:out value="${job.datum}" /> </p>
-                        </div>
-                    </c:forEach>
-                </div>
-
-
-
+                <p id="Werbungsbanner">
+                        Hier koennte ihre Werbung stehen!
+                </p>
             </div>
-            <%--<a href="<c:url value='/schueler/jobs/detail?id=${job.id}'/>"> </a> --%>
         </div>
 
         <c:import url="inc/footer.jsp" />

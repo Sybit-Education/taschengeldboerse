@@ -21,5 +21,8 @@ public interface UserService {
     Schueler saveSchueler(Schueler schueler);
     
     Anbieter saveAnbieter(Anbieter anbieter);
+    
+    Anbieter saveAnbieterNachBewertung(Anbieter anbieter);
+    
 
 }

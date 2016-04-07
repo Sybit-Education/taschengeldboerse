@@ -18,4 +18,8 @@ public interface AnbieterService {
     
     Anbieter getById(Integer id);
     
+    List<Anbieter> getAll();
+    
+    Anbieter findById(Integer id);
+    
 }

@@ -18,6 +18,8 @@ import com.sybit.education.taschengeldboerse.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
 
+    
+
     private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
@@ -111,5 +113,14 @@ public class UserServiceImpl implements UserService {
         
         return anbieter;
     }
+    
+    @Override
+    public Anbieter saveAnbieterNachBewertung(Anbieter anbieter) {
+        
+        anbieter = anbieterRepository.save(anbieter);
+        return anbieter;
+       
+    }
+    
 
 }

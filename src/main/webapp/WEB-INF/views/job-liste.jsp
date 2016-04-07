@@ -21,31 +21,31 @@
                 <h1>Die Taschengeldbörse</h1>
             </div>
 
-                <div class="panel panel-default">
+            <div class="panel panel-default">
                   <!-- Default panel contents -->
-                  <div class="panel-heading" style="color : green">Jobuebersicht</div>
+                <div class="panel-heading" style="color : green">Job uebersicht</div>
 
                   <!-- Table -->
-                  <table class="table">
-                      <tr id="tabelle">
-                          <th>Bezeichnung</th>
-                          <th>Ort</th>
-                          <th>Datum</th>
-                      </tr>
-                      <c:forEach var="job" items="${jobList}"> 
+                <table class="table">
+                    
+                    <tr id="tabelle">
+                        <th>Bezeichnung</th>
+                        <th>Ort</th>
+                        <th>Datum</th>
+                    </tr>
+                    
+                    <c:forEach var="job" items="${jobList}"> 
                         <tr onclick="location.href = '<c:url value='/job/detail?id=${job.id}'/>'" style="cursor: pointer">
-                                <td>${job.bezeichnung}</td>
-                                <td>${job.ort}</td>
-                                <td>${job.datum}</td>
+                            <td>${job.bezeichnung}</td>
+                            <td>${job.ort}</td>
+                            <td>${job.datum}</td>
                         </tr>
-                      </c:forEach>
-                  </table>
-                </div>
-                <p id="Werbungsbanner">
-                        Hier koennte ihre Werbung stehen!
-                </p>
+                    </c:forEach>
+                </table>
             </div>
+                
         </div>
+        
 
         <c:import url="inc/footer.jsp" />
     </body>

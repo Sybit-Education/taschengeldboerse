@@ -15,4 +15,5 @@ public interface AnbieterRepository extends JpaRepository<Anbieter,Long> {
 
     Anbieter findByEmail(String email);
 
+    List<Anbieter> findAll();
 }

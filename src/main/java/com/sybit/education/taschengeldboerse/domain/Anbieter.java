@@ -6,6 +6,7 @@
 package com.sybit.education.taschengeldboerse.domain;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -38,7 +39,7 @@ public class Anbieter implements Serializable {
     @Size(min = 5, message = "Bitte E-Mail angeben")
     @Column(unique = true)
     private String email;
-
+   
     @Column(name = "Anrede")
     private String anrede;
 
@@ -75,6 +76,14 @@ public class Anbieter implements Serializable {
     @Column(name = "Datenschutz")
     @AssertTrue(message="Die Datenschutzbedingungen müssen akzeptiert werden!")
     private boolean datenschutz;
+    
+    @Column(name = "AnzahlBewertungen")
+    private Integer anzahlBewertungen;
+
+    @Column(name = "BewertungspunkteInsgesammt")
+    private Integer bewertungspunkteInsgesammt;
+    
+  
 
     public Anbieter() {
     }
@@ -83,6 +92,23 @@ public class Anbieter implements Serializable {
         this.email = user.getEmail();
     }
 
+    public Integer getAnzahlBewertungen() {
+        return anzahlBewertungen;
+    }
+
+    public void setAnzahlBewertungen(Integer anzahl) {
+        this.anzahlBewertungen = anzahl;
+    }
+
+
+    public Integer getBewertungspunkteInsgesammt() {
+        return bewertungspunkteInsgesammt;
+    }
+
+    public void setBewertungspunkteInsgesammt(Integer bewertungspunkte) {
+        this.bewertungspunkteInsgesammt = bewertungspunkte;
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -181,27 +207,26 @@ public class Anbieter implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.id);
-        hash = 43 * hash + Objects.hashCode(this.anrede);
-        hash = 43 * hash + Objects.hashCode(this.vorname);
-        hash = 43 * hash + Objects.hashCode(this.name);
-        hash = 43 * hash + Objects.hashCode(this.geburtsdatum);
-        hash = 43 * hash + Objects.hashCode(this.strasse);
-        hash = 43 * hash + Objects.hashCode(this.plz);
-        hash = 43 * hash + Objects.hashCode(this.wohnort);
-        hash = 43 * hash + Objects.hashCode(this.telefonnummer);
-        hash = 43 * hash + Objects.hashCode(this.email);
-        hash = 43 * hash + (this.merkblatt ? 1 : 0);
-        hash = 43 * hash + (this.datenschutz ? 1 : 0);
+        int hash = 5;
+        hash = 31 * hash + Objects.hashCode(this.id);
+        hash = 31 * hash + Objects.hashCode(this.email);
+        hash = 31 * hash + Objects.hashCode(this.anrede);
+        hash = 31 * hash + Objects.hashCode(this.vorname);
+        hash = 31 * hash + Objects.hashCode(this.name);
+        hash = 31 * hash + Objects.hashCode(this.geburtsdatum);
+        hash = 31 * hash + Objects.hashCode(this.strasse);
+        hash = 31 * hash + Objects.hashCode(this.plz);
+        hash = 31 * hash + Objects.hashCode(this.wohnort);
+        hash = 31 * hash + Objects.hashCode(this.telefonnummer);
+        hash = 31 * hash + (this.merkblatt ? 1 : 0);
+        hash = 31 * hash + (this.datenschutz ? 1 : 0);
+        hash = 31 * hash + Objects.hashCode(this.anzahlBewertungen);
+        hash = 31 * hash + Objects.hashCode(this.bewertungspunkteInsgesammt);
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (obj == null) {
             return false;
         }
@@ -209,10 +234,10 @@ public class Anbieter implements Serializable {
             return false;
         }
         final Anbieter other = (Anbieter) obj;
-        if (this.merkblatt != other.merkblatt) {
+        if (!Objects.equals(this.id, other.id)) {
             return false;
         }
-        if (this.datenschutz != other.datenschutz) {
+        if (!Objects.equals(this.email, other.email)) {
             return false;
         }
         if (!Objects.equals(this.anrede, other.anrede)) {
@@ -222,6 +247,9 @@ public class Anbieter implements Serializable {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.geburtsdatum, other.geburtsdatum)) {
             return false;
         }
         if (!Objects.equals(this.strasse, other.strasse)) {
@@ -236,13 +264,16 @@ public class Anbieter implements Serializable {
         if (!Objects.equals(this.telefonnummer, other.telefonnummer)) {
             return false;
         }
-        if (!Objects.equals(this.email, other.email)) {
+        if (this.merkblatt != other.merkblatt) {
             return false;
         }
-        if (!Objects.equals(this.id, other.id)) {
+        if (this.datenschutz != other.datenschutz) {
             return false;
         }
-        if (!Objects.equals(this.geburtsdatum, other.geburtsdatum)) {
+        if (!Objects.equals(this.anzahlBewertungen, other.anzahlBewertungen)) {
+            return false;
+        }
+        if (!Objects.equals(this.bewertungspunkteInsgesammt, other.bewertungspunkteInsgesammt)) {
             return false;
         }
         return true;
@@ -250,7 +281,8 @@ public class Anbieter implements Serializable {
 
     @Override
     public String toString() {
-        return "anbieter{" + "ID=" + id + ", Anrede=" + anrede + ", Vorname=" + vorname + ", Name=" + name + ", Geburtsdatum=" + geburtsdatum + ", Stra\u00dfe=" + strasse + ", PLZ=" + plz + ", Wohnort=" + wohnort + ", Telefonnummer=" + telefonnummer + ", Email=" + email + ", Merkblatt=" + merkblatt + ", Datenschutz=" + datenschutz + '}';
+        return "Anbieter{" + "id=" + id + ", email=" + email + ", anrede=" + anrede + ", vorname=" + vorname + ", name=" + name + ", geburtsdatum=" + geburtsdatum + ", strasse=" + strasse + ", plz=" + plz + ", wohnort=" + wohnort + ", telefonnummer=" + telefonnummer + ", merkblatt=" + merkblatt + ", datenschutz=" + datenschutz + ", anzahlBewertungen=" + anzahlBewertungen + ", bewertungspunkteInsgesammt=" + bewertungspunkteInsgesammt + '}';
     }
 
+    
 }

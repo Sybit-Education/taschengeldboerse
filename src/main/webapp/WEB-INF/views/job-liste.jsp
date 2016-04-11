@@ -41,9 +41,6 @@
                       </c:forEach>
                   </table>
                 </div>
-                <p id="Werbungsbanner">
-                        Hier koennte ihre Werbung stehen!
-                </p>
             </div>
         </div>
 

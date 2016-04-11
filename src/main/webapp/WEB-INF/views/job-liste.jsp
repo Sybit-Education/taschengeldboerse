@@ -41,9 +41,8 @@
                       </c:forEach>
                   </table>
                 </div>
-            </div>
-        </div>
-
+               </div>
+        
         <c:import url="inc/footer.jsp" />
     </body>
 </html>

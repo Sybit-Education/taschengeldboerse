@@ -13,6 +13,7 @@ public interface AnbieterRepository extends JpaRepository<Anbieter,Long> {
     
     Anbieter findById(Integer id);
 
-    List<Anbieter> findByEmail(String email);
+    Anbieter findByEmail(String email);
 
+    List<Anbieter> findAll();
 }

@@ -25,14 +25,7 @@ public class AnbieterServiceImpl implements AnbieterService {
 
     @Override
     public Anbieter getByEmail(String email) {
-        List<Anbieter> anbieterList = repository.findByEmail(email);
-        
-        if(anbieterList.size() > 0) {
-            return anbieterList.get(0);
-        } else {
-            return null;
-        }
-        
+        return repository.findByEmail(email);      
     }
 
     @Override
@@ -40,6 +33,19 @@ public class AnbieterServiceImpl implements AnbieterService {
         
         return repository.findById(id);
         
+    }
+    
+    
+    @Override
+    public List<Anbieter> getAll(){
+        
+       return repository.findAll();
+    
+    }
+
+    @Override
+    public Anbieter findById(Integer id) {
+        return repository.findById(id);
     }
     
 }

@@ -30,4 +30,7 @@ public interface JobsService {
     List<Job> findByAnbieterId(Integer id);
     
     List<Job> findJobsBySchuelerID(Integer id);
+
+    void addInteressentenToJob(Job job, String interresanten);
+
 }

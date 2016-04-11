@@ -14,7 +14,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -74,7 +73,18 @@ public class Job implements Serializable {
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date erstelldatum;
 
-    public Job() {
+    @Column(name = "interresenten")
+    private String interresenten;
+
+    public void setInterresenten(String interresenten) {
+        this.interresenten = interresenten;
+    }
+
+    public String getInterresenten() {
+        return interresenten;
+    }    
+    
+    public Job(){
     }
     
     public Job(String bezeichnung, Integer Anbieter, Integer Schueler) {

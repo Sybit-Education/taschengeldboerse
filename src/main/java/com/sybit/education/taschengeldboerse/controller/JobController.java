@@ -84,9 +84,9 @@ public class JobController {
 
         logger.debug("All Jobs <------");
         return "job-liste";
-
+    
     }
-
+    
     /**
      *
      * @param id
@@ -106,37 +106,50 @@ public class JobController {
         if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_SCHUELER"))) {
              // ein Schüler guckt sich den Job an
              
-             if (job.getSchueler() != null) {
+            if (job.getSchueler() != null) {
                  //Job ist einem Schüler zugeordnet!
                  
                  //prüfen ob dann die SchülerID gleich der des angemeldenten schülers ist:
                  Schueler schueler = schuelerService.getByEmail(username);
                  
-                 if (Objects.equals(job.getSchueler(), schueler.getId())) {
+                if (Objects.equals(job.getSchueler(), schueler.getId())) {
                      //Das ist der vom Schüler übernommene Job: Details anzeigen!
                      
-                     Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-                     modelAndView.addObject("job", job);
-                     modelAndView.addObject("anbieter", anbieter);
-                     modelAndView.addObject("anbieterName", anbieter.getName());
-                     modelAndView.addObject("disabled","style=\"display: none\"") ;
-                     modelAndView.setViewName("job-detail");         
-                 } else {
-                     //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
+                     String interresentenListe = job.getInterresenten();
+                     
+                    int ergebnis =0;
+                    if (interresentenListe != null){
+                         ergebnis = interresentenListe.split(",").length;
+                    }
+                       
+                    Anbieter anbieter = anbieterService.getById(job.getAnbieter()); 
+                    modelAndView.addObject("job", job);
+                    modelAndView.addObject("anbieter", anbieter);
+                    modelAndView.addObject("anbieterName", anbieter.getName());
+                    modelAndView.addObject("interresentenAnzahl",ergebnis);
+                    modelAndView.addObject("disabled","style=\"display: none\"") ;
+                    modelAndView.setViewName("job-detail");   
+                } else {
+                        //FEHLER: da versucht jemand zu hacken! Seite darf nicht angezeigt werden!!!!!
                      modelAndView.setViewName("home");
                      
-                 }
-                 
+                    }
+                  
              } else {
                  //Job noch verfügbar, keinem Schüler zugeordnet
-                 //Job wird one Anbieterdaten angezeigt
-                 Anbieter anbieter = anbieterService.getById(job.getAnbieter());
+                 //Job wird ohne Anbieterdaten angezeigt
+                 String interresentenListe = job.getInterresenten();
+                int ergebnis =0;
+                    if (interresentenListe != null){
+                         ergebnis = interresentenListe.split(",").length; 
+                    }
+                
+                Anbieter anbieter = anbieterService.getById(job.getAnbieter());
                  modelAndView.addObject("job", job);
                  modelAndView.addObject("anbieterName", anbieter.getName());
                  modelAndView.setViewName("job-detail");
              }
              
-
         } else if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ANBIETER"))) {
              // ein Anbieter schaut
              
@@ -144,8 +157,13 @@ public class JobController {
              Anbieter anbieter = anbieterService.getByEmail(username);
              if(Objects.equals(job.getAnbieter(), anbieter.getId())) {
                  //Das ist der Job des Anbieters: Anzeigen, ohne Anbieterdetails und ohne Übernehmen-Button
+                String interresentenListe = job.getInterresenten();      
+                int ergebnis =0;
+                if (interresentenListe != null){
+                     ergebnis = interresentenListe.split(",").length;
                      modelAndView.addObject("job", job);
                      modelAndView.addObject("anbieterName", anbieter.getName());
+                     modelAndView.addObject("interresentenAnzahl","Bla");
                      modelAndView.addObject("disabled","style=\"display: none\"") ;
                      modelAndView.setViewName("job-detail");
                  
@@ -158,19 +176,10 @@ public class JobController {
         } else {
             throw new IllegalAccessError("Unhandled role: " + auth.getAuthorities());
         }
-
-//        Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-//        modelAndView.addObject("job", job);
-//        modelAndView.addObject("anbieterName", anbieter.getName());
-//        modelAndView.addObject("anbieter", anbieter);
-       
-        
-
-
-        return modelAndView;
-
+             return modelAndView;       
+      }
+     return modelAndView;
     }
-
     /**
      * Simply selects the home view to render by returning its name.
      *
@@ -181,7 +190,7 @@ public class JobController {
     public ModelAndView jobFormular(final HttpServletRequest request) {
 
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("job", new Job());
+        modelAndView.addObject("job",new Job());
 
         modelAndView.setViewName("job-neu");
 
@@ -228,11 +237,6 @@ public class JobController {
         return modelAndView;
     }
 
-    /**
-     *
-     * @param id
-     * @return
-     */
     @RequestMapping(value = "/schueler/jobs/zuordnen", method = RequestMethod.GET)
     public ModelAndView jobZuordnen(@RequestParam("id") Integer id) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -253,7 +257,24 @@ public class JobController {
         modelAndView.setViewName("job-detail");
 
         return modelAndView;
-
+    }  
+    @RequestMapping(value = "/interessenten/erhöhen", method = RequestMethod.GET)
+    public String interesseErhöhen(@RequestParam("id") Integer id){
+        
+        Job job = jobService.findById(id);
+        
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        Schueler schueler = schuelerService.getByEmail(username);
+        String ids = job.getInterresenten();
+        Integer idneu = schueler.getId();
+        ids = ids +","+ idneu.toString();
+        
+        jobService.addInteressentenToJob(job, ids);
+        
+        ModelAndView modelAndView = new ModelAndView("job-detail");
+        modelAndView.addObject("job", job);
+        
+        return "redirect:/job/detail?id="+id; 
     }
-
-}
+   }

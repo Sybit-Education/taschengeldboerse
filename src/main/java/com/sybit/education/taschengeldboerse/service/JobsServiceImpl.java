@@ -74,4 +74,11 @@ public class JobsServiceImpl implements JobsService {
     public List<Job> findByAnbieterId(Integer anbieterId) {
         return jobRepository.findByAnbieter(anbieterId);
     }
+
+    @Override
+    public void addInteressentenToJob(Job job, String intessenten) {
+        job.setInterresenten(intessenten);
+        
+        jobRepository.save(job);
+    }
 }

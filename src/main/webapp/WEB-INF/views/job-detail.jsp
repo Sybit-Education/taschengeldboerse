@@ -58,14 +58,21 @@
                             <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Postleitzahl: ${anbieter.plz} </div>
                         <div class="col-md-6">
                             <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Wohnort: ${anbieter.wohnort} </div>
-                        </div>
+                        <div class="col-md-6">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Interresenten: ${interresentenAnzahl} </div>
                     </table>
                   </div>   
             </div> 
-            <c:url var = "action" value="/schueler/jobs/zuordnen?id=${job.id}" />
-            <a class= "form-horizontal" href="${action}" >
+                    
+            <c:url var = "annehmenUrl" value="/schueler/jobs/zuordnen?id=${job.id}" />
+            <a class= "form-horizontal" href="${annehmenUrl}" >
                 <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" ${disabled}/>
             </a>
-        <c:import url="inc/footer.jsp" />
+            
+            <c:url var = "interssiertUrl" value="/interessenten/erhöhen?id=${job.id}" />
+            <a class= "form-horizontal" href="${interssiertUrl}" >
+                <input class="btn btn-primary pull-left" type="submit" value="Job Interesse" ${disabled}/>
+            </a>
+                <c:import url="inc/footer.jsp" />
     </body>
 </html>

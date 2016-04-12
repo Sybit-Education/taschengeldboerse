@@ -46,7 +46,7 @@ public class JobController {
     private SchuelerService schuelerService;
 
     /**
-     * Liste für die Schüler alle offenen Jobs auf.
+     * Liste fÃ¼r die SchÃ¼ler alle offenen Jobs auf.
      *
      * @param model
      * @param request
@@ -62,7 +62,7 @@ public class JobController {
     }
 
     /**
-     * Liste für den Anbieter seine erstellten Jobs auf
+     * Liste fÃ¼r den Anbieter seine erstellten Jobs auf
      *
      * @param model
      * @param request
@@ -104,16 +104,16 @@ public class JobController {
         ModelAndView modelAndView = new ModelAndView();
         
         if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_SCHUELER"))) {
-             // ein Schüler guckt sich den Job an
+             // ein SchÃ¼ler guckt sich den Job an
              
             if (job.getSchueler() != null) {
-                 //Job ist einem Schüler zugeordnet!
+                 //Job ist einem SchÃ¼ler zugeordnet!
                  
-                 //prüfen ob dann die SchülerID gleich der des angemeldenten schülers ist:
+                 //prÃ¼fen ob dann die SchÃ¼lerID gleich der des angemeldenten schÃ¼lers ist:
                  Schueler schueler = schuelerService.getByEmail(username);
                  
                 if (Objects.equals(job.getSchueler(), schueler.getId())) {
-                     //Das ist der vom Schüler übernommene Job: Details anzeigen!
+                     //Das ist der vom SchÃ¼ler Ã¼bernommene Job: Details anzeigen!
                      
                      String interresentenListe = job.getInterresenten();
                      
@@ -136,18 +136,24 @@ public class JobController {
                     }
                   
              } else {
-                 //Job noch verfügbar, keinem Schüler zugeordnet
+                 //Job noch verfuegbar, keinem Schueler zugeordnet
                  //Job wird ohne Anbieterdaten angezeigt
                  String interresentenListe = job.getInterresenten();
                 int ergebnis =0;
                     if (interresentenListe != null){
                          ergebnis = interresentenListe.split(",").length; 
                     }
+                Schueler schueler = schuelerService.getByEmail(username);
                 
+               
                 Anbieter anbieter = anbieterService.getById(job.getAnbieter());
-                 modelAndView.addObject("job", job);
-                 modelAndView.addObject("anbieterName", anbieter.getName());
-                 modelAndView.setViewName("job-detail");
+                modelAndView.addObject("job", job);
+                modelAndView.addObject("job", job);
+                modelAndView.addObject("anbieter", anbieter);
+                modelAndView.addObject("anbieterName", anbieter.getName());
+                modelAndView.addObject("interresentenAnzahl",ergebnis);
+                modelAndView.addObject("anbieterName", anbieter.getName());
+                modelAndView.setViewName("job-detail");
              }
              
         } else if (auth.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_ANBIETER"))) {
@@ -156,7 +162,7 @@ public class JobController {
              //keine Kontaktdaten anzeigen
              Anbieter anbieter = anbieterService.getByEmail(username);
              if(Objects.equals(job.getAnbieter(), anbieter.getId())) {
-                 //Das ist der Job des Anbieters: Anzeigen, ohne Anbieterdetails und ohne Übernehmen-Button
+                 //Das ist der Job des Anbieters: Anzeigen, ohne Anbieterdetails und ohne Ãœbernehmen-Button
                 String interresentenListe = job.getInterresenten();      
                 int ergebnis =0;
                 if (interresentenListe != null){
@@ -258,8 +264,8 @@ public class JobController {
 
         return modelAndView;
     }  
-    @RequestMapping(value = "/interessenten/erhöhen", method = RequestMethod.GET)
-    public String interesseErhöhen(@RequestParam("id") Integer id){
+    @RequestMapping(value = "/interessenten/erhoehen", method = RequestMethod.GET)
+    public String interesseErhoehen(@RequestParam("id") Integer id){
         
         Job job = jobService.findById(id);
         

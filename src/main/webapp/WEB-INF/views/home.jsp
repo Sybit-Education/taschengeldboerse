@@ -83,7 +83,8 @@
                     <div class="caption">
                       <h3>Starte Jetzt!</h3>
                        <p>Registriere Dich heute noch!</p>
-                      <p><a href="#" class="btn btn-primary" role="button" >Jetzt registrieren</a></p>
+                        <c:url var = "registrierenUrl" value="/=${job.id}" />
+                      <p><a href="#" class="btn btn-primary" role="button" value="registrieren">Jetzt registrieren</a></p>
                     </div>
                   </div>
                 </div>

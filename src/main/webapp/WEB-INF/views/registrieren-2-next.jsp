@@ -28,7 +28,7 @@
                         <input type="hidden" name="authority" value="ROLE_SCHUELER" />
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                        <input type="submit"class="btn btn-primary pull-right"  value="Schüler" />
+                        <input type="submit"class="btn btn-primary pull-left"  value="Schüler" />
                     </form:form>                    
                 </div>
                 <div class="col-sm-6">
@@ -39,7 +39,7 @@
                         <input type="hidden" name="authority" value="ROLE_ANBIETER" />
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-                        <input type="submit"class="btn btn-primary pull-right"  value="Anbieter" />
+                        <input type="submit"class="btn btn-primary pull-left"  value="Anbieter" />
                     </form:form>                    
                 </div>                
             </div>

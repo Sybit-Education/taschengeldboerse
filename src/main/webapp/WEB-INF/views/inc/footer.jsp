@@ -11,7 +11,7 @@
 <script>
     function formSubmit() {
         document.getElementById("logoutForm").submit();
-    }
+    }     
 </script>
 
 <c:url value="/logout" var="logoutUrl" />
@@ -27,15 +27,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                &copy; 2015 Sybit | 
+                &copy; 2015 Sybit |
                 <a href="<c:url value="/impressum" />">Impressum</a> |
                 <c:if test="${pageContext.request.userPrincipal.name != null}">
-                    Benutzer: ${pageContext.request.userPrincipal.name} | 
-                    <a href="javascript:formSubmit()"> Logout</a>	
+                    Benutzer: ${pageContext.request.userPrincipal.name} |
+                    <a href="javascript:formSubmit()"> Logout</a>
                 </c:if>
             </div>
         </div>
     </div>
 </footer>
-                
-                

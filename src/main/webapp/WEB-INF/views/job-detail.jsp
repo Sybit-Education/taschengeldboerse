@@ -63,8 +63,6 @@
                     </table>
                   </div>   
             </div>
-        </div>
-                    
                     
             <c:url var = "annehmenUrl" value="/schueler/jobs/zuordnen?id=${job.id}" />
             <a class= "form-horizontal" href="${annehmenUrl}" >
@@ -75,6 +73,7 @@
             <a class= "form-horizontal" href="${interssiertUrl}" >
                 <input class="btn btn-primary pull-left" type="submit" value="Job Interesse" ${disabled}/>
             </a>
-                <c:import url="inc/footer.jsp" />
+        </div>           
+        <c:import url="inc/footer.jsp" />
     </body>
 </html>

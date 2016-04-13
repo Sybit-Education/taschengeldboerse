@@ -69,7 +69,7 @@
                 <input class="btn btn-primary pull-right" type="submit" value="Job Annehmen" ${disabled}/>
             </a>
             
-            <c:url var = "interssiertUrl" value="/interessenten/erhöhen?id=${job.id}" />
+            <c:url var = "interssiertUrl" value="/interessenten/erhoehen?id=${job.id}" />
             <a class= "form-horizontal" href="${interssiertUrl}" >
                 <input class="btn btn-primary pull-left" type="submit" value="Job Interesse" ${disabled}/>
             </a>

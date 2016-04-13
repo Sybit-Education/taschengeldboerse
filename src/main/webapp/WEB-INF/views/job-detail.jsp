@@ -24,7 +24,7 @@
             <c:if test="${not empty error}">
                 ${error}
             </c:if>
-            
+        
             
              <div class="col-md-9">
                  <div class="panel panel-default">
@@ -62,7 +62,9 @@
                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Interresenten: ${interresentenAnzahl} </div>
                     </table>
                   </div>   
-            </div> 
+            </div>
+        </div>
+                    
                     
             <c:url var = "annehmenUrl" value="/schueler/jobs/zuordnen?id=${job.id}" />
             <a class= "form-horizontal" href="${annehmenUrl}" >

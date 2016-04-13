@@ -276,20 +276,20 @@ public class JobController {
         String username = auth.getName();
         Schueler schueler = schuelerService.getByEmail(username);
         String ids = job.getInterresenten();
+        Integer idneu = schueler.getId();
+        String[] ergebnis = new String[0];
         
-        
-        if (ids <= 0) {
+        if (ids != null) {
+            ergebnis = new String[ids.split(",").length];
+            ergebnis = ids.split(",");
             
+            ids = ids +","+ idneu.toString();
+        } else {
+            ids = idneu.toString();
         }
         
-        String[] ergebnis = new String[ids.split(",").length];
-        ergebnis = ids.split(",");
-         
-        Integer idneu = schueler.getId();
-        ids = ids +","+ idneu.toString();
-
         List<String> apfelKisten = new ArrayList<>();
-        
+
         for(int i=0; i < ergebnis.length; i++){
             apfelKisten.add(ergebnis[i]);
         }
@@ -297,10 +297,10 @@ public class JobController {
         if(!apfelKisten.contains(idneu.toString())) {
             jobService.addInteressentenToJob(job, ids);
         }
-        
+
             ModelAndView modelAndView = new ModelAndView("job-detail");
             modelAndView.addObject("job", job);
-            
+
             return "redirect:/job/detail?id="+id;
      }
    }

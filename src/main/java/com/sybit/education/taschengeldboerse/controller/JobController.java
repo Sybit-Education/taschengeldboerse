@@ -1,7 +1,5 @@
 package com.sybit.education.taschengeldboerse.controller;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
-import com.sun.org.apache.xml.internal.utils.StringToIntTable;
 import com.sybit.education.taschengeldboerse.domain.Anbieter;
 import com.sybit.education.taschengeldboerse.domain.Job;
 import com.sybit.education.taschengeldboerse.domain.Schueler;
@@ -9,7 +7,6 @@ import com.sybit.education.taschengeldboerse.service.AnbieterService;
 import com.sybit.education.taschengeldboerse.service.JobsService;
 import com.sybit.education.taschengeldboerse.service.SchuelerService;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -276,31 +273,14 @@ public class JobController {
         String username = auth.getName();
         Schueler schueler = schuelerService.getByEmail(username);
         String ids = job.getInterresenten();
-        
-        
-        if (ids <= 0) {
-            
-        }
-        
-        String[] ergebnis = new String[ids.split(",").length];
-        ergebnis = ids.split(",");
-         
         Integer idneu = schueler.getId();
         ids = ids +","+ idneu.toString();
-
-        List<String> apfelKisten = new ArrayList<>();
         
-        for(int i=0; i < ergebnis.length; i++){
-            apfelKisten.add(ergebnis[i]);
-        }
+        jobService.addInteressentenToJob(job, ids);
         
-        if(!apfelKisten.contains(idneu.toString())) {
-            jobService.addInteressentenToJob(job, ids);
-        }
+        ModelAndView modelAndView = new ModelAndView("job-detail");
+        modelAndView.addObject("job", job);
         
-            ModelAndView modelAndView = new ModelAndView("job-detail");
-            modelAndView.addObject("job", job);
-            
-            return "redirect:/job/detail?id="+id;
-     }
+        return "redirect:/job/detail?id="+id; 
+    }
    }

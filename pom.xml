@@ -14,14 +14,14 @@
     </scm>        
     <ciManagement>
         <system>Jenkins</system>
-        <url></url>
+        <url/>
     </ciManagement>      
     
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework-version>4.1.7.RELEASE</org.springframework-version>
-        <org.spring.security-version>4.0.2.RELEASE</org.spring.security-version>
+        <org.springframework-version>4.3.15.RELEASE</org.springframework-version>
+        <org.spring.security-version>4.2.3.RELEASE</org.spring.security-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
     </properties>
     
@@ -75,7 +75,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>4.2.1.RELEASE</version>
+            <version>4.2.4.RELEASE</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -87,7 +87,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>4.2.1.RELEASE</version>
+            <version>4.2.4.RELEASE</version>
         </dependency>        
         <dependency>
             <groupId>org.springframework</groupId>
@@ -114,7 +114,7 @@
         <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
-            <version>1.4.1</version>
+            <version>1.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -135,12 +135,12 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
-            <version>1.10.0.RELEASE</version>
+            <version>1.13.11.RELEASE</version>
         </dependency>          
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
-            <version>1.7.1.RELEASE</version>
+            <version>1.11.11.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -217,7 +217,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.36</version>
+            <version>5.1.42</version>
         </dependency>   
         <dependency>
             <groupId>javax.enterprise</groupId>
@@ -232,7 +232,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.0.1.Final</version>
+            <version>5.1.2.Final</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -356,7 +356,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.34</version>
+                        <version>5.1.42</version>
                     </dependency>
                 </dependencies>
             </plugin>

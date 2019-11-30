@@ -20,7 +20,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <org.springframework-version>4.1.7.RELEASE</org.springframework-version>
+        <org.springframework-version>4.3.1.RELEASE</org.springframework-version>
         <org.spring.security-version>4.0.2.RELEASE</org.spring.security-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>    
     </properties>
